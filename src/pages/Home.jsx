@@ -61,9 +61,9 @@ export default function Home() {
     <main className="min-h-svh bg-white text-gray-900">
       <div className="mx-auto w-full max-w-6xl px-6 py-10 md:py-14">
         {/* Header (logo left) */}
-        <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Left: Logo + brand */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <img
               src={logo}
               alt="Staywell"
@@ -73,19 +73,19 @@ export default function Home() {
 
           {/* Right: Title + description */}
           <div className="md:text-right">
-            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-staywell-nav">
+            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-staywell-nav">
               Welcome to Staywell Healthcare
             </h1>
 
             {/* Dual brand divider */}
-            <div className="mt-4 md:ml-auto flex h-1.5 w-28 overflow-hidden rounded-full bg-black/10">
+            <div className="mt-2 md:ml-auto flex h-1 w-24 overflow-hidden rounded-full">
               <div className="w-2/3" style={{ backgroundColor: "#D81820" }} />
               <div className="w-1/3" style={{ backgroundColor: "#78B840" }} />
             </div>
 
 
 
-            <p className="mt-4 max-w-1xl md:ml-auto text-base md:text-lg text-black/60 leading-relaxed">
+            <p className="mt-3 max-w-xl md:ml-auto text-sm md:text-base text-black/60">
               Choose your preferred Staywell location to access clinic, pharmacy & homecare supplies.
             </p>
 
