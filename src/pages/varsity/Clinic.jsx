@@ -8,9 +8,9 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 export default function Clinic() {
   const tabs = useMemo(
     () => [
-      { key: "clinic", label: "Clinic", to: "/varsity/clinic" },
-      { key: "pharmacy", label: "Pharmacy", to: "/varsity/pharmacy" },
-      { key: "supplies", label: "Homecare Supplies", to: "/varsity/supplies" },
+      { key: "clinic", label: "Staywell Medical Clinic", to: "/varsity/clinic" },
+      { key: "pharmacy", label: "Staywell Pharmacy", to: "/varsity/pharmacy" },
+      { key: "supplies", label: "Staywell Homecare", to: "/varsity/supplies" },
     ],
     []
   );
@@ -126,35 +126,48 @@ export default function Clinic() {
                 </span>
               </h1>
 
-              <p className="relative mt-4 text-lg md:text-2xl text-[#515D72] font-medium">
+              <h3 className="relative mt-4 text-lg md:text-2xl text-[#515D72] font-medium">
                 A community clinic committed to your well-being
-              </p>
+              </h3>
             </div>
           </div>
         </div>
       </section>
+      {/* BELOW HERO CTA BUTTONS (Staywell style) */}
+<section className="bg-[#DC2227]">
+  <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      {tabs.map((t) => (
+        <NavLink
+          key={t.key}
+          to={t.to}
+          className={({ isActive }) =>
+            [
+              // shape + sizing
+              "rounded-2xl text-center",
+              "px-8 py-6",                 // ✅ consistent padding
+              "min-h-84px flex items-center justify-center", // ✅ same height
+              // typography
+              "text-xl md:text-2xl font-extrabold tracking-tight",
+              "transition-all duration-300",
+              // borders
+              "border-2 border-white/25",
+              // colors (your spec)
+              isActive
+                ? "bg-white text-[#DC2227]"
+                : "bg-[#79BD43] text-white hover:bg-white hover:text-[#DC2227]",
+              // subtle polish
+              "shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+            ].join(" ")
+          }
+        >
+          {t.label}
+        </NavLink>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* Tabs (optional) */}
-      <section className="border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex gap-2">
-          {tabs.map((t) => (
-            <NavLink
-              key={t.key}
-              to={t.to}
-              className={({ isActive }) =>
-                [
-                  "px-4 py-2 rounded-full text-sm font-semibold transition",
-                  isActive
-                    ? "bg-gray-900 text-white"
-                    : "bg-gray-100 text-gray-800 hover:bg-gray-200",
-                ].join(" ")
-              }
-            >
-              {t.label}
-            </NavLink>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }
