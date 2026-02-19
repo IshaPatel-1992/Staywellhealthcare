@@ -55,9 +55,9 @@ export default function Clinic() {
     <main className="min-h-svh bg-white text-gray-900">
       {/* HERO */}
       <section
-        id="home"
-        className="relative h-[92vh] md:h-[96vh] pt-24 md:pt-28 overflow-hidden"
-      >
+  id="home"
+  className="group relative h-[92vh] md:h-[96vh] pt-24 md:pt-28 overflow-hidden"
+>
         {/* Background images (crossfade) */}
         {slides.map((s, i) => (
           <img
@@ -73,35 +73,53 @@ export default function Clinic() {
 
         ))}
 
-        {/* LEFT Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-8 top-1/2 -translate-y-1/2 z-20
-             w-12 h-12 rounded-full
-             bg-[#DC2227]/90 text-white
-             flex items-center justify-center
-             shadow-xl backdrop-blur-md
-             hover:bg-[#DC2227] hover:scale-110
-             transition duration-300"
-          aria-label="Previous Slide"
-        >
-          <FaChevronLeft className="text-lg" />
-        </button>
+        {/* Arrow Controls (Red ring style) */}
+        <div className="absolute inset-0 z-20 flex items-center justify-between px-4 md:px-8 pointer-events-none">
+          {/* LEFT */}
+          <button
+            onClick={prevSlide}
+            className="
+      pointer-events-auto
+      w-10 h-10 md:w-12 md:h-12
+      rounded-full
+      bg-transparent
+      border-2 border-white/80
+      text-[#DC2227]
+      flex items-center justify-center
+      backdrop-blur-sm
+      transition-all duration-300
+      hover:bg-white/20 hover:border-white hover:scale-110
+      opacity-100 md:opacity-0 md:group-hover:opacity-100
+    "
+            aria-label="Previous Slide"
+            type="button"
+          >
+            <FaChevronLeft className="text-base md:text-lg" />
+          </button>
 
-        {/* RIGHT Arrow */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-8 top-1/2 -translate-y-1/2 z-20
-             w-12 h-12 rounded-full
-             bg-[#DC2227]/90 text-white
-             flex items-center justify-center
-             shadow-xl backdrop-blur-md
-             hover:bg-[#DC2227] hover:scale-110
-             transition duration-300"
-          aria-label="Next Slide"
-        >
-          <FaChevronRight className="text-lg" />
-        </button>
+          {/* RIGHT */}
+          <button
+            onClick={nextSlide}
+            className="
+      pointer-events-auto
+      w-10 h-10 md:w-12 md:h-12
+      rounded-full
+      bg-transparent
+      border-2 border-white/80
+      text-[#DC2227]
+      flex items-center justify-center
+      backdrop-blur-sm
+      transition-all duration-300
+      hover:bg-white/20 hover:border-white hover:scale-110
+      opacity-100 md:opacity-0 md:group-hover:opacity-100
+    "
+            aria-label="Next Slide"
+            type="button"
+          >
+            <FaChevronRight className="text-base md:text-lg" />
+          </button>
+        </div>
+
 
 
         {/* Optional soft left gradient (helps readability) 
@@ -134,39 +152,39 @@ export default function Clinic() {
         </div>
       </section>
       {/* BELOW HERO CTA BUTTONS (Staywell style) */}
-<section className="bg-[#DC2227]">
-  <div className="max-w-6xl mx-auto px-4 py-10">
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-      {tabs.map((t) => (
-        <NavLink
-          key={t.key}
-          to={t.to}
-          className={({ isActive }) =>
-            [
-              // shape + sizing
-              "rounded-2xl text-center",
-              "px-8 py-6",                 // ✅ consistent padding
-              "min-h-84px flex items-center justify-center", // ✅ same height
-              // typography
-              "text-xl md:text-2xl font-extrabold tracking-tight",
-              "transition-all duration-300",
-              // borders
-              "border-2 border-white/25",
-              // colors (your spec)
-              isActive
-                ? "bg-white text-[#DC2227]"
-                : "bg-[#79BD43] text-white hover:bg-white hover:text-[#DC2227]",
-              // subtle polish
-              "shadow-lg hover:shadow-xl hover:-translate-y-0.5",
-            ].join(" ")
-          }
-        >
-          {t.label}
-        </NavLink>
-      ))}
-    </div>
-  </div>
-</section>
+      <section className="bg-[#DC2227]">
+        <div className="max-w-6xl mx-auto px-4 py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {tabs.map((t) => (
+              <NavLink
+                key={t.key}
+                to={t.to}
+                className={({ isActive }) =>
+                  [
+                    // shape + sizing
+                    "rounded-2xl text-center",
+                    "px-8 py-6",                 // ✅ consistent padding
+                    "min-h-21 flex items-center justify-center", // ✅ same height
+                    // typography
+                    "text-xl md:text-2xl font-extrabold tracking-tight",
+                    "transition-all duration-300",
+                    // borders
+                    "border-2 border-white/25",
+                    // colors (your spec)
+                    isActive
+                      ? "bg-white text-[#DC2227]"
+                      : "bg-[#79BD43] text-white hover:bg-white hover:text-[#DC2227]",
+                    // subtle polish
+                    "shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+                  ].join(" ")
+                }
+              >
+                {t.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </main>
   );
