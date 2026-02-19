@@ -31,27 +31,29 @@ export default function Home() {
     () => [
       {
         key: "varsity",
+        accent: "green",
         title: "Varsity",
         subtitle: "Clinic • Pharmacy • Homecare Supplies",
-        address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 129",
+        address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
         badge: "New",
         badgeTone: "bg-staywell-green text-white",
         cta: "Continue to Varsity",
         to: "/varsity/clinic",
         type: "internal",
-        chips: ["Walk-in Available", "Accepting Patients", "On-site Pharmacy"],
+        chips: ["Clinic", "Pharmacy", "Homecare Supplies"],
       },
       {
         key: "carrington",
+        accent: "red",
         title: "Carrington",
         subtitle: "Clinic • Pharmacy • Homecare Supplies",
-        address: "You’ll be redirected to our Carrington websites.",
+        address: "59 Carrigton Plz #190, Calgary, AB T3P 1Y3",
         badge: "Current",
         badgeTone: "bg-black/5 text-black/70 border border-black/10",
         cta: "Continue to Carrington",
         href: "https://staywellmedical.ca",
         type: "external",
-        chips: ["Clinic", "Pharmacy", "Supplies"],
+        chips: ["Clinic", "Pharmacy", "Homecare Supplies"],
       },
     ],
     []
@@ -113,81 +115,107 @@ export default function Home() {
 
         {/* Divider */}
         <div className="mt-8 h-px w-full bg-black/10" />
+        <div className="fixed bottom-4 left-4 `z-[9999]` h-10 w-10 bg-staywell-red" />
+<div className="fixed bottom-4 left-20 `z-[9999]` h-10 w-10 text-staywell-nav">
+  TEST
+</div>
 
         {/* Cards */}
         <section className="mt-8 grid gap-6 md:grid-cols-2">
           {locations.map((loc) => {
-            const CardInner = (
-              <div className="group relative rounded-3xl border border-black/10 bg-white p-7 md:p-9 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-22px_rgba(0,0,0,0.45)]">
-                {/* Top row */}
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-extrabold">
-                      {loc.title}
-                    </h2>
-                    <p className="mt-2 text-black/60">{loc.subtitle}</p>
-                  </div>
+const CardInner = (() => {
+  const isGreen = loc.accent === "green";
+  const accent = isGreen ? "#78B840" : "#D81820";
 
-                  <span
-                    className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${loc.badgeTone}`}
-                  >
-                    {loc.badge}
-                  </span>
-                </div>
+  return (
 
-                {/* Feature pills */}
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
-                    <MdLocalHospital />
-                    Clinic
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
-                    <MdLocalPharmacy />
-                    Pharmacy
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
-                    <FaBoxOpen />
-                    Homecare
-                  </div>
-                </div>
 
-                {/* Address */}
-                <div className="mt-6 flex items-start gap-3 text-sm text-black/60">
-                  <HiMapPin
-                    className="mt-0.5 shrink-0 text-staywell-gray"
-                    size={18}
-                  />
-                  <div>{loc.address}</div>
-                </div>
+    <div
+      className="group relative rounded-3xl bg-white p-7 md:p-9 border border-black/10
+      shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)]
+      transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-22px_rgba(0,0,0,0.45)]"
+      style={{
+        boxShadow: `0 10px 30px -18px rgba(0,0,0,0.35)`,
+        outline: `1px solid ${accent}55`, // subtle colored ring
+        outlineOffset: "0px",
+      }}
+    >
 
-                {/* Chips */}
-                <div className="mt-6 flex flex-wrap gap-2 text-sm">
-                  {loc.chips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="rounded-full border border-black/10 bg-black/2 px-3 py-1 text-black/70"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
 
-                {/* CTA row (modern button) */}
-                <div className="mt-8 flex items-center justify-between gap-4">
-                  <div className="h-2 w-24 rounded-full bg-black/5 overflow-hidden">
-                    <div className="h-full w-2/3 bg-staywell-green" />
-                  </div>
+      {/* Top row */}
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-extrabold">{loc.title}</h2>
+          <p className="mt-2 text-black/60">{loc.subtitle}</p>
+        </div>
 
-                  <div className="inline-flex items-center gap-2 rounded-2xl border border-staywell-red/20 bg-staywell-red/5 px-4 py-2 font-semibold text-staywell-red transition group-hover:bg-staywell-red/10">
-                    {loc.cta}
-                    <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
-                </div>
+        <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${loc.badgeTone}`}>
+          {loc.badge}
+        </span>
+      </div>
 
-                {/* corner ring */}
-                <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-black/5" />
-              </div>
-            );
+      {/* Feature pills */}
+      <div className="mt-6 flex flex-wrap gap-3">
+        <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
+          <MdLocalHospital />
+          Clinic
+        </div>
+        <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
+          <MdLocalPharmacy />
+          Pharmacy
+        </div>
+        <div className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-black/2 px-3 py-2 text-sm text-black/75">
+          <FaBoxOpen />
+          Homecare
+        </div>
+      </div>
+
+      {/* Address */}
+      <div className="mt-6 flex items-start gap-3 text-sm text-black/60">
+        <HiMapPin className="mt-0.5 shrink-0 text-staywell-gray" size={18} />
+        <div>{loc.address}</div>
+      </div>
+
+      {/* Chips */}
+      <div className="mt-6 flex flex-wrap gap-2 text-sm">
+        {loc.chips.map((chip) => (
+          <span
+            key={chip}
+            className="rounded-full border border-black/10 bg-black/2 px-3 py-1 text-black/70"
+          >
+            {chip}
+          </span>
+        ))}
+      </div>
+
+      {/* CTA row */}
+      <div className="mt-8 flex items-center justify-between gap-4">
+        {/* progress */}
+        <div className="h-2 w-24 rounded-full bg-black/5 overflow-hidden">
+          <div style={{ backgroundColor: accent }} className="h-full w-2/3" />
+        </div>
+
+        {/* CTA button */}
+        <div
+          className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 font-semibold transition"
+          style={{
+            borderColor: `${accent}33`,
+            backgroundColor: `${accent}0D`,
+            color: accent,
+          }}
+        >
+          {loc.cta}
+          <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
+      </div>
+
+      {/* corner ring */}
+      <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-black/5" />
+    </div>
+  );
+})();
+
+
 
             if (loc.type === "internal") {
               return (
