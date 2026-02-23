@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-import logo from "../assets/logo/Staywell-favicon-01.webp";
+import logo from "../../assets/logo/Staywell-favicon-01.webp";
 
-export default function Navbar() {
+export default function NavbarClinic() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -73,16 +73,15 @@ export default function Navbar() {
 >
   Contact
 </NavLink> */}
- <NavLink
-  to="/contact"
-  className={({ isActive }) =>
-    `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${
-      isActive ? "bg-staywell-green" : "bg-staywell-red hover:bg-staywell-green"
-    }`
-  }
->
-  Contact
-</NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive ? "bg-staywell-green" : "bg-staywell-red hover:bg-staywell-green"
+              }`
+            }
+          >
+            Contact
+          </NavLink>
 
 
 
@@ -133,16 +132,15 @@ export default function Navbar() {
             </div>
 
             {/* Square Contact Button */}
-         <NavLink
-  to="/contact"
-  className={({ isActive }) =>
-    `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${
-      isActive ? "bg-staywell-green" : "bg-staywell-red hover:bg-staywell-green"
-    }`
-  }
->
-  Contact
-</NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive ? "bg-staywell-green" : "bg-staywell-red hover:bg-staywell-green"
+                }`
+              }
+            >
+              Contact
+            </NavLink>
 
 
           </div>

@@ -38,7 +38,7 @@ export default function Home() {
         badge: "New",
         badgeTone: "bg-staywell-green text-white",
         cta: "Continue to Varsity",
-        to: "/varsity/clinic",
+        to: "/varsityclinic",
         type: "internal",
         chips: ["Clinic", "Pharmacy", "Homecare Supplies"],
       },
