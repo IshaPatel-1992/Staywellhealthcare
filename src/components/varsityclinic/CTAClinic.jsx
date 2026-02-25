@@ -13,24 +13,27 @@ export default function CTAClinic() {
 
   return (
     <section className="bg-[#DC2227]">
-      <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {tabs.map((t) => (
             <NavLink
               key={t.key}
               to={t.to}
               className={({ isActive }) =>
                 [
-                  "rounded-2xl text-center",
-                  "px-8 py-6",
-                  "min-h-21 flex items-center justify-center",
-                  "text-xl md:text-2xl font-extrabold tracking-tight",
-                  "transition-all duration-300",
-                  "border-2 border-white/25",
+                  "flex items-center justify-center",
+                  "font-(--font-heading)",       // Paytone One
+                  "font-extrabold",
+                  "text-[24px] leading-tight",   // 24px size
+                  "px-3.75 py-4.5",         // exact padding
+                  "min-h-23.5",                // match ~94px height
+                  "rounded-xl",                  // slightly rounded
+                  "border-2 border-white/25",    // subtle border
+                  "transition-all duration-300", // smooth hover
                   isActive
-                    ? "bg-white text-[#DC2227]"
-                    : "bg-[#79BD43] text-white hover:bg-white hover:text-[#DC2227]",
-                  "shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+                    ? "bg-white text-[#DC2227]"  // active white/red
+                    : "bg-[#78BD43] text-white hover:bg-white hover:text-[#DC2227]",
+                  "shadow-md hover:shadow-lg hover:-translate-y-0.5",
                 ].join(" ")
               }
             >

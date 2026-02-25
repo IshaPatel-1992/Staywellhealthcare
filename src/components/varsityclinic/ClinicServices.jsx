@@ -104,9 +104,11 @@ export default function ClinicServices() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#DC2227] leading-[1.08]">
-            Our Most Popular Services
-          </h2>
+          <h2 className="relative text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
+              <span className="font-(--font-heading) text-[#DC2227]">
+                Our Most Popular Services
+              </span>
+            </h2>
         </div>
 
         {/* Cards Grid */}

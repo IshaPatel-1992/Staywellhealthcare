@@ -51,20 +51,20 @@ export default function WelcomeClinic() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-14 items-stretch">
           {/* LEFT CONTENT */}
           <div className="flex flex-col">
-            {/* ✅ Bigger heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#DC2227] leading-[1.08]">
-              Welcome to Our Clinic
-            </h2>
 
-            {/* ✅ Bigger paragraph text */}
-            <p className="mt-4 md:mt-6 text-base sm:text-xl text-gray-700 leading-relaxed text-justify">
-              Welcome to Staywell, where your health and happiness come first.
-              Our clinic provides a safe, inviting space for individuals and families.
+            <h1 className="relative text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
+              <span className="font-(--font-heading) text-[#DC2227]">
+                Welcome to Our Clinic
+              </span>
+            </h1>
+
+
+            <p className="relative mt-4 text-[#515D72] font-normal text-lg leading-7 text-justify">
+              Welcome to Staywell, where your health and happiness come first. Our clinic provides a safe, inviting space for individuals and families seeking comprehensive care.
             </p>
 
-            <p className="mt-3 md:mt-4 text-base sm:text-xl text-gray-700 leading-relaxed text-justify">
-              With a dedicated team, we offer preventive services and chronic disease
-              management to support your long-term wellness.
+            <p className="relative mt-4 text-[#515D72] font-normal text-lg leading-7 text-justify">
+              With a dedicated team, we offer preventive services and chronic disease management to support your long-term wellness.
             </p>
 
             {/* Mobile: show image BEFORE staff */}
@@ -77,9 +77,11 @@ export default function WelcomeClinic() {
             </div>
 
             {/* ✅ 3-up staff carousel (no dots) */}
-            <div className="mt-7 md:mt-8">
+            <h4 className="relative text-2xl md:text-2xl font-bold leading-tight tracking-tight">
+              <span className="font-(--font-heading) text-[#DC2227] drop-shadow-[0_6px_18px_rgba(0,0,0,0.25)]">
               <StaffCarousel3Up items={team} bookTo={bookTo} callTo={callTo} />
-            </div>
+              </span>
+            </h4>
 
             <div className="flex-1" />
           </div>

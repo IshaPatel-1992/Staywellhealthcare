@@ -44,15 +44,20 @@ export default function BookanAppointmentClinic() {
         {/* CONTENT */}
         <div className="relative max-w-6xl mx-auto px-4 py-20 sm:py-24 md:py-28">
           <div className="max-w-xl">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-red-600">
-              Book An Appointment
+            <h2 className="relative text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
+              <span className="font-(--font-heading) text-[#DC2227]">
+                Book An Appointment
+              </span>
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-black/80">
+
+            </p>
+            <p className="relative mt-4 text-[#000000] font-normal text-xl leading-[2.09rem]">
               Your health matters—call us today to take charge of your well-being!
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="pt-5 mx-10.25 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:18254143933"
                 className="inline-flex items-center justify-center rounded-xl px-7 py-3 font-semibold bg-red-600 text-white shadow-md hover:bg-red-700 transition"

@@ -33,21 +33,42 @@ export default function NewPatientClinic() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-14 items-stretch">
           {/* LEFT CONTENT */}
           <div className="flex flex-col">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#DC2227] leading-[1.08]">
-              Join The Staywell Family
+            <h2 className="relative text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
+              <span className="font-(--font-heading) text-[#DC2227]">
+                Join the Staywell Family
+              </span>
             </h2>
 
-            <p className="mt-4 md:mt-6 text-base sm:text-3xl text-gray-700 leading-relaxed text-justify">
+            <p className="relative mt-4 text-[#515D72] font-extrabold text-lg leading-7 text-justify">
               We Are Accepting New Patients!
             </p>
 
-            <p className="mt-3 md:mt-4 text-base sm:text-xl text-gray-700 leading-relaxed text-justify">
+            <p className="relative mt-4 text-[#515D72] font-normal text-lg leading-7 text-justify">
               At Staywell, we believe everyone deserves quality healthcare. We’re
               currently accepting new patients and invite you to join our
               community! Our experienced team offers comprehensive care for you
               and your family. Contact us today to book your appointment and
               experience patient-centered care!
             </p>
+
+            <div className="mt-6">
+              <a
+                href="/varsityclinic/become-a-patient"
+                className="
+      inline-flex items-center justify-center
+      font-(--font-button)
+      text-base
+      px-8 py-3
+      rounded-xl
+      bg-[#78BD43] text-white
+      transition-all duration-300
+      hover:bg-[#DC2227] hover:text-white
+      shadow-md hover:shadow-lg
+    "
+              >
+                New Patient Form
+              </a>
+            </div>
 
             {/* Mobile: slider below content */}
             <div className="mt-6 lg:hidden">
