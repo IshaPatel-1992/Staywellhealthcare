@@ -11,8 +11,8 @@ export default function NavbarClinic() {
     { name: "Services", path: "/services" },
     { name: "New Patients", path: "/new-patients" },
     { name: "Policies", path: "/policies" },
-    { name: "Pharmacy", path: "/pharmacy" },
-    { name: "HomeCare", path: "/homecare" },
+    { name: "Pharmacy", path: "/varsitypharmacy/pharmacy" },
+    { name: "HomeCare", path: "/varsitysupplies/homecare" },
   ];
 
   return (

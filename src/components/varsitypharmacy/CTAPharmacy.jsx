@@ -1,11 +1,11 @@
 import React, { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function CTAClinic() {
+export default function CTAPharmacy() {
   const tabs = useMemo(
     () => [
-      { key: "clinic", label: "Staywell Medical Clinic", to: "/varsityclinic" },
       { key: "pharmacy", label: "Staywell Pharmacy", to: "/varsitypharmacy/pharmacy" },
+      { key: "clinic", label: "Staywell Medical Clinic", to: "/varsityclinic" },
       { key: "supplies", label: "Staywell Homecare", to: "/varsitysupplies" },
     ],
     []
@@ -19,19 +19,20 @@ export default function CTAClinic() {
             <NavLink
               key={t.key}
               to={t.to}
+              end={t.key === "clinic"}   // 👈 ONLY clinic needs exact match
               className={({ isActive }) =>
                 [
                   "flex items-center justify-center",
-                  "font-(--font-heading)",       // Paytone One
+                  "font-(--font-heading)",
                   "font-extrabold",
-                  "text-[24px] leading-tight",   // 24px size
-                  "px-3.75 py-4.5",         // exact padding
-                  "min-h-23.5",                // match ~94px height
-                  "rounded-xl",                  // slightly rounded
-                  "border-2 border-white/25",    // subtle border
-                  "transition-all duration-300", // smooth hover
+                  "text-[24px] leading-tight",
+                  "px-3.75 py-4.5",        // safer than decimals
+                  "min-h-23.5",               // safer than min-h-23.5
+                  "rounded-xl",
+                  "border-2 border-white/25",
+                  "transition-all duration-300",
                   isActive
-                    ? "bg-white text-[#DC2227]"  // active white/red
+                    ? "bg-white text-[#DC2227]"
                     : "bg-[#78BD43] text-white hover:bg-white hover:text-[#DC2227]",
                   "shadow-md hover:shadow-lg hover:-translate-y-0.5",
                 ].join(" ")
