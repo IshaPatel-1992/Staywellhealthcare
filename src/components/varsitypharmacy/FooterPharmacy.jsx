@@ -25,7 +25,7 @@ export default function FooterPharmacy() {
     const contact = {
         address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
         phone: "403-874-8787",
-        fax: "000-000-0000",
+        fax: "587-350-8585",
         email: "varsity@staywellpharmacy.ca",
     };
 
