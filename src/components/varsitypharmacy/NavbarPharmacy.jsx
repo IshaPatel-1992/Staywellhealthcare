@@ -9,8 +9,8 @@ export default function NavbarClinic() {
 
   const navLinks = [
     { name: "Services", path: "/pharmacyservices" },
-    { name: "HomeCare", path: "/homecare" },
-    { name: "TravelClinic", path: "/travelclinic" },
+    { name: "HomeCare", type: "external", url: "https://staywellmedicalsupplies.ca/" },
+    { name: "TravelClinic", type: "external", url: "https://www.bookmypharmacy.com/travel/8254140721?noNav=true" },
     { name: "Prescribing Pharmacist", path: "/pharmacist" },
   ];
 
@@ -101,10 +101,10 @@ export default function NavbarClinic() {
               About Us
             </a>
             <a href="fax:+18254140722" className="hover:opacity-85 transition">
-              Fax: 825-414-0722
+              Fax: 000-000-0000
             </a>
-            <a href="tel:+18254140721" className="hover:opacity-85 transition">
-              Phone: 825-414-0721
+            <a href="tel:+14038748787" className="hover:opacity-85 transition">
+              Phone: 403-874-8787
             </a>
             <NavLink to="/refill" className="hover:opacity-85 transition">
               Refill

@@ -10,12 +10,16 @@ import BecomeAPatient from "@/pages/varsityclinic/IntakeFormPage";
 // Pharmacy
 import PharmacyHomePage from "@/pages/varsitypharmacy/PharmacyHomePage";
 
+import ScrollToTop from "@/components/common/ScrollToTop";
+
+
 // HomeSupplies (example – update import/path to your actual file)
 //import HomeSuppliesHomePage from "@/pages/varsitysupplies/HomeSuppliesHomePage";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
+ <ScrollToTop />   {/* ✅ self-closing, not wrapping */}
       <Routes>
         {/* Landing */}
         <Route path="/" element={<Home />} />

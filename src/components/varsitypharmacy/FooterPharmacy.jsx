@@ -23,20 +23,19 @@ export default function FooterPharmacy() {
 
     // ✅ Update these details
     const contact = {
-        address: "159 Carrington Plz, Calgary, AB T3P 1Y3",
-        phone: "825-414-0721",
-        fax: "825-414-0722",
-        email: "info@staywellpharmacy.ca",
-        pharmacyLicenseHref: "#", // add actual link (pdf/page)
+        address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
+        phone: "403-874-8787",
+        fax: "000-000-0000",
+        email: "varsity@staywellpharmacy.ca",
     };
 
     // ✅ Google map embed (replace src with your real one if needed)
-    const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5011.618259895248!2d-114.15658152318905!3d51.09352994085315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f22fdff8325%3A0x2a98586fbc6664aa!2s4624%20Varsity%20Dr%20NW%2C%20Calgary%2C%20AB%20T3A%202V7!5e0!3m2!1sen!2sca!4v1772309560967!5m2!1sen!2sca";
+    const mapSrc = "https://www.google.com/maps?q=4624%20Varsity%20Drive%20NW%20Unit%2010%20Calgary%20AB&output=embed";
 
     return (
         <footer className="bg-white">
             {/* ================= TOP BACKGROUND + MAP STRIP ================= */}
-<section className="relative w-full">
+<section id="map-section" className="relative w-full">
   <div className="relative h-65 sm:h-75 md:h-90 overflow-hidden">
     <img
       src={footerBg}
@@ -59,16 +58,17 @@ export default function FooterPharmacy() {
     </div>
 
     {/* Map overlay (UNCHANGED) */}
-    <div className="absolute right-6 md:right-10 top-10 md:top-12 w-90 sm:w-105 md:w-130 h-50 sm:h-55 md:h-65 rounded-xl overflow-hidden shadow-md border border-black/10 bg-white">
+    <div  className="absolute right-6 md:right-10 top-10 md:top-12 w-90 sm:w-105 md:w-130 h-50 sm:h-55 md:h-65 rounded-xl overflow-hidden shadow-md border border-black/10 bg-white">
       <iframe
-        title="Staywell Pharmacy Map"
-        src={mapSrc}
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
+            title="Google Map"
+            src={mapSrc}
+            width="100%"
+            height="380"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
     </div>
   </div>
 </section>

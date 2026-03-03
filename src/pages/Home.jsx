@@ -1,11 +1,14 @@
 // src/pages/Home.jsx
 import React, { useEffect, useMemo, useState } from "react";
+import { useSeo } from "@/lib/useSeo";
 import { useNavigate } from "react-router-dom";
 import { MdLocalHospital, MdLocalPharmacy } from "react-icons/md";
 import { FaBoxOpen, FaExternalLinkAlt } from "react-icons/fa";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { HiMapPin, HiPhone, HiEnvelope, HiGlobeAlt } from "react-icons/hi2";
 import logo from "../assets/logo/Staywell-Trans_Main.png";
+
+
 
 const STORAGE_KEY = "staywell:selectedLocation"; // "varsity" | "carrington"
 
@@ -121,6 +124,187 @@ function MedicalCornerArt({ accent = BRAND_GREEN }) {
 }
 
 export default function Home() {
+
+    const canonical = "https://staywellhealthcare.ca/";
+
+  useSeo({
+    title: "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary",
+    description:
+      "Staywell Healthcare offers trusted medical clinic care, pharmacy services, and homecare & medical supplies in Calgary. Choose Varsity or Carrington and connect by phone or email.",
+    canonical,
+    og: {
+      title: "Staywell Healthcare | Calgary Clinics, Pharmacy & Medical Supplies",
+      description:
+        "Choose your location (Varsity or Carrington) for medical clinic care, pharmacy services, and homecare & medical supplies in Calgary.",
+      url: canonical,
+      type: "website",
+      image: "https://staywellhealthcare.ca/images/og/varsity-clinic-pharmacy-medicalsupplies.jpg",
+    },
+    jsonLdId: "staywell-home",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Staywell Healthcare",
+      url: canonical,
+      sameAs: [
+        "https://www.instagram.com/staywell.healthcare/",
+        "https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca",
+        "https://www.facebook.com/people/Staywell-Healthcare/61570180690301/",
+      ],
+      description:
+        "Staywell Healthcare provides medical clinic care, pharmacy services, and homecare & medical supplies in Calgary, Alberta.",
+      department: [
+        {
+          "@type": "MedicalClinic",
+          name: "Staywell Medical Clinic - Varsity",
+          telephone: "+1-587-955-6207",
+          email: "varsity@staywellmedical.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "4624 Varsity Drive NW Unit #10",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3A 2L9",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Family medicine", "Walk-in clinic", "Preventive care", "Chronic disease management"],
+        },
+        {
+          "@type": "Pharmacy",
+          name: "Staywell Pharmacy - Varsity",
+          telephone: "+1-403-874-8787",
+          faxNumber: "+1-825-414-0722",
+          email: "varsity@staywellpharmacy.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "4624 Varsity Drive NW Unit #10",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3A 2L9",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Prescription refills", "Prescription transfers", "Vaccines", "Compounding", "Delivery"],
+        },
+        {
+          "@type": "Store",
+          name: "Staywell Homecare & Medical Supplies - Varsity",
+          telephone: "+1-403-874-8787",
+          email: "varsity@staywellpharmacy.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "4624 Varsity Drive NW Unit #10",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3A 2L9",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Homecare supplies", "Medical equipment", "Compression stockings", "Mobility aids"],
+        },
+
+        {
+          "@type": "MedicalClinic",
+          name: "Staywell Medical Clinic - Carrington",
+          telephone: "+1-825-414-3933",
+          email: "info@staywellmedical.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "59 Carrington Plz #190",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3P 1Y3",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Family medicine", "Walk-in clinic", "Preventive care", "Chronic disease management"],
+        },
+        {
+          "@type": "Pharmacy",
+          name: "Staywell Pharmacy - Carrington",
+          telephone: "+1-825-414-0721",
+          faxNumber: "+1-825-414-0722",
+          email: "info@staywellpharmacy.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "59 Carrington Plz #190",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3P 1Y3",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Prescription refills", "Prescription transfers", "Vaccines", "Compounding", "Delivery"],
+        },
+        {
+          "@type": "Store",
+          name: "Staywell Homecare & Medical Supplies - Carrington",
+          telephone: "+1-403-874-8787",
+          email: "info@staywellmedicalsupplies.ca",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "59 Carrington Plz #190",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            postalCode: "T3P 1Y3",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+          ],
+          knowsAbout: ["Homecare supplies", "Medical equipment", "Mobility aids", "Compression stockings"],
+        },
+      ],
+    },
+  }); 
+
   const [saved, setSaved] = useState(null);
   const navigate = useNavigate();
 
@@ -150,7 +334,7 @@ export default function Home() {
         services: {
           clinic: { phone: "587-955-6207", tel: "tel:+15879556207", email: "varsity@staywellmedical.ca", to: "/varsityclinic" },
           pharmacy: { phone: "403-874-8787", tel: "tel:+14038748787", email: "varsity@staywellpharmacy.ca", to: "/varsitypharmacy/pharmacy" },
-          supplies: { phone: "403-874-8787", tel: "tel:+14038748787", email: "varsity@staywellpharmacy.ca", to: "/varsitysupplies/supplies" },
+          supplies: { phone: "403-874-8787", tel: "tel:+14038748787", email: "varsity@staywellpharmacy.ca", href: "https://www.staywellmedicalsupplies.ca" },
         },
       },
       {
@@ -185,17 +369,17 @@ export default function Home() {
       <div className="relative mx-auto w-full max-w-6xl px-6 py-6 md:py-8">
         {/* Header */}
         <header className="flex items-center justify-between gap-4">
-          <img src={logo} alt="Staywell" className="h-16 md:h-20 w-auto object-contain shrink-0" />
+          <img src={logo} alt="Staywell Healthcare logo" className="h-16 md:h-20 w-auto object-contain shrink-0" />
 
           {/* Social Icons: always right */}
           <div className="flex items-center gap-3 text-staywell-nav shrink-0">
-            <a href="#" className="hover:opacity-80 transition" aria-label="Instagram">
+            <a href="https://www.instagram.com/staywell.healthcare/" className="hover:opacity-80 transition" aria-label="Instagram">
               <FaInstagram size={16} />
             </a>
-            <a href="#" className="hover:opacity-80 transition" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca" className="hover:opacity-80 transition" aria-label="LinkedIn">
               <FaLinkedinIn size={16} />
             </a>
-            <a href="#" className="hover:opacity-80 transition" aria-label="Facebook">
+            <a href="https://www.facebook.com/people/Staywell-Healthcare/61570180690301/" className="hover:opacity-80 transition" aria-label="Facebook">
               <FaFacebookF size={16} />
             </a>
           </div>

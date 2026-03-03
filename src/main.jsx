@@ -4,12 +4,13 @@ import "./index.css"
 import "@fontsource/figtree/400.css"
 import "@fontsource/figtree/500.css"
 import "@fontsource/figtree/600.css"
+import { HelmetProvider } from "react-helmet-async";
 
 
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <HelmetProvider>
     <App />
-  </StrictMode>,
+  </HelmetProvider>,
 )

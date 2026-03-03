@@ -1,8 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-// Staff placeholders
-import staff1 from "@/assets/staywell-home-doc-placeholder-man.webp";
-import staff2 from "@/assets/staywell-home-doc-placeholder-femal.webp";
+
+// Staff images (add these files to your src/assets/staff folder)
+import drLinda from "@/assets/staywell-home-doc-placeholder-femal.webp";
+import drAlex from "@/assets/staywell-home-doc-placeholder-man.webp"; // add if you have it
+import rphMaimoona from "@/assets/staywell-home-doc-placeholder-femal.webp";
+import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
 
 // Right-side images
 import right1 from "@/assets/staywell-home-about.webp";
@@ -12,20 +15,60 @@ import right3 from "@/assets/staywell-home-about-02.webp";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function WelcomeClinic() {
-  const bookTo = "/varsityclinic/book";
-  const callTo = "tel:+14031234567";
+  const CLINIC_PHONE = "tel:+15879556207";
+  const CLINIC_FAX = "fax:+15879556208"; // optional use
+  const PHARM_PHONE = "tel:+14038748787";
+  const PHARM_FAX = "fax:+15873508585";
+  const PHARM_EMAIL = "mailto:varsity@staywellpharmacy.ca";
+  const SUPPLIES_EMAIL = "mailto:varsity@staywellpharmacy.ca";
 
-  // ✅ Add per-staff CTA condition here:
-  // cta: "book" | "call"
+
+
   const team = useMemo(
-    () => [
-      { name: "Dr. Aisha Khan", img: staff1, cta: "book" },
-      { name: "Dr. Michael Chen", img: staff2, cta: "call" },
-      { name: "Sarah Patel, RPh", img: staff1, cta: "book" },
-      { name: "Dr. Neha Sharma", img: staff2, cta: "call" },
-    ],
-    []
-  );
+  () => [
+    {
+      name: "Dr. Linda Ukey-Jarrett",
+      role: "Family Physician",
+      credentials: "MBBS, LMCC, CCFP",
+      img: drLinda,
+      cta: "call",
+      ctaHref: CLINIC_PHONE,
+      ctaLabel: "Call Now",
+      metaLine: "CPSA ID 029854 • PRAC ID 6171-91308",
+    },
+    {
+      name: "Dr. Alexander Arthur",
+      role: "Physician",
+      credentials: "CCFP, cCSAM, ISAM",
+      img: drAlex,
+      cta: "call",
+      ctaHref: CLINIC_PHONE,
+      ctaLabel: "Call Now",
+      metaLine: "CPSA ID 038597 • PRAC ID 5379-73308",
+    },
+    {
+      name: "RPh Maimoona Nirmal",
+      role: "Clinical Pharmacist",
+      credentials: "BSc Pharm, MSc Infectious Diseases, APA",
+      img: rphMaimoona,
+      cta: "call",
+      ctaHref: PHARM_PHONE,
+      ctaLabel: "Call Now",
+      metaLine: "Staywell Pharmacy (Varsity)",
+    },
+    {
+      name: "Ms. Rima Dave",
+      role: "MOA • Sales Representative",
+      credentials: "Certified Compression Stocking Fitter",
+      img: msRima,
+      cta: "call",
+      ctaHref: PHARM_PHONE, // or separate supplies number if different
+      ctaLabel: "Call Now",
+      metaLine: "Homecare & Medical Supplies",
+    },
+  ],
+  []
+);
 
   const rightImages = useMemo(
     () => [
@@ -77,11 +120,13 @@ export default function WelcomeClinic() {
             </div>
 
             {/* ✅ 3-up staff carousel (no dots) */}
-            <h4 className="relative text-2xl md:text-2xl font-bold leading-tight tracking-tight">
+            <h4 className="relative text-2xl md:text-2xl font-bold leading-tight tracking-tight mt-8">
               <span className="font-(--font-heading) text-[#DC2227] drop-shadow-[0_6px_18px_rgba(0,0,0,0.25)]">
-              <StaffCarousel3Up items={team} bookTo={bookTo} callTo={callTo} />
+                Meet Our Team
               </span>
             </h4>
+
+            <StaffCarousel3Up items={team} bookTo="/varsityclinic/book" callTo={CLINIC_PHONE} />
 
             <div className="flex-1" />
           </div>
@@ -211,9 +256,8 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
     <div className="mt-6">
       <div className="grid gap-5 lg:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((m) => {
-          const isCall = m.cta === "call";
-          const href = isCall ? callTo : bookTo;
-          const label = isCall ? "Call Now" : "Book Now";
+          const href = m.ctaHref || (m.cta === "call" ? callTo : bookTo);
+          const label = m.ctaLabel || (m.cta === "call" ? "Call Now" : "Book Now");
 
           return (
             <div

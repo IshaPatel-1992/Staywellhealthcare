@@ -62,7 +62,7 @@ export default function BookanAppointmentClinic() {
                 href="tel:18254143933"
                 className="inline-flex items-center justify-center rounded-xl px-7 py-3 font-semibold bg-red-600 text-white shadow-md hover:bg-red-700 transition"
               >
-                (825) 414-3933
+                (587) 955-6207
               </a>
 
               <a

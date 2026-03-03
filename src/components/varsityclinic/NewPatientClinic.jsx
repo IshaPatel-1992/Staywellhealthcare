@@ -28,7 +28,7 @@ export default function NewPatientClinic() {
   }, [rightImages.length]);
 
   return (
-    <section className="py-14 md:py-18 lg:py-20 bg-linear-to-b from-white via-emerald-50/40 to-white">
+    <section id="new-patients" className="py-14 md:py-18 lg:py-20 bg-linear-to-b from-white via-emerald-50/40 to-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-14 items-stretch">
           {/* LEFT CONTENT */}
