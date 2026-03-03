@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn, FaFacebookF, FaEnvelope } from "react-icons/fa";
+import { HiEnvelope } from "react-icons/hi2";
+import SocialLinks from "@/components/common/SocialLinks";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import logo from "../../assets/logo/LogoStaywellPharmacy.png";
 
@@ -37,10 +38,9 @@ export default function NavbarClinic() {
                 key={index}
                 to={link.path}
                 className={({ isActive }) =>
-                  `transition-all duration-200 text-base lg:text-lg tracking-wide ${
-                    isActive
-                      ? "text-staywell-nav font-bold"
-                      : "text-shadow-staywell-nav font-normal hover:font-medium"
+                  `transition-all duration-200 text-base lg:text-lg tracking-wide ${isActive
+                    ? "text-staywell-nav font-bold"
+                    : "text-shadow-staywell-nav font-normal hover:font-medium"
                   }`
                 }
               >
@@ -48,27 +48,17 @@ export default function NavbarClinic() {
               </NavLink>
             ))}
 
-            {/* Social Icons */}
-            <div className="flex items-center space-x-4 ml-4">
-              <a href="#" className="text-staywell-nav">
-                <FaInstagram size={16} />
-              </a>
-              <a href="#" className="text-staywell-nav">
-                <FaLinkedinIn size={16} />
-              </a>
-              <a href="#" className="text-staywell-nav">
-                <FaFacebookF size={16} />
-              </a>
-            </div>
+
+            {/* Social Icons: always right */}
+            <SocialLinks size={16} className="text-staywell-nav shrink-0" />
 
             {/* Contact Button */}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${
-                  isActive
-                    ? "bg-staywell-green"
-                    : "bg-staywell-red hover:bg-staywell-green"
+                `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive
+                  ? "bg-staywell-green"
+                  : "bg-staywell-red hover:bg-staywell-green"
                 }`
               }
             >
@@ -100,8 +90,8 @@ export default function NavbarClinic() {
             <a href="#about-section" className="hover:opacity-85 transition">
               About Us
             </a>
-            <a href="fax:+18254140722" className="hover:opacity-85 transition">
-              Fax: 000-000-0000
+            <a href="fax:+15873508585" className="hover:opacity-85 transition">
+              Fax: 587-350-8585
             </a>
             <a href="tel:+14038748787" className="hover:opacity-85 transition">
               Phone: 403-874-8787
@@ -128,10 +118,9 @@ export default function NavbarClinic() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `text-base transition-all ${
-                    isActive
-                      ? "text-staywell-nav font-bold"
-                      : "text-staywell-nav font-normal"
+                  `text-base transition-all ${isActive
+                    ? "text-staywell-nav font-bold"
+                    : "text-staywell-nav font-normal"
                   }`
                 }
               >
@@ -139,19 +128,17 @@ export default function NavbarClinic() {
               </NavLink>
             ))}
 
-            {/* Social Icons */}
-            <div className="flex space-x-6 pt-4 border-t border-gray-100">
-              <a href="#" className="text-staywell-nav">
-                <FaInstagram size={18} />
-              </a>
-              <a href="#" className="text-staywell-nav">
-                <FaLinkedinIn size={18} />
-              </a>
-              <a href="#" className="text-staywell-nav">
-                <FaFacebookF size={18} />
-              </a>
-              <a href="#" className="text-staywell-nav">
-                <FaEnvelope size={18} />
+            {/* Social Icons (common) + Email */}
+            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <SocialLinks size={18} className="text-staywell-nav" />
+
+              {/* Email icon (pharmacy email) */}
+              <a
+                href="mailto:varsity@staywellpharmacy.ca"
+                className="text-staywell-nav hover:opacity-80 transition"
+                aria-label="Email"
+              >
+                <HiEnvelope size={20} />
               </a>
             </div>
 
@@ -160,10 +147,9 @@ export default function NavbarClinic() {
               to="/contact"
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${
-                  isActive
-                    ? "bg-staywell-green"
-                    : "bg-staywell-red hover:bg-staywell-green"
+                `px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive
+                  ? "bg-staywell-green"
+                  : "bg-staywell-red hover:bg-staywell-green"
                 }`
               }
             >

@@ -1,7 +1,7 @@
 // src/components/varsitypharmacy/FooterPharmacy.jsx
 import React from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaFax, FaEnvelope } from "react-icons/fa";
-import { FaEnvelope as FaMail, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaFax, FaEnvelope, FaEnvelope as FaMail } from "react-icons/fa";
+import SocialLinks from "@/components/common/SocialLinks";
 
 // ✅ Replace with your real assets
 import footerBg from "@/assets/staywell-home-hero-02.webp"; // background image for top strip
@@ -35,43 +35,43 @@ export default function FooterPharmacy() {
     return (
         <footer className="bg-white">
             {/* ================= TOP BACKGROUND + MAP STRIP ================= */}
-<section id="map-section" className="relative w-full">
-  <div className="relative h-65 sm:h-75 md:h-90 overflow-hidden">
-    <img
-      src={footerBg}
-      alt=""
-      aria-hidden="true"
-      className="absolute inset-0 w-full h-full object-cover"
-    />
+            <section id="map-section" className="relative w-full">
+                <div className="relative h-65 sm:h-75 md:h-90 overflow-hidden">
+                    <img
+                        src={footerBg}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
 
-    {/* white overlay like screenshot */}
-    <div className="absolute inset-0 bg-white/70" />
+                    {/* white overlay like screenshot */}
+                    <div className="absolute inset-0 bg-white/70" />
 
-    {/* ✅ LEFT LOGO (bigger) */}
-    <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2">
-      <img
-        src={logo}
-        alt="Staywell Pharmacy"
-        className="h-18 sm:h-22 md:h-26 w-auto object-contain drop-shadow-sm"
-        loading="lazy"
-      />
-    </div>
+                    {/* ✅ LEFT LOGO (bigger) */}
+                    <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2">
+                        <img
+                            src={logo}
+                            alt="Staywell Pharmacy"
+                            className="h-18 sm:h-22 md:h-26 w-auto object-contain drop-shadow-sm"
+                            loading="lazy"
+                        />
+                    </div>
 
-    {/* Map overlay (UNCHANGED) */}
-    <div  className="absolute right-6 md:right-10 top-10 md:top-12 w-90 sm:w-105 md:w-130 h-50 sm:h-55 md:h-65 rounded-xl overflow-hidden shadow-md border border-black/10 bg-white">
-      <iframe
-            title="Google Map"
-            src={mapSrc}
-            width="100%"
-            height="380"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-    </div>
-  </div>
-</section>
+                    {/* Map overlay (UNCHANGED) */}
+                    <div className="absolute right-6 md:right-10 top-10 md:top-12 w-90 sm:w-105 md:w-130 h-50 sm:h-55 md:h-65 rounded-xl overflow-hidden shadow-md border border-black/10 bg-white">
+                        <iframe
+                            title="Google Map"
+                            src={mapSrc}
+                            width="100%"
+                            height="380"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
+                </div>
+            </section>
 
             {/* ================= FOOTER CONTENT ================= */}
             <div className="border-t border-black/10">
@@ -227,32 +227,12 @@ export default function FooterPharmacy() {
                                         <FaMail className="text-white" />
                                     </a>
 
-                                    <a
-                                        href="#"
-                                        className="w-11 h-11 rounded-full border border-black/10 shadow-sm flex items-center justify-center hover:opacity-90 transition"
-                                        style={{ backgroundColor: BRAND_RED }}
-                                        aria-label="Facebook"
-                                    >
-                                        <FaFacebookF className="text-white" />
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="w-11 h-11 rounded-full border border-black/10 shadow-sm flex items-center justify-center hover:opacity-90 transition"
-                                        style={{ backgroundColor: BRAND_RED }}
-                                        aria-label="Instagram"
-                                    >
-                                        <FaInstagram className="text-white" />
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="w-11 h-11 rounded-full border border-black/10 shadow-sm flex items-center justify-center hover:opacity-90 transition"
-                                        style={{ backgroundColor: BRAND_RED }}
-                                        aria-label="LinkedIn"
-                                    >
-                                        <FaLinkedinIn className="text-white" />
-                                    </a>
+                                   <SocialLinks
+  size={18}
+  variant="circle"
+  className="justify-center"
+  iconClassName="hover:opacity-80 transition"
+/>
                                 </div>
                             </div>
                         </div>

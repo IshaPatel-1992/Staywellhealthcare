@@ -3,7 +3,7 @@ import React from "react";
 
 // Replace these with your real assets
 import heroBuilding from "@/assets/Pharmacy/image10.jpg"; // middle image
-import managerImg from "@/assets/Pharmacy/Services/image11.jpg"; // right card image (replace)
+import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp"; // right card image (replace)
 
 const BRAND_RED = "#DC2227";
 const BRAND_GRAY = "#515D72";
@@ -60,27 +60,27 @@ export default function WelcomePharmacy() {
               </div>
 
               {/* CTA Buttons */}
-<div className="mt-10 flex flex-col sm:flex-row gap-4">
-  {/* Book Appointment */}
-  <a
-    href="https://www.bookmypharmacy.com/?noNav=true"
-    className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-extrabold text-white shadow-sm hover:opacity-90 transition w-full sm:w-auto"
-    style={{ backgroundColor: BRAND_RED }}
-  >
-    Book Appointment
-  </a>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                {/* Book Appointment */}
+                <a
+                  href="https://www.bookmypharmacy.com/?noNav=true"
+                  className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-extrabold text-white shadow-sm hover:opacity-90 transition w-full sm:w-auto"
+                  style={{ backgroundColor: BRAND_RED }}
+                >
+                  Book Appointment
+                </a>
 
-  {/* Leave Review */}
-  <a
-    href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-extrabold text-white text-sm tracking-wide transition hover:opacity-90 w-full sm:w-auto"
-    style={{ backgroundColor: BRAND_GREEN }}
-  >
-    Leave a Review
-  </a>
-</div>
+                {/* Leave Review */}
+                <a
+                  href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-extrabold text-white text-sm tracking-wide transition hover:opacity-90 w-full sm:w-auto"
+                  style={{ backgroundColor: BRAND_GREEN }}
+                >
+                  Leave a Review
+                </a>
+              </div>
             </div>
           </div>
 
@@ -99,6 +99,7 @@ export default function WelcomePharmacy() {
           {/* ================= RIGHT MANAGER CARD ================= */}
           <aside className="flex justify-center lg:justify-end">
             <div className="w-full max-w-sm rounded-2xl overflow-hidden border border-black/10 shadow-sm bg-white">
+              {/* Image */}
               <div className="p-2">
                 <div className="rounded-xl overflow-hidden border border-black/10">
                   <img
@@ -110,21 +111,83 @@ export default function WelcomePharmacy() {
                 </div>
               </div>
 
-              <div className="px-6 pb-7 pt-4 text-center">
+              {/* Content */}
+              <div className="px-6 pb-7 pt-4">
                 <div
-                  className="text-xl font-extrabold leading-snug"
+                  className="text-xl font-extrabold leading-snug text-center"
                   style={{ color: BRAND_GRAY, fontFamily: "var(--font-heading)" }}
                 >
-                  Pharmacy Manager:
+                  Clinical Pharmacist
                   <br />
-                  Sandip Dave
+                  RPh Maimoona Nirmal
                 </div>
 
-                <p className="mt-4 text-[15px] leading-7 text-left" style={{ color: BRAND_GRAY }}>
-                  Sandip is a Prescribing Pharmacist (APA) and certified Diabetes Educator (CDE)
-                  and has expertise in compounding, Travel Health, Mental Health, and is a
-                  certified PreP prescriber.
+                <p className="mt-3 text-[15px] leading-7 text-center" style={{ color: BRAND_GRAY }}>
+                  BSc Pharm, MSc Infectious Diseases, APA
                 </p>
+
+                {/* Divider */}
+                <div className="mt-5 h-px w-full bg-black/10" />
+
+                {/* Contact info */}
+                <div className="mt-5 space-y-3 text-[14.5px]" style={{ color: BRAND_GRAY }}>
+                  {/* Location */}
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 font-extrabold text-black/70">Location</span>
+                    <a
+                      href="https://maps.google.com/?q=4624%20Varsity%20Drive%20NW%20Unit%2010%20Calgary%20AB%20T3A%202L9"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="leading-6 underline decoration-black/20 hover:decoration-black/50 transition"
+                    >
+                      4624 Varsity Drive NW, Unit #10<br />
+                      Calgary, AB T3A 2L9
+                    </a>
+                  </div>
+
+                  {/* Phone + Fax (same row) */}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <span className="shrink-0 font-extrabold text-black/70">Phone</span>
+                      <a
+                        href="tel:+14038748787"
+                        className="underline decoration-black/20 hover:decoration-black/50 transition"
+                      >
+                        403-874-8787
+                      </a>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="shrink-0 font-extrabold text-black/70">Fax</span>
+                      <a
+                        href="fax:+15873508585"
+                        className="underline decoration-black/20 hover:decoration-black/50 transition"
+                      >
+                        587-350-8585
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 font-extrabold text-black/70">Email</span>
+                    <a
+                      href="mailto:varsity@staywellpharmacy.ca"
+                      className="break-all underline decoration-black/20 hover:decoration-black/50 transition"
+                    >
+                      varsity@staywellpharmacy.ca
+                    </a>
+                  </div>
+                </div>
+
+                {/* Optional button */}
+                <a
+                  href="tel:+14038748787"
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-extrabold text-white transition hover:opacity-95"
+                  style={{ backgroundColor: "#DC2227" }}
+                >
+                  Call Pharmacy
+                </a>
               </div>
             </div>
           </aside>

@@ -3,12 +3,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useSeo } from "@/lib/useSeo";
 import { useNavigate } from "react-router-dom";
 import { MdLocalHospital, MdLocalPharmacy } from "react-icons/md";
-import { FaBoxOpen, FaExternalLinkAlt } from "react-icons/fa";
-import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaBoxOpen, FaExternalLinkAlt, FaFax } from "react-icons/fa";
+import SocialLinks from "@/components/common/SocialLinks";
 import { HiMapPin, HiPhone, HiEnvelope, HiGlobeAlt } from "react-icons/hi2";
 import logo from "../assets/logo/Staywell-Trans_Main.png";
-
-
 
 const STORAGE_KEY = "staywell:selectedLocation"; // "varsity" | "carrington"
 
@@ -30,7 +28,11 @@ function MedicalCornerArt({ accent = BRAND_GREEN }) {
   return (
     <div className="pointer-events-none absolute inset-0">
       {/* TOP-RIGHT CLUSTER */}
-      <svg className="absolute -top-10 -right-10 h-60 w-60 opacity-100" viewBox="0 0 240 240" fill="none">
+      <svg
+        className="absolute -top-10 -right-10 h-60 w-60 opacity-100"
+        viewBox="0 0 240 240"
+        fill="none"
+      >
         <circle cx="175" cy="70" r="92" fill={red} opacity={WASH_OP} />
 
         <g transform="translate(150 28) rotate(12)">
@@ -77,7 +79,11 @@ function MedicalCornerArt({ accent = BRAND_GREEN }) {
       </svg>
 
       {/* BOTTOM-LEFT CLUSTER */}
-      <svg className="absolute -bottom-12 -left-12 h-64 w-64 opacity-100" viewBox="0 0 260 260" fill="none">
+      <svg
+        className="absolute -bottom-12 -left-12 h-64 w-64 opacity-100"
+        viewBox="0 0 260 260"
+        fill="none"
+      >
         <circle cx="85" cy="190" r="105" fill={green} opacity={WASH_OP} />
 
         <g transform="translate(24 154) rotate(10)">
@@ -124,8 +130,7 @@ function MedicalCornerArt({ accent = BRAND_GREEN }) {
 }
 
 export default function Home() {
-
-    const canonical = "https://staywellhealthcare.ca/";
+  const canonical = "https://staywellhealthcare.ca/";
 
   useSeo({
     title: "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary",
@@ -227,7 +232,6 @@ export default function Home() {
           ],
           knowsAbout: ["Homecare supplies", "Medical equipment", "Compression stockings", "Mobility aids"],
         },
-
         {
           "@type": "MedicalClinic",
           name: "Staywell Medical Clinic - Carrington",
@@ -277,33 +281,9 @@ export default function Home() {
           ],
           knowsAbout: ["Prescription refills", "Prescription transfers", "Vaccines", "Compounding", "Delivery"],
         },
-        {
-          "@type": "Store",
-          name: "Staywell Homecare & Medical Supplies - Carrington",
-          telephone: "+1-403-874-8787",
-          email: "info@staywellmedicalsupplies.ca",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "59 Carrington Plz #190",
-            addressLocality: "Calgary",
-            addressRegion: "AB",
-            postalCode: "T3P 1Y3",
-            addressCountry: "CA",
-          },
-          openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
-          ],
-          knowsAbout: ["Homecare supplies", "Medical equipment", "Mobility aids", "Compression stockings"],
-        },
       ],
     },
-  }); 
+  });
 
   const [saved, setSaved] = useState(null);
   const navigate = useNavigate();
@@ -327,14 +307,33 @@ export default function Home() {
         address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
         badge: "NEW",
         type: "internal",
-
         websiteLabel: "StaywellHealthcare (new site)",
         websiteHref: "https://staywellhealthcare.ca",
-
         services: {
-          clinic: { phone: "587-955-6207", tel: "tel:+15879556207", email: "varsity@staywellmedical.ca", to: "/varsityclinic" },
-          pharmacy: { phone: "403-874-8787", tel: "tel:+14038748787", email: "varsity@staywellpharmacy.ca", to: "/varsitypharmacy/pharmacy" },
-          supplies: { phone: "403-874-8787", tel: "tel:+14038748787", email: "varsity@staywellpharmacy.ca", href: "https://www.staywellmedicalsupplies.ca" },
+          clinic: {
+            phone: "587-955-6207",
+            tel: "tel:+15879556207",
+            fax: "587-955-6208",
+            faxTel: "tel:+15879556208",
+            email: "varsity@staywellmedical.ca",
+            to: "/varsityclinic",
+          },
+          pharmacy: {
+            phone: "403-874-8787",
+            tel: "tel:+14038748787",
+            fax: "587-350-8585",
+            faxTel: "tel:+15873508585",
+            email: "varsity@staywellpharmacy.ca",
+            to: "/varsitypharmacy/pharmacy",
+          },
+          supplies: {
+            phone: "403-874-8787",
+            tel: "tel:+14038748787",
+            fax: "587-350-8585",
+            faxTel: "tel:+15873508585",
+            email: "info@staywellmedicalsupplies.ca",
+            href: "https://www.staywellmedicalsupplies.ca",
+          },
         },
       },
       {
@@ -344,25 +343,39 @@ export default function Home() {
         address: "59 Carrigton Plz #190, Calgary, AB T3P 1Y3",
         badge: null,
         type: "external",
-
         websiteLabel: "StaywellMedical.ca",
         websiteHref: "https://staywellmedical.ca",
-
         services: {
-          clinic: { phone: "825-414-3933", tel: "tel:+18254143933", email: "info@staywellmedical.ca", href: "https://staywellmedical.ca" },
-          pharmacy: { phone: "825-414-0722", tel: "tel:+18254140722", email: "info@staywellpharmacy.ca", href: "https://staywellpharmacy.ca" },
-          supplies: { phone: "403-874-8787", tel: "tel:+14038748787", email: "info@staywellmedicalsupplies.ca", href: "https://www.staywellmedicalsupplies.ca/" },
+          clinic: {
+            phone: "825-414-3933",
+            tel: "tel:+18254143933",
+            email: "info@staywellmedical.ca",
+            href: "https://staywellmedical.ca",
+          },
+          pharmacy: {
+            phone: "825-414-0721",
+            tel: "tel:+18254140721",
+            fax: "825-414-0722",
+            faxTel: "tel:+18254140722",
+            email: "info@staywellpharmacy.ca",
+            href: "https://staywellpharmacy.ca",
+          },
         },
       },
     ],
     []
   );
 
-  const serviceCards = [
-    { key: "clinic", label: "Medical Clinic", icon: MdLocalHospital },
-    { key: "pharmacy", label: "Pharmacy", icon: MdLocalPharmacy },
-    { key: "supplies", label: "Homecare & Medical Supplies", icon: FaBoxOpen },
-  ];
+  const serviceCardsByLocation = (loc) => {
+    const base = [
+      { key: "clinic", label: "Medical Clinic", icon: MdLocalHospital },
+      { key: "pharmacy", label: "Pharmacy", icon: MdLocalPharmacy },
+    ];
+    if (loc.key === "varsity") {
+      base.push({ key: "supplies", label: "Homecare & Medical Supplies", icon: FaBoxOpen });
+    }
+    return base;
+  };
 
   return (
     <main className="relative min-h-svh bg-white text-gray-900 overflow-hidden">
@@ -372,32 +385,26 @@ export default function Home() {
           <img src={logo} alt="Staywell Healthcare logo" className="h-16 md:h-20 w-auto object-contain shrink-0" />
 
           {/* Social Icons: always right */}
-          <div className="flex items-center gap-3 text-staywell-nav shrink-0">
-            <a href="https://www.instagram.com/staywell.healthcare/" className="hover:opacity-80 transition" aria-label="Instagram">
-              <FaInstagram size={16} />
-            </a>
-            <a href="https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca" className="hover:opacity-80 transition" aria-label="LinkedIn">
-              <FaLinkedinIn size={16} />
-            </a>
-            <a href="https://www.facebook.com/people/Staywell-Healthcare/61570180690301/" className="hover:opacity-80 transition" aria-label="Facebook">
-              <FaFacebookF size={16} />
-            </a>
-          </div>
+         <SocialLinks
+  size={18}
+  className="text-staywell-nav shrink-0"
+  iconClassName="text-staywell-nav hover:opacity-80 transition"
+/>
         </header>
 
         {/* Title + description row */}
         <div className="mt-4 md:mt-5 md:flex md:items-start md:justify-between md:gap-10">
           <div className="md:max-w-2xl">
-            <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-staywell-nav">
+            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-staywell-nav">
               Welcome to Staywell Healthcare
             </h1>
 
-            <div className="mt-2 flex h-1 w-20 overflow-hidden rounded-full">
+            <div className="mt-2 flex h-1.5 w-24 overflow-hidden rounded-full">
               <div className="w-2/3" style={{ backgroundColor: BRAND_RED }} />
               <div className="w-1/3" style={{ backgroundColor: BRAND_GREEN }} />
             </div>
 
-            <p className="mt-2 text-[#515D72] font-bold text-sm md:text-base leading-relaxed">
+            <p className="mt-3 text-[#515D72] font-bold text-base md:text-lg leading-relaxed">
               Select your location to access trusted medical care, pharmacy services, and homecare supplies — all under one roof.
             </p>
           </div>
@@ -412,7 +419,7 @@ export default function Home() {
             const accent = loc.accent === "green" ? BRAND_GREEN : BRAND_RED;
 
             const serviceBoxClass =
-              "relative w-full rounded-2xl border border-black/10 bg-white/70 backdrop-blur-sm px-4 py-4 transition duration-300 hover:-translate-y-px";
+              "relative w-full rounded-2xl border border-black/10 bg-white/70 backdrop-blur-sm px-5 py-5 transition duration-300 hover:-translate-y-px sm:min-h-[148px]";
             const serviceBoxStyle = { outline: `1px solid ${accent}33` };
 
             const goCard = () => {
@@ -428,6 +435,12 @@ export default function Home() {
               selectLocation(loc.key);
               const data = loc.services?.[serviceKey];
               if (!data) return;
+
+              // Supplies should open external site even though Varsity is "internal"
+              if (serviceKey === "supplies" && data?.href) {
+                window.open(data.href, "_blank", "noopener,noreferrer");
+                return;
+              }
 
               if (loc.type === "internal") {
                 navigate(data.to || "/");
@@ -449,23 +462,24 @@ export default function Home() {
               >
                 <div
                   className="group relative overflow-hidden rounded-3xl bg-white p-7 md:p-9 border border-black/10
-          shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)]
-          transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-22px_rgba(0,0,0,0.45)]"
+                  shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)]
+                  transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-22px_rgba(0,0,0,0.45)]"
                   style={{ outline: `1px solid ${accent}55`, outlineOffset: "0px" }}
                 >
                   <MedicalCornerArt accent={accent} />
 
-                  <div className="relative z-10">
+                  {/* ✅ make both cards equal height + push buttons to bottom */}
+                  <div className="relative z-10 flex min-h-150 flex-col">
                     {/* Header row */}
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h2 className="text-2xl md:text-3xl font-extrabold">{loc.title}</h2>
+                        <h2 className="text-3xl md:text-4xl font-extrabold">{loc.title}</h2>
                       </div>
 
                       {loc.badge ? (
                         <div className="relative shrink-0">
                           <div
-                            className="relative rounded-md px-3 py-1.5 text-[11px] md:text-xs font-extrabold tracking-wide uppercase text-white shadow-[0_10px_22px_-14px_rgba(0,0,0,0.55)]"
+                            className="relative rounded-md px-3 py-1.5 text-xs md:text-sm font-extrabold tracking-wide uppercase text-white shadow-[0_10px_22px_-14px_rgba(0,0,0,0.55)]"
                             style={{ backgroundColor: BRAND_RED }}
                           >
                             {loc.badge}
@@ -486,14 +500,14 @@ export default function Home() {
                     </div>
 
                     {/* Common Location */}
-                    <div className="mt-5 flex items-start gap-3 text-sm text-black/60">
-                      <HiMapPin className="mt-0.5 shrink-0 text-staywell-gray" size={18} />
+                    <div className="mt-5 flex items-start gap-3 text-base text-black/60">
+                      <HiMapPin className="mt-0.5 shrink-0 text-staywell-gray" size={20} />
                       <div>{loc.address}</div>
                     </div>
 
-                    {/* 3 Service Options (clickable divs - NOT links) */}
+                    {/* Services */}
                     <div className="mt-6 grid gap-3">
-                      {serviceCards.map((s) => {
+                      {serviceCardsByLocation(loc).map((s) => {
                         const Icon = s.icon;
                         const data = loc.services?.[s.key];
 
@@ -516,39 +530,53 @@ export default function Home() {
                           >
                             <div className={serviceBoxClass} style={serviceBoxStyle}>
                               <div className="flex items-start justify-between gap-3">
-                                <div className="flex items-center gap-2 font-semibold text-black/80">
+                                <div className="flex items-center gap-3 font-extrabold text-black/85 text-lg md:text-xl">
                                   <span
-                                    className="inline-flex h-9 w-9 items-center justify-center rounded-xl"
+                                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl"
                                     style={{ backgroundColor: `${accent}14`, color: accent }}
                                   >
-                                    <Icon />
+                                    <Icon size={18} />
                                   </span>
                                   <span>{s.label}</span>
                                 </div>
 
-                                {loc.type === "external" ? (
-                                  <FaExternalLinkAlt className="mt-1 opacity-60" />
-                                ) : null}
+                                {loc.type === "external" ? <FaExternalLinkAlt className="mt-1 opacity-60" /> : null}
                               </div>
 
-                              {/* Phone + Email: mobile stacked, desktop side-by-side */}
-                              <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-black/60">
-                                <a
-                                  href={data?.tel}
-                                  onClick={(e) => e.stopPropagation()}
-                                  className="inline-flex items-center gap-2 hover:underline min-w-0"
-                                >
-                                  <HiPhone className="shrink-0 opacity-80" />
-                                  <span className="truncate">{data?.phone}</span>
-                                </a>
+                              {/* ✅ Phone + Fax together, Email goes down */}
+                              <div className="mt-4 text-[15px] md:text-base text-black/60">
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                                  <a
+                                    href={data?.tel}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="inline-flex items-center gap-2 hover:underline"
+                                  >
+                                    <HiPhone className="shrink-0 opacity-80" size={18} />
+                                    <span className="font-semibold">{data?.phone}</span>
+                                  </a>
+
+                                  {data?.fax ? (
+                                    <a
+                                      href={data?.faxTel || "#"}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="inline-flex items-center gap-2 hover:underline"
+                                      aria-label="Fax"
+                                    >
+                                      <FaFax className="shrink-0 opacity-80" />
+                                      <span className="font-semibold">{data?.fax}</span>
+                                    </a>
+                                  ) : null}
+                                </div>
 
                                 <a
                                   href={`mailto:${data?.email}`}
                                   onClick={(e) => e.stopPropagation()}
-                                  className="inline-flex items-center gap-2 hover:underline min-w-0 sm:justify-self-end"
+                                  className="mt-2 inline-flex items-center gap-2 hover:underline min-w-0"
                                 >
-                                  <HiEnvelope className="shrink-0 opacity-80" />
-                                  <span className="truncate">{data?.email}</span>
+                                  <HiEnvelope className="shrink-0 opacity-80" size={18} />
+                                  <span className="truncate max-w-85 md:max-w-95 font-medium">
+                                    {data?.email}
+                                  </span>
                                 </a>
                               </div>
                             </div>
@@ -557,18 +585,18 @@ export default function Home() {
                       })}
                     </div>
 
-                    {/* Call + Website buttons (these are links, so stop propagation) */}
-                    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {/* Buttons pushed to bottom */}
+                    <div className="mt-auto pt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <a
                         href={loc.services?.clinic?.tel}
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-px w-full"
+                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-extrabold text-white transition duration-300 hover:-translate-y-px w-full"
                         style={{
                           background: `linear-gradient(135deg, ${accent} 0%, ${accent}CC 55%, ${accent} 100%)`,
                           boxShadow: `0 14px 30px -18px ${accent}AA`,
                         }}
                       >
-                        <HiPhone className="opacity-95" />
+                        <HiPhone className="opacity-95" size={18} />
                         Call Now
                       </a>
 
@@ -577,22 +605,20 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-px w-full"
+                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-extrabold transition duration-300 hover:-translate-y-px w-full"
                         style={{
                           border: `1px solid ${accent}55`,
                           backgroundColor: `${accent}10`,
                           color: accent,
                         }}
                       >
-                        <HiGlobeAlt className="opacity-80" />
+                        <HiGlobeAlt className="opacity-80" size={18} />
                         Website
                         <FaExternalLinkAlt className="opacity-70" />
                       </a>
                     </div>
 
-                    <div className="mt-2 text-xs md:text-sm text-black/50">
-                      Opens {loc.websiteLabel}
-                    </div>
+                    <div className="mt-2 text-sm text-black/50">Opens {loc.websiteLabel}</div>
                   </div>
 
                   <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-black/5" />
@@ -602,7 +628,7 @@ export default function Home() {
           })}
         </section>
 
-        <div className="mt-10 text-center text-xs md:text-sm text-black/50">
+        <div className="mt-10 text-center text-sm md:text-base text-black/50">
           Tip: Your selection is saved for next time. You can change it anytime from the homepage.
         </div>
       </div>
@@ -626,17 +652,7 @@ export default function Home() {
         </div>
 
         <div className="bg-[#DC2227] text-white text-center px-6 py-6">
-          <div className="flex justify-center gap-6 mb-4">
-            <a href="#" className="hover:opacity-80 transition" aria-label="Instagram">
-              <FaInstagram size={18} />
-            </a>
-            <a href="#" className="hover:opacity-80 transition" aria-label="LinkedIn">
-              <FaLinkedinIn size={18} />
-            </a>
-            <a href="#" className="hover:opacity-80 transition" aria-label="Facebook">
-              <FaFacebookF size={18} />
-            </a>
-          </div>
+          <SocialLinks size={18} className="justify-center" iconClassName="hover:opacity-80 transition" />
 
           <div className="text-sm md:text-base font-medium">© Staywell Healthcare 2026</div>
         </div>
