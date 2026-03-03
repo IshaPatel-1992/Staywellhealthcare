@@ -9,8 +9,9 @@ import BecomeAPatient from "@/pages/varsityclinic/IntakeFormPage";
 
 // Pharmacy
 import PharmacyHomePage from "@/pages/varsitypharmacy/PharmacyHomePage";
-
+import PrescribingPharmacist from "@/pages/varsitypharmacy/PrescribingPharmacist";
 import ScrollToTop from "@/components/common/ScrollToTop";
+
 
 
 // HomeSupplies (example – update import/path to your actual file)
@@ -19,7 +20,7 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 export default function AppRouter() {
   return (
     <BrowserRouter>
- <ScrollToTop />   {/* ✅ self-closing, not wrapping */}
+      <ScrollToTop />   {/* ✅ self-closing, not wrapping */}
       <Routes>
         {/* Landing */}
         <Route path="/" element={<Home />} />
@@ -33,14 +34,11 @@ export default function AppRouter() {
         {/* Pharmacy */}
         <Route path="/varsitypharmacy" element={<VarsityLayout />}>
           <Route index element={<PharmacyHomePage />} />
-          {/* If you really want /varsitypharmacy/pharmacy too: */}
           <Route path="pharmacy" element={<PharmacyHomePage />} />
-        </Route>
 
-        {/* Home Supplies 
-        <Route path="/varsitysupplies" element={<VarsityLayout />}>
-          <Route index element={<HomeSuppliesHomePage />} />
-        </Route> */}
+          {/* ✅ Only real page */}
+          <Route path="PrescribingPharmacist" element={<PrescribingPharmacist />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

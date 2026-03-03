@@ -288,7 +288,7 @@ function ServiceCard({ service }) {
 
 export default function PharmacyServices() {
   return (
-    <section className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-14">

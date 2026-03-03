@@ -1,75 +1,122 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { HiEnvelope } from "react-icons/hi2";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
+import { HiEnvelope, HiBars3, HiXMark } from "react-icons/hi2";
 import SocialLinks from "@/components/common/SocialLinks";
-import { HiBars3, HiXMark } from "react-icons/hi2";
 import logo from "../../assets/logo/LogoStaywellPharmacy.png";
 
-export default function NavbarClinic() {
+export default function NavbarPharmacy() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // ✅ Scroll helper: works even if user is not on /varsitypharmacy
+  const goToSection = (id) => {
+    setIsOpen(false);
+
+    const onPharmacyHome =
+      location.pathname === "/varsitypharmacy" || location.pathname === "/varsitypharmacy/pharmacy";
+
+    if (!onPharmacyHome) {
+      navigate("/varsitypharmacy");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return;
+    }
+
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const navLinks = [
-    { name: "Services", path: "/pharmacyservices" },
+    { name: "Services", type: "section", id: "services" },
+    { name: "Travel Clinic", type: "external", url: "https://www.bookmypharmacy.com/travel/8254140721?noNav=true" },
     { name: "HomeCare", type: "external", url: "https://staywellmedicalsupplies.ca/" },
-    { name: "TravelClinic", type: "external", url: "https://www.bookmypharmacy.com/travel/8254140721?noNav=true" },
-    { name: "Prescribing Pharmacist", path: "/pharmacist" },
+
+    // ✅ ONLY this one is a page
+    { name: "Prescribing Pharmacist", type: "internal", path: "/varsitypharmacy/PrescribingPharmacist" },
   ];
+
+  const NavItem = ({ link, mobile = false }) => {
+    const base =
+      "transition-all duration-200 text-base lg:text-lg tracking-wide " +
+      (mobile ? "text-staywell-nav" : "text-shadow-staywell-nav") +
+      " font-normal hover:font-medium";
+
+    if (link.type === "section") {
+      return (
+        <button
+          key={link.name}
+          type="button"
+          onClick={() => goToSection(link.id)}
+          className={base + " text-left"}
+        >
+          {link.name}
+        </button>
+      );
+    }
+
+    if (link.type === "external") {
+      return (
+        <a
+          key={link.name}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setIsOpen(false)}
+          className={base}
+        >
+          {link.name}
+        </a>
+      );
+    }
+
+    // route
+    return (
+      <NavLink
+        key={link.name}
+        to={link.path}
+        onClick={() => setIsOpen(false)}
+        className={({ isActive }) =>
+          `${base} ${isActive ? "text-staywell-nav font-bold" : ""}`
+        }
+      >
+        {link.name}
+      </NavLink>
+    );
+  };
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      {/* =========================
-          Top white navbar row
-      ========================= */}
+      {/* Top row */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img
-              src={logo}
-              alt="Staywell Clinic Logo"
-              className="h-14 md:h-16 w-auto object-contain"
-            />
+          {/* logo */}
+          <Link to="/varsitypharmacy" className="flex items-center">
+            <img src={logo} alt="Staywell Pharmacy Logo" className="h-14 md:h-16 w-auto object-contain" />
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link, index) => (
-              <NavLink
-                key={index}
-                to={link.path}
-                className={({ isActive }) =>
-                  `transition-all duration-200 text-base lg:text-lg tracking-wide ${isActive
-                    ? "text-staywell-nav font-bold"
-                    : "text-shadow-staywell-nav font-normal hover:font-medium"
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
+            {navLinks.map((link) => (
+              <NavItem key={link.name} link={link} />
             ))}
 
-
-            {/* Social Icons: always right */}
             <SocialLinks size={16} className="text-staywell-nav shrink-0" />
 
-            {/* Contact Button */}
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive
-                  ? "bg-staywell-green"
-                  : "bg-staywell-red hover:bg-staywell-green"
-                }`
-              }
+            {/* If Contact is a section on home, make it a button */}
+            <button
+              type="button"
+              onClick={() => goToSection("contact")}
+              className="ml-6 px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 bg-staywell-red hover:bg-staywell-green"
             >
               Contact
-            </NavLink>
+            </button>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile toggle */}
           <button
             className="md:hidden text-staywell-nav"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((v) => !v)}
             aria-label="Toggle menu"
           >
             {isOpen ? <HiXMark size={28} /> : <HiBars3 size={28} />}
@@ -77,62 +124,45 @@ export default function NavbarClinic() {
         </div>
       </div>
 
-      {/* =========================
-          Green utility bar row
-          (visible on all sizes)
-      ========================= */}
+      {/* Utility bar */}
       <div className="bg-[#79BD43] text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-end gap-x-6 gap-y-2 py-3 text-[12px] sm:text-[13px] font-semibold uppercase tracking-wide">
-            <a href="#map-section" className="hover:opacity-85 transition">
+            <button onClick={() => goToSection("map-section")} className="hover:opacity-85 transition">
               Get Directions
-            </a>
-            <a href="#about-section" className="hover:opacity-85 transition">
+            </button>
+            <button onClick={() => goToSection("about-section")} className="hover:opacity-85 transition">
               About Us
-            </a>
+            </button>
+
             <a href="fax:+15873508585" className="hover:opacity-85 transition">
               Fax: 587-350-8585
             </a>
             <a href="tel:+14038748787" className="hover:opacity-85 transition">
               Phone: 403-874-8787
             </a>
-            <NavLink to="/refill" className="hover:opacity-85 transition">
+
+            {/* If these are sections, use goToSection */}
+            <button onClick={() => goToSection("refill")} className="hover:opacity-85 transition">
               Refill
-            </NavLink>
-            <NavLink to="/transfer" className="hover:opacity-85 transition">
+            </button>
+            <button onClick={() => goToSection("transfer")} className="hover:opacity-85 transition">
               Transfer
-            </NavLink>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* =========================
-          Mobile Dropdown
-      ========================= */}
+      {/* Mobile dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col px-6 py-6 space-y-4">
-            {navLinks.map((link, index) => (
-              <NavLink
-                key={index}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `text-base transition-all ${isActive
-                    ? "text-staywell-nav font-bold"
-                    : "text-staywell-nav font-normal"
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
+            {navLinks.map((link) => (
+              <NavItem key={link.name} link={link} mobile />
             ))}
 
-            {/* Social Icons (common) + Email */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
               <SocialLinks size={18} className="text-staywell-nav" />
-
-              {/* Email icon (pharmacy email) */}
               <a
                 href="mailto:varsity@staywellpharmacy.ca"
                 className="text-staywell-nav hover:opacity-80 transition"
@@ -142,19 +172,13 @@ export default function NavbarClinic() {
               </a>
             </div>
 
-            {/* Contact Button */}
-            <NavLink
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 ${isActive
-                  ? "bg-staywell-green"
-                  : "bg-staywell-red hover:bg-staywell-green"
-                }`
-              }
+            <button
+              type="button"
+              onClick={() => goToSection("contact")}
+              className="px-4 py-3 rounded-lg text-white text-sm font-semibold transition-colors duration-300 bg-staywell-red hover:bg-staywell-green"
             >
               Contact
-            </NavLink>
+            </button>
           </div>
         </div>
       )}
