@@ -91,7 +91,7 @@ export default function NavbarPharmacy() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
           {/* logo */}
-          <Link to="/varsitypharmacy" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="Staywell Pharmacy Logo" className="h-14 md:h-16 w-auto object-contain" />
           </Link>
 

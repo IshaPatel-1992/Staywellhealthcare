@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from "@/assets/Clinic/Carrington/staywell-home-cta-parallax.webp";
+import bgImg from "@/assets/staywell-home-cta-parallax.webp";
 
 export default function BookanAppointmentClinic() {
   // TOP: bowl (white comes DOWN into the section)
@@ -65,12 +65,14 @@ export default function BookanAppointmentClinic() {
                 (587) 955-6207
               </a>
 
-              <a
-                href="varsityclinic/become-a-patient"
-                className="inline-flex items-center justify-center rounded-xl px-7 py-3 font-semibold bg-white text-red-600 shadow-md hover:bg-gray-100 transition"
-              >
-                Become a Patient
-              </a>
+             <a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdSdz9dsCT5UYrL38eEcyLdRFf4R8EUQzZKloE_VcLPvL0Zsg/viewform?embedded=true"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center rounded-xl px-7 py-3 font-semibold bg-white text-red-600 shadow-md hover:bg-gray-100 transition"
+>
+  Become a Patient
+</a>
             </div>
           </div>
         </div>

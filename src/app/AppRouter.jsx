@@ -5,7 +5,6 @@ import VarsityLayout from "@/pages/varsityclinic/VarsityLayout";
 
 // Clinic
 import ClinicHomePage from "@/pages/varsityclinic/ClinicHomePage";
-import BecomeAPatient from "@/pages/varsityclinic/IntakeFormPage";
 
 // Pharmacy
 import PharmacyHomePage from "@/pages/varsitypharmacy/PharmacyHomePage";
@@ -28,7 +27,6 @@ export default function AppRouter() {
         {/* Clinic */}
         <Route path="/varsityclinic" element={<VarsityLayout />}>
           <Route index element={<ClinicHomePage />} />
-          <Route path="become-a-patient" element={<BecomeAPatient />} />
         </Route>
 
         {/* Pharmacy */}

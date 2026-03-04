@@ -53,18 +53,20 @@ export default function NewPatientClinic() {
 
             <div className="mt-6">
               <a
-                href="/varsityclinic/become-a-patient"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdSdz9dsCT5UYrL38eEcyLdRFf4R8EUQzZKloE_VcLPvL0Zsg/viewform?embedded=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-      inline-flex items-center justify-center
-      font-(--font-button)
-      text-base
-      px-8 py-3
-      rounded-xl
-      bg-[#78BD43] text-white
-      transition-all duration-300
-      hover:bg-[#DC2227] hover:text-white
-      shadow-md hover:shadow-lg
-    "
+    inline-flex items-center justify-center
+    font-(--font-button)
+    text-base
+    px-8 py-3
+    rounded-xl
+    bg-[#78BD43] text-white
+    transition-all duration-300
+    hover:bg-[#DC2227] hover:text-white
+    shadow-md hover:shadow-lg
+  "
               >
                 New Patient Form
               </a>
