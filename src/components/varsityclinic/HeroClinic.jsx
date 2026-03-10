@@ -1,18 +1,40 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/staywell-home-hero-02.webp";
-import bannerImg2 from "@/assets/staywell-home-hero-3.webp";
+import bannerImg1 from "@/assets/Varsity/staywell-clinic-hero-1920x900.webp";
+import bannerImg2 from "@/assets/Varsity/Welcoming1.png";
+import bannerImg3 from "@/assets/Varsity/ExteriororInterior.png";
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function HeroClinic() {
   const slides = useMemo(
     () => [
-      { src: bannerImg1, alt: "Healthcare office background" },
-      { src: bannerImg2, alt: "Clinic team and care background" },
+      {
+        src: bannerImg1,
+        alt: "Healthcare office background",
+        fit: "object-cover object-[50%_55%]",
+        title: "Caring for You",
+        subtitle: "A community clinic committed to your well-being.",
+      },
+      {
+        src: bannerImg2,
+        alt: "Clinic team and care background",
+        fit: "object-cover object-[50%_42%] sm:object-[50%_46%] md:object-[50%_50%]",
+        title: "Personalized Medical Care",
+        subtitle: "Thoughtful support focused on every patient and every visit.",
+      },
+      {
+        src: bannerImg3,
+        alt: "Exterior or interior",
+        fit: "object-cover object-[50%_42%] sm:object-[50%_46%] md:object-[50%_50%]",
+        title: "Modern Care, Trusted Team",
+        subtitle: "Welcoming spaces and dependable healthcare close to home.",
+      },
     ],
     []
   );
 
   const [index, setIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -21,51 +43,45 @@ export default function HeroClinic() {
     return () => clearInterval(id);
   }, [slides.length]);
 
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     setMounted(false);
     const t = setTimeout(() => setMounted(true), 120);
     return () => clearTimeout(t);
   }, [index]);
 
-  const prevSlide = () => setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
+    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
+  const nextSlide = () =>
+    setIndex((prev) => (prev + 1) % slides.length);
 
   return (
     <section
-      id="home"
-      className="group relative h-[92vh] md:h-[96vh] pt-24 md:pt-28 overflow-hidden"
-    >
+  id="home"
+  className={`group relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 h-[60vh] sm:h-[66vh] md:h-[72vh] lg:h-[70vh] ${slides[index].bg}`}
+>
       {slides.map((s, i) => (
         <img
           key={s.src}
           src={s.src}
           alt={s.alt}
           className={[
-            "absolute inset-0 w-full h-full object-cover object-[50%_15%] transition-opacity duration-1000",
+            "absolute inset-0 h-full w-full transition-opacity duration-1000",
+            s.fit,
             i === index ? "opacity-100" : "opacity-0",
           ].join(" ")}
           loading={i === 0 ? "eager" : "lazy"}
         />
       ))}
 
-      <div className="absolute inset-0 z-20 flex items-center justify-between px-4 md:px-8 pointer-events-none">
+      {/* overlay */}
+      <div className="absolute inset-0 `z-1` bg-black/18 sm:bg-black/12" />
+
+      {/* arrows */}
+      <div className="absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-4 lg:px-8 pointer-events-none">
         <button
           onClick={prevSlide}
-          className="
-            pointer-events-auto
-            w-10 h-10 md:w-12 md:h-12
-            rounded-full
-            bg-transparent
-            border-2 border-white/80
-            text-[#DC2227]
-            flex items-center justify-center
-            backdrop-blur-sm
-            transition-all duration-300
-            hover:bg-white/20 hover:border-white hover:scale-110
-            opacity-100 md:opacity-0 md:group-hover:opacity-100
-          "
+          className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-black/20 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-black/35 active:scale-95 md:h-12 md:w-12"
           aria-label="Previous Slide"
           type="button"
         >
@@ -74,19 +90,7 @@ export default function HeroClinic() {
 
         <button
           onClick={nextSlide}
-          className="
-            pointer-events-auto
-            w-10 h-10 md:w-12 md:h-12
-            rounded-full
-            bg-transparent
-            border-2 border-white/80
-            text-[#DC2227]
-            flex items-center justify-center
-            backdrop-blur-sm
-            transition-all duration-300
-            hover:bg-white/20 hover:border-white hover:scale-110
-            opacity-100 md:opacity-0 md:group-hover:opacity-100
-          "
+          className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-black/20 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-black/35 active:scale-95 md:h-12 md:w-12"
           aria-label="Next Slide"
           type="button"
         >
@@ -94,24 +98,25 @@ export default function HeroClinic() {
         </button>
       </div>
 
+      {/* content */}
       <div className="relative z-10 h-full">
-        <div className="max-w-6xl mx-auto px-4 h-full flex items-center">
+        <div className="mx-auto flex h-full max-w-6xl items-center px-4 sm:px-6 lg:px-8">
           <div
             className={[
-              "relative w-full max-w-xl text-left transition-all duration-700 ease-out",
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+              "relative w-full max-w-70 sm:max-w-lg lg:max-w-2xl text-left transition-all duration-700 ease-out",
+              mounted ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
             ].join(" ")}
           >
-            <div className="absolute -inset-x-10 -inset-y-12 bg-white/55 blur-2xl rounded-[999px] pointer-events-none" />
+            <div className="absolute -inset-x-3 -inset-y-4 sm:-inset-x-6 sm:-inset-y-6 lg:-inset-x-8 lg:-inset-y-8 rounded-4xl bg-white/45 blur-2xl pointer-events-none" />
 
-            <h1 className="relative text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-              <span className="font-(--font-heading) text-[#DC2227] drop-shadow-[0_6px_18px_rgba(0,0,0,0.25)]">
-                Caring for You
+            <h1 className="relative text-2xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+              <span className="font-(--font-heading) text-[#DC2227] drop-shadow-[0_4px_12px_rgba(0,0,0,0.20)]">
+                {slides[index].title}
               </span>
             </h1>
 
-            <p className="relative mt-4 text-[#515D72] font-normal text-2xl leading-[2.09rem]">
-              A Community Clinic Committed to Your Well-Being
+            <p className="relative mt-2 text-sm font-medium leading-6 text-[#374151] sm:mt-4 sm:text-lg sm:leading-8 md:text-xl lg:text-2xl">
+              {slides[index].subtitle}
             </p>
           </div>
         </div>

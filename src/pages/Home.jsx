@@ -3,133 +3,35 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useSeo } from "@/lib/useSeo";
 import { useNavigate } from "react-router-dom";
 import { MdLocalHospital, MdLocalPharmacy } from "react-icons/md";
-import { FaBoxOpen, FaExternalLinkAlt, FaFax } from "react-icons/fa";
-import SocialLinks from "@/components/common/SocialLinks";
-import { HiMapPin, HiPhone, HiEnvelope, HiGlobeAlt } from "react-icons/hi2";
-import logo from "../assets/logo/Staywell-Trans_Main.png";
+import { FaBoxOpen, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  HiMapPin,
+  HiPhone,
+  HiEnvelope,
+  HiGlobeAlt,
+  HiShieldCheck,
+  HiHeart,
+  HiClock,
+  HiUsers,
+} from "react-icons/hi2";
 
-const STORAGE_KEY = "staywell:selectedLocation"; // "varsity" | "carrington"
+import SocialLinks from "@/components/common/SocialLinks";
+import logo from "@/assets/logo/Staywell-Trans_Main.png";
+import varsityBanner from "@/assets/Varsity/Welcoming1.png";
+import carringtonBanner from "@/assets/staywell-home-hero-02.webp";
+
+const STORAGE_KEY = "staywell:selectedLocation";
 
 // Brand colors
 const BRAND_GREEN = "#79BD43";
 const BRAND_RED = "#DC2227";
 const BRAND_GRAY = "#515D72";
 
-function MedicalCornerArt({ accent = BRAND_GREEN }) {
-  const red = BRAND_RED;
-  const green = BRAND_GREEN;
-  const gray = BRAND_GRAY;
-
-  const LINE_OP = 0.78;
-  const FILL_OP = 0.34;
-  const WASH_OP = 0.18;
-  const DOT_OP = 0.55;
-
-  return (
-    <div className="pointer-events-none absolute inset-0">
-      {/* TOP-RIGHT CLUSTER */}
-      <svg
-        className="absolute -top-10 -right-10 h-60 w-60 opacity-100"
-        viewBox="0 0 240 240"
-        fill="none"
-      >
-        <circle cx="175" cy="70" r="92" fill={red} opacity={WASH_OP} />
-
-        <g transform="translate(150 28) rotate(12)">
-          <rect x="0" y="18" width="42" height="12" rx="6" fill={accent} opacity={FILL_OP} />
-          <rect x="15" y="0" width="12" height="48" rx="6" fill={accent} opacity={FILL_OP} />
-          <rect x="-4" y="14" width="50" height="20" rx="10" stroke={gray} strokeWidth="4" opacity={0.28} />
-        </g>
-
-        <path
-          d="M150 75 C150 105, 190 105, 190 138 C190 170, 150 176, 138 150"
-          stroke={gray}
-          strokeWidth="10"
-          strokeLinecap="round"
-          opacity={LINE_OP}
-        />
-        <path
-          d="M150 75 C135 52, 112 48, 98 62"
-          stroke={gray}
-          strokeWidth="10"
-          strokeLinecap="round"
-          opacity={LINE_OP}
-        />
-        <path
-          d="M150 75 C165 52, 188 48, 202 62"
-          stroke={gray}
-          strokeWidth="10"
-          strokeLinecap="round"
-          opacity={LINE_OP}
-        />
-        <circle cx="138" cy="150" r="16" fill={accent} opacity={0.70} />
-        <circle cx="138" cy="150" r="9" fill="white" opacity={0.55} />
-
-        <g transform="translate(52 82) rotate(-18)">
-          <rect x="0" y="0" width="78" height="30" rx="15" fill={green} opacity={0.45} />
-          <rect x="39" y="0" width="39" height="30" rx="15" fill={red} opacity={0.28} />
-          <line x1="39" y1="5" x2="39" y2="25" stroke="white" opacity={0.45} />
-          <rect x="0" y="0" width="78" height="30" rx="15" stroke={gray} strokeWidth="4" opacity={0.22} />
-        </g>
-
-        <circle cx="92" cy="150" r="10" fill={accent} opacity={0.45} />
-        <circle cx="74" cy="132" r="4.5" fill={gray} opacity={DOT_OP} />
-        <circle cx="212" cy="110" r="4" fill={gray} opacity={DOT_OP} />
-        <circle cx="196" cy="92" r="3.5" fill={gray} opacity={0.40} />
-      </svg>
-
-      {/* BOTTOM-LEFT CLUSTER */}
-      <svg
-        className="absolute -bottom-12 -left-12 h-64 w-64 opacity-100"
-        viewBox="0 0 260 260"
-        fill="none"
-      >
-        <circle cx="85" cy="190" r="105" fill={green} opacity={WASH_OP} />
-
-        <g transform="translate(24 154) rotate(10)">
-          <rect x="0" y="0" width="98" height="66" rx="16" fill={BRAND_GRAY} opacity={0.20} />
-          <path
-            d="M18 20 h54 M18 36 h66 M18 52 h40"
-            stroke={BRAND_GRAY}
-            strokeWidth="7"
-            strokeLinecap="round"
-            opacity={0.42}
-          />
-          <text x="68" y="26" fontSize="20" fontWeight="800" fill={BRAND_RED} opacity={0.45}>
-            Rx
-          </text>
-        </g>
-
-        <g transform="translate(120 70) rotate(-28)">
-          <rect x="0" y="52" width="96" height="28" rx="10" fill={accent} opacity={0.40} />
-          <rect x="14" y="44" width="68" height="44" rx="12" fill="white" opacity={0.48} />
-          <rect x="14" y="44" width="68" height="44" rx="12" stroke={BRAND_GRAY} strokeWidth="4" opacity={0.26} />
-          <rect x="-14" y="58" width="22" height="16" rx="8" fill={BRAND_GRAY} opacity={0.45} />
-          <rect x="-34" y="52" width="22" height="28" rx="8" fill={BRAND_GRAY} opacity={0.32} />
-          <path d="M96 66 L132 66" stroke={BRAND_GRAY} strokeWidth="6" strokeLinecap="round" opacity={0.58} />
-          <path d="M132 66 L148 60" stroke={BRAND_GRAY} strokeWidth="4" strokeLinecap="round" opacity={0.52} />
-          <path d="M30 52 v28 M46 52 v28 M62 52 v28" stroke={BRAND_GRAY} strokeWidth="4" opacity={0.34} />
-        </g>
-
-        <g transform="translate(44 112) rotate(18)">
-          <rect x="0" y="0" width="66" height="26" rx="13" fill={BRAND_RED} opacity={0.30} />
-          <rect x="33" y="0" width="33" height="26" rx="13" fill={BRAND_GREEN} opacity={0.38} />
-          <line x1="33" y1="5" x2="33" y2="21" stroke="white" opacity={0.45} />
-        </g>
-
-        <g transform="translate(36 70)">
-          <rect x="0" y="12" width="36" height="10" rx="5" fill={accent} opacity={0.32} />
-          <rect x="13" y="0" width="10" height="36" rx="5" fill={accent} opacity={0.32} />
-        </g>
-
-        <circle cx="58" cy="210" r="4" fill={BRAND_GRAY} opacity={0.45} />
-        <circle cx="92" cy="226" r="3.5" fill={BRAND_GRAY} opacity={0.40} />
-      </svg>
-    </div>
-  );
-}
-
 export default function Home() {
+  const [saved, setSaved] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const navigate = useNavigate();
+
   const canonical = "https://staywellhealthcare.ca/";
 
   useSeo({
@@ -143,7 +45,8 @@ export default function Home() {
         "Choose your location (Varsity or Carrington) for medical clinic care, pharmacy services, and homecare & medical supplies in Calgary.",
       url: canonical,
       type: "website",
-      image: "https://staywellhealthcare.ca/images/og/varsity-clinic-pharmacy-medicalsupplies.jpg",
+      image:
+        "https://staywellhealthcare.ca/images/og/varsity-clinic-pharmacy-medicalsupplies.jpg",
     },
     jsonLdId: "staywell-home",
     jsonLd: {
@@ -173,15 +76,49 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Monday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Tuesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Wednesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Thursday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Saturday",
+              opens: "10:00",
+              closes: "15:00",
+            },
           ],
-          knowsAbout: ["Family medicine", "Walk-in clinic", "Preventive care", "Chronic disease management"],
+          knowsAbout: [
+            "Family medicine",
+            "Walk-in clinic",
+            "Preventive care",
+            "Chronic disease management",
+          ],
         },
         {
           "@type": "Pharmacy",
@@ -198,15 +135,50 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Monday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Tuesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Wednesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Thursday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Saturday",
+              opens: "10:00",
+              closes: "15:00",
+            },
           ],
-          knowsAbout: ["Prescription refills", "Prescription transfers", "Vaccines", "Compounding", "Delivery"],
+          knowsAbout: [
+            "Prescription refills",
+            "Prescription transfers",
+            "Vaccines",
+            "Compounding",
+            "Delivery",
+          ],
         },
         {
           "@type": "Store",
@@ -222,15 +194,49 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Monday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Tuesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Wednesday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Thursday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "09:00",
+              closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Saturday",
+              opens: "10:00",
+              closes: "15:00",
+            },
           ],
-          knowsAbout: ["Homecare supplies", "Medical equipment", "Compression stockings", "Mobility aids"],
+          knowsAbout: [
+            "Homecare supplies",
+            "Medical equipment",
+            "Compression stockings",
+            "Mobility aids",
+          ],
         },
         {
           "@type": "MedicalClinic",
@@ -246,15 +252,55 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Monday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Tuesday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Wednesday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Thursday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Saturday",
+              opens: "09:00",
+              closes: "17:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Sunday",
+              opens: "10:00",
+              closes: "14:00",
+            },
           ],
-          knowsAbout: ["Family medicine", "Walk-in clinic", "Preventive care", "Chronic disease management"],
+          knowsAbout: [
+            "Family medicine",
+            "Walk-in clinic",
+            "Preventive care",
+            "Chronic disease management",
+          ],
         },
         {
           "@type": "Pharmacy",
@@ -271,66 +317,92 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Monday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Tuesday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Wednesday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Thursday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "09:00",
+              closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Saturday",
+              opens: "09:00",
+              closes: "17:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Sunday",
+              opens: "10:00",
+              closes: "14:00",
+            },
           ],
-          knowsAbout: ["Prescription refills", "Prescription transfers", "Vaccines", "Compounding", "Delivery"],
+          knowsAbout: [
+            "Prescription refills",
+            "Prescription transfers",
+            "Vaccines",
+            "Compounding",
+            "Delivery",
+          ],
         },
       ],
     },
   });
 
-  const [saved, setSaved] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const existing = localStorage.getItem(STORAGE_KEY);
-    if (existing) setSaved(existing);
-  }, []);
-
-  const selectLocation = (location) => {
-    localStorage.setItem(STORAGE_KEY, location);
-    setSaved(location);
-  };
-
   const locations = useMemo(
     () => [
       {
         key: "varsity",
-        accent: "green",
+        accent: BRAND_GREEN,
         title: "Varsity Location",
         address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
         badge: "NEW",
         type: "internal",
-        websiteLabel: "StaywellHealthcare (new site)",
+        websiteLabel: "StaywellHealthcare.ca",
         websiteHref: "https://staywellhealthcare.ca",
+        banner: varsityBanner,
+        bannerText:
+          "Medical clinic, pharmacy, and homecare supplies — all under one roof in Varsity.",
+        imageClassName: "object-center",
         services: {
           clinic: {
             phone: "587-955-6207",
             tel: "tel:+15879556207",
-            fax: "587-955-6208",
-            faxTel: "tel:+15879556208",
             email: "varsity@staywellmedical.ca",
             to: "/varsityclinic",
           },
           pharmacy: {
             phone: "403-874-8787",
             tel: "tel:+14038748787",
-            fax: "587-350-8585",
-            faxTel: "tel:+15873508585",
             email: "varsity@staywellpharmacy.ca",
             to: "/varsitypharmacy/pharmacy",
           },
           supplies: {
             phone: "403-874-8787",
             tel: "tel:+14038748787",
-            fax: "587-350-8585",
-            faxTel: "tel:+15873508585",
             email: "info@staywellmedicalsupplies.ca",
             href: "https://www.staywellmedicalsupplies.ca",
           },
@@ -338,13 +410,17 @@ export default function Home() {
       },
       {
         key: "carrington",
-        accent: "red",
+        accent: BRAND_RED,
         title: "Carrington Location",
-        address: "59 Carrigton Plz #190, Calgary, AB T3P 1Y3",
+        address: "59 Carrington Plz #190, Calgary, AB T3P 1Y3",
         badge: null,
         type: "external",
         websiteLabel: "StaywellMedical.ca",
         websiteHref: "https://staywellmedical.ca",
+        banner: carringtonBanner,
+        bannerText:
+          "Trusted clinic and pharmacy services for individuals and families in Carrington.",
+        imageClassName: "object-[center_35%]",
         services: {
           clinic: {
             phone: "825-414-3933",
@@ -355,8 +431,6 @@ export default function Home() {
           pharmacy: {
             phone: "825-414-0721",
             tel: "tel:+18254140721",
-            fax: "825-414-0722",
-            faxTel: "tel:+18254140722",
             email: "info@staywellpharmacy.ca",
             href: "https://staywellpharmacy.ca",
           },
@@ -366,36 +440,202 @@ export default function Home() {
     []
   );
 
-  const serviceCardsByLocation = (loc) => {
-    const base = [
-      { key: "clinic", label: "Medical Clinic", icon: MdLocalHospital },
-      { key: "pharmacy", label: "Pharmacy", icon: MdLocalPharmacy },
-    ];
-    if (loc.key === "varsity") {
-      base.push({ key: "supplies", label: "Homecare & Medical Supplies", icon: FaBoxOpen });
+  const services = useMemo(
+    () => [
+      {
+        key: "clinic",
+        title: "Medical Clinic",
+        icon: MdLocalHospital,
+        description:
+          "Access trusted medical care, family practice support, walk-in care, and preventive services.",
+        availability: "Available in Varsity & Carrington",
+        accent: BRAND_GREEN,
+        actions: [
+          { label: "Varsity", type: "internal", to: "/varsityclinic" },
+          {
+            label: "Carrington",
+            type: "external",
+            href: "https://staywellmedical.ca",
+          },
+        ],
+      },
+      {
+        key: "pharmacy",
+        title: "Pharmacy",
+        icon: MdLocalPharmacy,
+        description:
+          "Prescription refills, transfers, pharmacist support, and convenient pharmacy care close to home.",
+        availability: "Available in Varsity & Carrington",
+        accent: BRAND_RED,
+        actions: [
+          {
+            label: "Varsity",
+            type: "internal",
+            to: "/varsitypharmacy/pharmacy",
+          },
+          {
+            label: "Carrington",
+            type: "external",
+            href: "https://staywellpharmacy.ca",
+          },
+        ],
+      },
+      {
+        key: "supplies",
+        title: "Homecare & Medical Supplies",
+        icon: FaBoxOpen,
+        description:
+          "Shop essential homecare products, mobility aids, compression wear, and medical supply solutions.",
+        availability: "Available in Varsity",
+        accent: BRAND_GREEN,
+        actions: [
+          {
+            label: "Visit Supplies",
+            type: "external",
+            href: "https://www.staywellmedicalsupplies.ca",
+          },
+        ],
+      },
+    ],
+    []
+  );
+
+  const trustPoints = useMemo(
+    () => [
+      {
+        title: "Trusted Local Care",
+        description:
+          "Compassionate healthcare and pharmacy services designed for Calgary families.",
+        icon: HiHeart,
+        accent: BRAND_GREEN,
+      },
+      {
+        title: "Convenient Access",
+        description:
+          "Clinic, pharmacy, and supplies connected in one simple patient experience.",
+        icon: HiClock,
+        accent: BRAND_RED,
+      },
+      {
+        title: "Patient-Focused Support",
+        description:
+          "Helpful care teams focused on clear communication and everyday wellness needs.",
+        icon: HiUsers,
+        accent: BRAND_GREEN,
+      },
+      {
+        title: "Reliable Service",
+        description:
+          "A dependable healthcare experience with quality support you can count on.",
+        icon: HiShieldCheck,
+        accent: BRAND_RED,
+      },
+    ],
+    []
+  );
+
+  const quickLocations = useMemo(
+    () => [
+      {
+        key: "varsity",
+        title: "Varsity",
+        accent: BRAND_GREEN,
+        address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
+        phone: "587-955-6207",
+        tel: "tel:+15879556207",
+        email: "varsity@staywellmedical.ca",
+        website: "https://staywellhealthcare.ca",
+        websiteLabel: "StaywellHealthcare.ca",
+        hours: [
+          "Mon – Fri: 9:00 AM – 6:00 PM",
+          "Saturday: 10:00 AM – 3:00 PM",
+          "Sunday: Closed",
+        ],
+      },
+      {
+        key: "carrington",
+        title: "Carrington",
+        accent: BRAND_RED,
+        address: "59 Carrington Plz #190, Calgary, AB T3P 1Y3",
+        phone: "825-414-3933",
+        tel: "tel:+18254143933",
+        email: "info@staywellmedical.ca",
+        website: "https://staywellmedical.ca",
+        websiteLabel: "StaywellMedical.ca",
+        hours: [
+          "Mon – Fri: 9:00 AM – 9:00 PM",
+          "Saturday: 9:00 AM – 5:00 PM",
+          "Sunday: 10:00 AM – 2:00 PM",
+        ],
+      },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    const existing = localStorage.getItem(STORAGE_KEY);
+    if (existing) setSaved(existing);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % locations.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [locations.length]);
+
+  const selectLocation = (location) => {
+    localStorage.setItem(STORAGE_KEY, location);
+    setSaved(location);
+  };
+
+  const goBanner = (loc) => {
+    selectLocation(loc.key);
+
+    if (loc.type === "internal") {
+      navigate(loc.services?.clinic?.to || "/");
+    } else {
+      window.open(loc.websiteHref, "_blank", "noopener,noreferrer");
     }
-    return base;
+  };
+
+  const goAction = (action) => {
+    if (action.type === "internal") {
+      navigate(action.to);
+    } else {
+      window.open(action.href, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  const goPrevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? locations.length - 1 : prev - 1));
+  };
+
+  const goNextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % locations.length);
   };
 
   return (
-    <main className="relative min-h-svh bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-svh overflow-hidden bg-white text-gray-900">
       <div className="relative mx-auto w-full max-w-6xl px-6 py-6 md:py-8">
-        {/* Header */}
         <header className="flex items-center justify-between gap-4">
-          <img src={logo} alt="Staywell Healthcare logo" className="h-16 md:h-20 w-auto object-contain shrink-0" />
+          <img
+            src={logo}
+            alt="Staywell Healthcare logo"
+            className="h-16 w-auto shrink-0 object-contain md:h-20"
+          />
 
-          {/* Social Icons: always right */}
-         <SocialLinks
-  size={18}
-  className="text-staywell-nav shrink-0"
-  iconClassName="text-staywell-nav hover:opacity-80 transition"
-/>
+          <SocialLinks
+            size={18}
+            className="shrink-0 text-staywell-nav"
+            iconClassName="text-staywell-nav transition hover:opacity-80"
+          />
         </header>
 
-        {/* Title + description row */}
         <div className="mt-4 md:mt-5 md:flex md:items-start md:justify-between md:gap-10">
           <div className="md:max-w-2xl">
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-staywell-nav">
+            <h1 className="text-2xl font-extrabold tracking-tight text-staywell-nav md:text-3xl">
               Welcome to Staywell Healthcare
             </h1>
 
@@ -404,241 +644,374 @@ export default function Home() {
               <div className="w-1/3" style={{ backgroundColor: BRAND_GREEN }} />
             </div>
 
-            <p className="mt-3 text-[#515D72] font-bold text-base md:text-lg leading-relaxed">
-              Select your location to access trusted medical care, pharmacy services, and homecare supplies — all under one roof.
+            <p className="mt-3 text-base font-bold leading-relaxed text-[#515D72] md:text-lg">
+              Select your location to access trusted medical care, pharmacy
+              services, and homecare supplies — all under one roof.
             </p>
           </div>
         </div>
 
-        {/* Divider */}
         <div className="mt-8 h-px w-full bg-black/10" />
 
-        {/* Cards */}
-        <section className="mt-8 grid gap-6 md:grid-cols-2">
-          {locations.map((loc) => {
-            const accent = loc.accent === "green" ? BRAND_GREEN : BRAND_RED;
-
-            const serviceBoxClass =
-              "relative w-full rounded-2xl border border-black/10 bg-white/70 backdrop-blur-sm px-5 py-5 transition duration-300 hover:-translate-y-px sm:min-h-[148px]";
-            const serviceBoxStyle = { outline: `1px solid ${accent}33` };
-
-            const goCard = () => {
-              selectLocation(loc.key);
-              if (loc.type === "internal") {
-                navigate(loc.services?.clinic?.to || "/");
-              } else {
-                window.open(loc.websiteHref, "_blank", "noopener,noreferrer");
-              }
-            };
-
-            const goService = (serviceKey) => {
-              selectLocation(loc.key);
-              const data = loc.services?.[serviceKey];
-              if (!data) return;
-
-              // Supplies should open external site even though Varsity is "internal"
-              if (serviceKey === "supplies" && data?.href) {
-                window.open(data.href, "_blank", "noopener,noreferrer");
-                return;
-              }
-
-              if (loc.type === "internal") {
-                navigate(data.to || "/");
-              } else {
-                window.open(data.href || loc.websiteHref, "_blank", "noopener,noreferrer");
-              }
-            };
-
-            return (
-              <div
-                key={loc.key}
-                role="link"
-                tabIndex={0}
-                onClick={goCard}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") goCard();
-                }}
-                className="focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-staywell-red rounded-3xl"
-              >
+        {/* Section 1: Hero Slider */}
+        <section className="mt-8">
+          <div className="relative overflow-hidden rounded-4xl border border-black/10 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)]">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+            >
+              {locations.map((loc) => (
                 <div
-                  className="group relative overflow-hidden rounded-3xl bg-white p-7 md:p-9 border border-black/10
-                  shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)]
-                  transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_-22px_rgba(0,0,0,0.45)]"
-                  style={{ outline: `1px solid ${accent}55`, outlineOffset: "0px" }}
+                  key={loc.key}
+                  className="relative min-w-full cursor-pointer h-90 sm:h-107.5 lg:h-130"
+                  onClick={() => goBanner(loc)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") goBanner(loc);
+                  }}
                 >
-                  <MedicalCornerArt accent={accent} />
+                  <img
+                    src={loc.banner}
+                    alt={`${loc.title} banner`}
+                    className={`absolute inset-0 h-full w-full object-cover ${loc.imageClassName}`}
+                  />
 
-                  {/* ✅ make both cards equal height + push buttons to bottom */}
-                  <div className="relative z-10 flex min-h-150 flex-col">
-                    {/* Header row */}
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-extrabold">{loc.title}</h2>
-                      </div>
+                  <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/45 to-black/20" />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: `linear-gradient(135deg, ${loc.accent}22 0%, transparent 55%, transparent 100%)`,
+                    }}
+                  />
 
-                      {loc.badge ? (
-                        <div className="relative shrink-0">
-                          <div
-                            className="relative rounded-md px-3 py-1.5 text-xs md:text-sm font-extrabold tracking-wide uppercase text-white shadow-[0_10px_22px_-14px_rgba(0,0,0,0.55)]"
-                            style={{ backgroundColor: BRAND_RED }}
-                          >
-                            {loc.badge}
-                            <span
-                              className="absolute -left-2 top-1/2 -translate-y-1/2"
-                              style={{
-                                width: 0,
-                                height: 0,
-                                borderTop: "10px solid transparent",
-                                borderBottom: "10px solid transparent",
-                                borderRight: `10px solid ${BRAND_RED}`,
-                              }}
-                            />
-                          </div>
-                          <div className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-white/30" />
+                  <div className="relative z-10 flex h-full items-end">
+                    <div className="w-full p-5 sm:p-7 lg:p-10">
+                      <div className="max-w-190">
+                        <div
+                          className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white sm:text-xs"
+                          style={{
+                            backgroundColor: `${loc.accent}E6`,
+                            boxShadow: `0 10px 30px -16px ${loc.accent}`,
+                          }}
+                        >
+                          {loc.badge || "Location"}
                         </div>
-                      ) : null}
-                    </div>
 
-                    {/* Common Location */}
-                    <div className="mt-5 flex items-start gap-3 text-base text-black/60">
-                      <HiMapPin className="mt-0.5 shrink-0 text-staywell-gray" size={20} />
-                      <div>{loc.address}</div>
-                    </div>
+                        <h2 className="mt-3 text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-5xl">
+                          {loc.title}
+                        </h2>
 
-                    {/* Services */}
-                    <div className="mt-6 grid gap-3">
-                      {serviceCardsByLocation(loc).map((s) => {
-                        const Icon = s.icon;
-                        const data = loc.services?.[s.key];
+                        <p className="mt-3 max-w-160 text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
+                          {loc.bannerText}
+                        </p>
 
-                        return (
-                          <div
-                            key={s.key}
-                            role="button"
-                            tabIndex={0}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              goService(s.key);
+                        <div className="mt-4 flex max-w-175 items-start gap-2 text-sm text-white/90 sm:text-base">
+                          <HiMapPin className="mt-0.5 shrink-0" size={18} />
+                          <span>{loc.address}</span>
+                        </div>
+
+                        <div className="mt-5 flex flex-wrap gap-3">
+                          <a
+                            href={loc.services?.clinic?.tel}
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold text-white transition duration-300 hover:-translate-y-px sm:px-5 sm:text-base"
+                            style={{
+                              background: `linear-gradient(135deg, ${loc.accent} 0%, ${loc.accent}CC 55%, ${loc.accent} 100%)`,
+                              boxShadow: `0 14px 30px -18px ${loc.accent}AA`,
                             }}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" || e.key === " ") {
-                                e.stopPropagation();
-                                goService(s.key);
-                              }
-                            }}
-                            className="block cursor-pointer"
                           >
-                            <div className={serviceBoxClass} style={serviceBoxStyle}>
-                              <div className="flex items-start justify-between gap-3">
-                                <div className="flex items-center gap-3 font-extrabold text-black/85 text-lg md:text-xl">
-                                  <span
-                                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl"
-                                    style={{ backgroundColor: `${accent}14`, color: accent }}
-                                  >
-                                    <Icon size={18} />
-                                  </span>
-                                  <span>{s.label}</span>
-                                </div>
+                            <HiPhone size={18} />
+                            Call Now
+                          </a>
 
-                                {loc.type === "external" ? <FaExternalLinkAlt className="mt-1 opacity-60" /> : null}
-                              </div>
+                          <a
+                            href={loc.websiteHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold text-white transition duration-300 hover:-translate-y-px sm:px-5 sm:text-base"
+                            style={{
+                              border: "1px solid rgba(255,255,255,0.35)",
+                              backgroundColor: "rgba(255,255,255,0.14)",
+                              backdropFilter: "blur(6px)",
+                            }}
+                          >
+                            <HiGlobeAlt size={18} />
+                            Visit Website
+                            <FaExternalLinkAlt className="opacity-80" />
+                          </a>
+                        </div>
 
-                              {/* ✅ Phone + Fax together, Email goes down */}
-                              <div className="mt-4 text-[15px] md:text-base text-black/60">
-                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-                                  <a
-                                    href={data?.tel}
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="inline-flex items-center gap-2 hover:underline"
-                                  >
-                                    <HiPhone className="shrink-0 opacity-80" size={18} />
-                                    <span className="font-semibold">{data?.phone}</span>
-                                  </a>
-
-                                  {data?.fax ? (
-                                    <a
-                                      href={data?.faxTel || "#"}
-                                      onClick={(e) => e.stopPropagation()}
-                                      className="inline-flex items-center gap-2 hover:underline"
-                                      aria-label="Fax"
-                                    >
-                                      <FaFax className="shrink-0 opacity-80" />
-                                      <span className="font-semibold">{data?.fax}</span>
-                                    </a>
-                                  ) : null}
-                                </div>
-
-                                <a
-                                  href={`mailto:${data?.email}`}
-                                  onClick={(e) => e.stopPropagation()}
-                                  className="mt-2 inline-flex items-center gap-2 hover:underline min-w-0"
-                                >
-                                  <HiEnvelope className="shrink-0 opacity-80" size={18} />
-                                  <span className="truncate max-w-85 md:max-w-95 font-medium">
-                                    {data?.email}
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
+                        {saved === loc.key ? (
+                          <div className="mt-4 text-sm font-semibold text-white/90">
+                            Selected for next time
                           </div>
-                        );
-                      })}
+                        ) : null}
+                      </div>
                     </div>
-
-                    {/* Buttons pushed to bottom */}
-                    <div className="mt-auto pt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <a
-                        href={loc.services?.clinic?.tel}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-extrabold text-white transition duration-300 hover:-translate-y-px w-full"
-                        style={{
-                          background: `linear-gradient(135deg, ${accent} 0%, ${accent}CC 55%, ${accent} 100%)`,
-                          boxShadow: `0 14px 30px -18px ${accent}AA`,
-                        }}
-                      >
-                        <HiPhone className="opacity-95" size={18} />
-                        Call Now
-                      </a>
-
-                      <a
-                        href={loc.websiteHref}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-extrabold transition duration-300 hover:-translate-y-px w-full"
-                        style={{
-                          border: `1px solid ${accent}55`,
-                          backgroundColor: `${accent}10`,
-                          color: accent,
-                        }}
-                      >
-                        <HiGlobeAlt className="opacity-80" size={18} />
-                        Website
-                        <FaExternalLinkAlt className="opacity-70" />
-                      </a>
-                    </div>
-
-                    <div className="mt-2 text-sm text-black/50">Opens {loc.websiteLabel}</div>
                   </div>
-
-                  <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-black/5" />
                 </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+
+            {/* Arrows */}
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={goPrevSlide}
+              className="absolute left-3 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 p-3 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-105 active:scale-95 not-first-of-type:md:inline-flex"
+            >
+              <FaChevronLeft size={16} />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={goNextSlide}
+              className="absolute right-3 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 p-3 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-105 active:scale-95 md:inline-flex"
+            >
+              <FaChevronRight size={16} />
+            </button>
+            <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/15 px-3 py-2 backdrop-blur-md">
+              {locations.map((loc, index) => {
+                const isActive = activeSlide === index;
+
+                return (
+                  <button
+                    key={loc.key}
+                    type="button"
+                    aria-label={`Go to ${loc.title}`}
+                    onClick={() => setActiveSlide(index)}
+                    className="h-3 rounded-full transition-all duration-300"
+                    style={{
+                      width: isActive ? "28px" : "10px",
+                      backgroundColor: isActive
+                        ? loc.accent
+                        : "rgba(255,255,255,0.65)",
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </section>
 
-        <div className="mt-10 text-center text-sm md:text-base text-black/50">
-          Tip: Your selection is saved for next time. You can change it anytime from the homepage.
+        {/* Section 2: Our Services */}
+        <section className="mt-12">
+          <div className="text-center">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
+              Our Services
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-staywell-nav md:text-4xl">
+              Care and support designed around everyday health needs
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-[#515D72] md:text-lg">
+              Explore Staywell services and quickly choose the location that
+              works best for you.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <div
+                  key={service.key}
+                  className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_12px_30px_-20px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-1"
+                  style={{ outline: `1px solid ${service.accent}22` }}
+                >
+                  <div
+                    className="inline-flex h-14 w-14 items-center justify-center rounded-2xl"
+                    style={{
+                      backgroundColor: `${service.accent}14`,
+                      color: service.accent,
+                    }}
+                  >
+                    <Icon size={24} />
+                  </div>
+
+                  <h3 className="mt-5 text-2xl font-extrabold text-staywell-nav">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-7 text-black/65">
+                    {service.description}
+                  </p>
+
+                  <div
+                    className="mt-4 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
+                    style={{
+                      backgroundColor: `${service.accent}12`,
+                      color: service.accent,
+                    }}
+                  >
+                    {service.availability}
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {service.actions.map((action) => (
+                      <button
+                        key={action.label}
+                        type="button"
+                        onClick={() => goAction(action)}
+                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold transition duration-300 hover:-translate-y-px"
+                        style={{
+                          backgroundColor: `${service.accent}10`,
+                          color: service.accent,
+                          border: `1px solid ${service.accent}33`,
+                        }}
+                      >
+                        {action.label}
+                        {action.type === "external" ? (
+                          <FaExternalLinkAlt className="opacity-70" />
+                        ) : null}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Section 3: Why Staywell Healthcare */}
+        <section className="mt-14 rounded-4xl bg-[#F8FAFB] px-6 py-10 md:px-8 md:py-12">
+          <div className="text-center">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
+              Why Staywell Healthcare
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-staywell-nav md:text-4xl">
+              A supportive healthcare experience for patients and families
+            </h2>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {trustPoints.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_24px_-18px_rgba(0,0,0,0.22)]"
+                >
+                  <div
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-2xl"
+                    style={{
+                      backgroundColor: `${item.accent}14`,
+                      color: item.accent,
+                    }}
+                  >
+                    <Icon size={22} />
+                  </div>
+
+                  <h3 className="mt-4 text-lg font-extrabold text-staywell-nav">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-black/65">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Section 4: Quick Contact / Visit Us */}
+        <section className="mt-14">
+          <div className="text-center">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
+              Quick Contact / Visit Us
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-staywell-nav md:text-4xl">
+              Find the location that works best for you
+            </h2>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {quickLocations.map((loc) => (
+              <div
+                key={loc.key}
+                className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_12px_28px_-20px_rgba(0,0,0,0.25)]"
+                style={{ outline: `1px solid ${loc.accent}22` }}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-staywell-nav">
+                      {loc.title}
+                    </h3>
+                    <div
+                      className="mt-2 h-1.5 w-16 rounded-full"
+                      style={{ backgroundColor: loc.accent }}
+                    />
+                  </div>
+
+                  <a
+                    href={loc.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-extrabold"
+                    style={{
+                      backgroundColor: `${loc.accent}10`,
+                      color: loc.accent,
+                      border: `1px solid ${loc.accent}33`,
+                    }}
+                  >
+                    Website
+                    <FaExternalLinkAlt className="opacity-70" />
+                  </a>
+                </div>
+
+                <div className="mt-5 space-y-3 text-black/65">
+                  <div className="flex items-start gap-3">
+                    <HiMapPin className="mt-0.5 shrink-0" size={18} />
+                    <span>{loc.address}</span>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <HiPhone className="mt-0.5 shrink-0" size={18} />
+                    <a href={loc.tel} className="hover:underline">
+                      {loc.phone}
+                    </a>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <HiEnvelope className="mt-0.5 shrink-0" size={18} />
+                    <a href={`mailto:${loc.email}`} className="break-all hover:underline">
+                      {loc.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-2xl bg-[#F8FAFB] p-4">
+                  <div className="text-sm font-extrabold uppercase tracking-wide text-staywell-nav">
+                    Hours
+                  </div>
+                  <div className="mt-3 space-y-2 text-sm text-black/65">
+                    {loc.hours.map((line) => (
+                      <div key={line}>{line}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="mt-10 text-center text-sm text-black/50 md:text-base">
+          Tip: Your selection is saved for next time. You can change it anytime
+          from the homepage.
         </div>
       </div>
 
-      {/* =========================================
-          Designer Wave Footer
-      ========================================= */}
+      {/* Section 5: Footer */}
       <footer className="relative mt-16">
         <div className="relative">
-          <svg viewBox="0 0 1440 120" className="w-full h-20 md:h-24" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1440 120"
+            className="h-20 w-full md:h-24"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,40 
                  C120,80 240,0 360,40 
@@ -651,10 +1024,15 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="bg-[#DC2227] text-white text-center px-6 py-6">
-          <SocialLinks size={18} className="justify-center" iconClassName="hover:opacity-80 transition" />
-
-          <div className="text-sm md:text-base font-medium">© Staywell Healthcare 2026</div>
+        <div className="bg-[#DC2227] px-6 py-6 text-center text-white">
+          <SocialLinks
+            size={18}
+            className="justify-center"
+            iconClassName="transition hover:opacity-80"
+          />
+          <div className="text-sm font-medium md:text-base">
+            © Staywell Healthcare 2026
+          </div>
         </div>
       </footer>
     </main>

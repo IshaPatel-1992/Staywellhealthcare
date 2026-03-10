@@ -8,9 +8,9 @@ import rphMaimoona from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
 
 // Right-side images
-import right1 from "@/assets/staywell-home-about.webp";
-import right2 from "@/assets/staywell-home-about-01.webp";
-import right3 from "@/assets/staywell-home-about-02.webp";
+import right1 from "@/assets/Varsity/WelcomeClinicResized.png";
+import right2 from "@/assets/Varsity/ExteriororInterior.png";
+import right3 from "@/assets/Varsity/PrescriptionandPickup.png";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 

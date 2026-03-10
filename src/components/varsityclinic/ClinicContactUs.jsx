@@ -62,13 +62,13 @@ export default function ComeForVisit() {
               <div className="pt-2">
                 <h4 className="font-semibold text-gray-900 mb-3">Hours</h4>
                 <div className="space-y-2 text-gray-700 max-w-sm mx-auto lg:mx-0">
-                  <HoursRow day="Monday" time="9 a.m. – 9 p.m." />
-                  <HoursRow day="Tuesday" time="9 a.m. – 9 p.m." />
-                  <HoursRow day="Wednesday" time="9 a.m. – 9 p.m." />
-                  <HoursRow day="Thursday" time="9 a.m. – 9 p.m." />
-                  <HoursRow day="Friday" time="9 a.m. – 9 p.m." />
-                  <HoursRow day="Saturday" time="9 a.m. – 5 p.m." />
-                  <HoursRow day="Sunday" time="10 a.m. – 2 p.m." />
+                  <HoursRow day="Monday" time="9 a.m. – 6 p.m." />
+                  <HoursRow day="Tuesday" time="9 a.m. – 6 p.m." />
+                  <HoursRow day="Wednesday" time="9 a.m. – 6 p.m." />
+                  <HoursRow day="Thursday" time="9 a.m. – 6 p.m." />
+                  <HoursRow day="Friday" time="9 a.m. – 6 p.m." />
+                  <HoursRow day="Saturday" time="10 a.m. – 3 p.m." />
+                  
                 </div>
               </div>
             </div>
