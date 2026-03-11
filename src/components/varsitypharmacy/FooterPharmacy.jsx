@@ -27,6 +27,7 @@ export default function FooterPharmacy() {
         phone: "403-874-8787",
         fax: "587-350-8585",
         email: "varsity@staywellpharmacy.ca",
+        pharmacyLicenseHref: "/licenses/4704-RPh Maimoona Nirmal.pdf",
     };
 
     // ✅ Google map embed (replace src with your real one if needed)

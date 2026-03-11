@@ -36,6 +36,18 @@ export default function WelcomeClinic() {
         ctaHref: CLINIC_PHONE,
         ctaLabel: "Call Now",
         metaLine: "CPSA ID 029854 • PRAC ID 6171-91308",
+        actions: [
+          {
+            label: "Book Now",
+            href: "https://patient.medeohealth.com/booking/staywell-medical-clinic-varsity",
+            type: "external"
+          },
+          {
+            label: "Call Now",
+            href: CLINIC_PHONE,
+            type: "phone"
+          }
+        ],
         bio: `Dr. Linda Ukey-Jarrett is a dedicated Family Physician committed to providing compassionate, patient-centered care to individuals and families. She completed her medical training with an MBBS degree and is certified by the College of Family Physicians of Canada (CCFP). Dr. Ukey-Jarrett is also a Licentiate of the Medical Council of Canada (LMCC).
 Her practice focuses on preventive medicine, chronic disease management, and supporting patients in maintaining long-term health and wellness. She believes in building strong relationships with her patients and providing clear guidance to help them make informed decisions about their health.
 Dr. Ukey-Jarrett is committed to creating a welcoming and respectful environment where patients feel heard, supported, and confident in their care.`
@@ -50,6 +62,18 @@ Dr. Ukey-Jarrett is committed to creating a welcoming and respectful environment
         ctaHref: CLINIC_PHONE,
         ctaLabel: "Call Now",
         metaLine: "CPSA ID 038597 • PRAC ID 5379-73308",
+        actions: [
+          {
+            label: "Book Now",
+            href: "https://patient.medeohealth.com/booking/staywell-medical-clinic-varsity",
+            type: "external"
+          },
+          {
+            label: "Call Now",
+            href: CLINIC_PHONE,
+            type: "phone"
+          }
+        ],
         bio: `Dr. Alexander Arthur is a Family and Addiction Medicine Physician and serves as the Medical Director of the clinic. He is certified by the College of Family Physicians of Canada (CCFP) and holds additional certification in addiction medicine through the Canadian Society of Addiction Medicine (cCSAM) and the International Society of Addiction Medicine (ISAM).
 Dr. Arthur has extensive experience supporting patients with both general family medicine needs and complex health conditions. His practice focuses on preventive care, chronic disease management, and evidence-based treatment for substance use disorders.
 He is committed to providing compassionate, respectful, and non-judgmental care while helping patients build healthier and more stable lives. As Medical Director, Dr. Arthur also works closely with the healthcare team to ensure high standards of patient care and coordinated treatment across services.`
@@ -154,11 +178,11 @@ As a Certified Compression Stocking Fitter, she helps patients find the appropri
             </h4>
 
             <StaffCarousel3Up
-  items={team}
-  bookTo="/varsityclinic/book"
-  callTo={CLINIC_PHONE}
-  onSelectStaff={setSelectedStaff}
-/>
+              items={team}
+              bookTo="/varsityclinic/book"
+              callTo={CLINIC_PHONE}
+              onSelectStaff={setSelectedStaff}
+            />
 
             <div className="flex-1" />
           </div>
@@ -175,9 +199,9 @@ As a Certified Compression Stocking Fitter, she helps patients find the appropri
         </div>
       </div>
       <StaffPopup
-  staff={selectedStaff}
-  onClose={() => setSelectedStaff(null)}
-/>
+        staff={selectedStaff}
+        onClose={() => setSelectedStaff(null)}
+      />
     </section>
   );
 }
@@ -322,20 +346,25 @@ function StaffCarousel3Up({ items, bookTo, callTo, onSelectStaff }) {
                   {m.name}
                 </div>
 
-                <div className="mt-4 flex justify-center">
-                  <a
-                    href={href}
-                    onClick={(e) => e.stopPropagation()}
-                    className="
-                      text-base font-bold
-                      text-[#79BD43]
-                      underline underline-offset-4
-                      hover:text-[#DC2227]
-                      transition
-                    "
-                  >
-                    {label}
-                  </a>
+                <div className="mt-4 flex justify-center gap-4">
+                  {m.actions?.map((a, i) => (
+                    <a
+                      key={i}
+                      href={a.href}
+                      target={a.type === "external" ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="
+        text-sm font-bold
+        text-[#79BD43]
+        underline underline-offset-4
+        hover:text-[#DC2227]
+        transition
+      "
+                    >
+                      {a.label}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -398,7 +427,7 @@ function StaffPopup({ staff, onClose }) {
           <div className="mt-1 text-gray-500 font-medium text-base">
             {staff.credentials}
           </div>
-          
+
         </h3>
 
         <div className="mt-3 text-[#515D72] text-lg leading-9 whitespace-pre-line">
