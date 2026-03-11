@@ -6,11 +6,12 @@ import drLinda from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import drAlex from "@/assets/staywell-home-doc-placeholder-man.webp"; // add if you have it
 import rphMaimoona from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
+import rphSandip from "@/assets/Pharmacy/Services/image11.jpg";
 
 // Right-side images
-import right1 from "@/assets/Varsity/WelcomeClinicResized.png";
-import right2 from "@/assets/Varsity/ExteriororInterior.png";
-import right3 from "@/assets/Varsity/PrescriptionandPickup.png";
+import right1 from "@/assets/SelectedPhotos/IMG_20260305_132651.jpg";
+import right2 from "@/assets/SelectedPhotos/DSC_0295 copy.jpg";
+import right3 from "@/assets/SelectedPhotos/DSC_0309 copy.jpg";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -25,50 +26,75 @@ export default function WelcomeClinic() {
 
 
   const team = useMemo(
-  () => [
-    {
-      name: "Dr. Linda Ukey-Jarrett",
-      role: "Family Physician",
-      credentials: "MBBS, LMCC, CCFP",
-      img: drLinda,
-      cta: "call",
-      ctaHref: CLINIC_PHONE,
-      ctaLabel: "Call Now",
-      metaLine: "CPSA ID 029854 • PRAC ID 6171-91308",
-    },
-    {
-      name: "Dr. Alexander Arthur",
-      role: "Physician",
-      credentials: "CCFP, cCSAM, ISAM",
-      img: drAlex,
-      cta: "call",
-      ctaHref: CLINIC_PHONE,
-      ctaLabel: "Call Now",
-      metaLine: "CPSA ID 038597 • PRAC ID 5379-73308",
-    },
-    {
-      name: "RPh Maimoona Nirmal",
-      role: "Clinical Pharmacist",
-      credentials: "BSc Pharm, MSc Infectious Diseases, APA",
-      img: rphMaimoona,
-      cta: "call",
-      ctaHref: PHARM_PHONE,
-      ctaLabel: "Call Now",
-      metaLine: "Staywell Pharmacy (Varsity)",
-    },
-    {
-      name: "Ms. Rima Dave",
-      role: "MOA • Sales Representative",
-      credentials: "Certified Compression Stocking Fitter",
-      img: msRima,
-      cta: "call",
-      ctaHref: PHARM_PHONE, // or separate supplies number if different
-      ctaLabel: "Call Now",
-      metaLine: "Homecare & Medical Supplies",
-    },
-  ],
-  []
-);
+    () => [
+      {
+        name: "Dr. Linda Ukey-Jarrett",
+        role: "Family Physician",
+        credentials: "MBBS, LMCC, CCFP",
+        img: drLinda,
+        cta: "call",
+        ctaHref: CLINIC_PHONE,
+        ctaLabel: "Call Now",
+        metaLine: "CPSA ID 029854 • PRAC ID 6171-91308",
+        bio: `Dr. Linda Ukey-Jarrett is a dedicated Family Physician committed to providing compassionate, patient-centered care to individuals and families. She completed her medical training with an MBBS degree and is certified by the College of Family Physicians of Canada (CCFP). Dr. Ukey-Jarrett is also a Licentiate of the Medical Council of Canada (LMCC).
+Her practice focuses on preventive medicine, chronic disease management, and supporting patients in maintaining long-term health and wellness. She believes in building strong relationships with her patients and providing clear guidance to help them make informed decisions about their health.
+Dr. Ukey-Jarrett is committed to creating a welcoming and respectful environment where patients feel heard, supported, and confident in their care.`
+
+      },
+      {
+        name: "Dr. Alexander Arthur",
+        role: "Family & Addiction Medicine Physician Medical Director",
+        credentials: "CCFP, cCSAM, ISAM",
+        img: drAlex,
+        cta: "call",
+        ctaHref: CLINIC_PHONE,
+        ctaLabel: "Call Now",
+        metaLine: "CPSA ID 038597 • PRAC ID 5379-73308",
+        bio: `Dr. Alexander Arthur is a Family and Addiction Medicine Physician and serves as the Medical Director of the clinic. He is certified by the College of Family Physicians of Canada (CCFP) and holds additional certification in addiction medicine through the Canadian Society of Addiction Medicine (cCSAM) and the International Society of Addiction Medicine (ISAM).
+Dr. Arthur has extensive experience supporting patients with both general family medicine needs and complex health conditions. His practice focuses on preventive care, chronic disease management, and evidence-based treatment for substance use disorders.
+He is committed to providing compassionate, respectful, and non-judgmental care while helping patients build healthier and more stable lives. As Medical Director, Dr. Arthur also works closely with the healthcare team to ensure high standards of patient care and coordinated treatment across services.`
+      },
+      {
+        name: "RPh Maimoona Nirmal",
+        role: "Clinical Pharmacist",
+        credentials: "BSc Pharm, MSc Infectious Diseases, APA",
+        img: rphMaimoona,
+        cta: "call",
+        ctaHref: PHARM_PHONE,
+        ctaLabel: "Call Now",
+        metaLine: "Pharmacy Licence No 4704",
+        bio: `RPh Maimoona Nirmal is a Clinical Pharmacist with a Bachelor of Science in Pharmacy and a Master’s degree in Infectious Diseases. She is an Additional Prescribing Authorization (APA) pharmacist, allowing her to assess certain health conditions, manage medications, and provide prescribing services when appropriate.
+Maimoona is passionate about supporting patients through medication management, prescription reviews, and personalized care plans. She works closely with physicians and healthcare professionals to ensure safe, effective, and coordinated treatment for patients.
+Her focus is on helping patients better understand their medications, improving health outcomes, and providing accessible pharmacy care within the community.`
+      },
+      {
+        name: "RPh Sandip Dave",
+        role: "Pharmacist",
+        credentials: "BSc Pharm, APA, CDE",
+        img: rphSandip, // add image in assets similar to others
+        cta: "call",
+        ctaHref: PHARM_PHONE,
+        ctaLabel: "Call Now",
+        metaLine: "Staywell Pharmacy (Varsity)",
+        bio: `RPh Sandip Dave is a Prescribing Pharmacist with Additional Prescribing Authorization (APA) and a Certified Diabetes Educator (CDE). He provides patient-focused pharmacy care with expertise in medication management, diabetes education, and preventative health services.
+Sandip has extensive experience in compounding, travel health consultations, mental health medication support, and HIV prevention services. As a certified PrEP prescriber, he works closely with patients to provide safe, confidential, and evidence-based care.
+He is committed to helping patients better understand their medications and supporting improved health outcomes through accessible pharmacy services and collaborative care with the healthcare team.`
+      },
+      {
+        name: "Ms. Rima Dave",
+        role: "MOA • Sales Representative",
+        credentials: "Certified Compression Stocking Fitter & Sales Representative",
+        img: msRima,
+        cta: "call",
+        ctaHref: PHARM_PHONE, // or separate supplies number if different
+        ctaLabel: "Call Now",
+        metaLine: "Homecare & Medical Supplies",
+        bio: `Ms. Rima Dave supports patients and families as a Medical Office Assistant and Sales Representative at Staywell. She assists with clinic coordination, patient services, and guidance on homecare and medical supply products.
+As a Certified Compression Stocking Fitter, she helps patients find the appropriate compression solutions and other medical supplies to support their health and daily comfort. Rima is dedicated to providing friendly, knowledgeable assistance and ensuring that every patient experience is welcoming, efficient, and supportive.`
+      },
+    ],
+    []
+  );
 
   const rightImages = useMemo(
     () => [
@@ -80,6 +106,7 @@ export default function WelcomeClinic() {
   );
 
   const [rightIdx, setRightIdx] = useState(0);
+  const [selectedStaff, setSelectedStaff] = useState(null);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -126,7 +153,12 @@ export default function WelcomeClinic() {
               </span>
             </h4>
 
-            <StaffCarousel3Up items={team} bookTo="/varsityclinic/book" callTo={CLINIC_PHONE} />
+            <StaffCarousel3Up
+  items={team}
+  bookTo="/varsityclinic/book"
+  callTo={CLINIC_PHONE}
+  onSelectStaff={setSelectedStaff}
+/>
 
             <div className="flex-1" />
           </div>
@@ -142,6 +174,10 @@ export default function WelcomeClinic() {
           </div>
         </div>
       </div>
+      <StaffPopup
+  staff={selectedStaff}
+  onClose={() => setSelectedStaff(null)}
+/>
     </section>
   );
 }
@@ -216,11 +252,10 @@ function RightImageSlider({ rightImages, rightIdx, setRightIdx, fillHeight = fal
   );
 }
 
-function StaffCarousel3Up({ items, bookTo, callTo }) {
+function StaffCarousel3Up({ items, bookTo, callTo, onSelectStaff }) {
   const [start, setStart] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
 
-  // Responsive visible cards
   useEffect(() => {
     const compute = () => {
       const w = window.innerWidth;
@@ -236,7 +271,6 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Auto rotate
   useEffect(() => {
     const id = setInterval(() => {
       setStart((p) => (p + 1) % items.length);
@@ -262,7 +296,9 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
           return (
             <div
               key={`${m.name}-${m._k}`}
+              onClick={() => onSelectStaff(m)}
               className="
+                cursor-pointer
                 rounded-2xl overflow-hidden bg-white
                 border border-gray-300
                 hover:border-[#DC2227]
@@ -270,7 +306,6 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
                 transition-all duration-300
               "
             >
-              {/* Image */}
               <div className="relative">
                 <img
                   src={m.img}
@@ -282,24 +317,22 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
                 <div className="absolute inset-0 bg-linear-to-t from-black/25 via-black/0 to-black/0" />
               </div>
 
-              {/* Content */}
               <div className="px-6 pt-5 pb-6">
-                {/* Bigger Name */}
                 <div className="font-extrabold text-[#DC2227] text-lg sm:text-lg text-center leading-snug">
                   {m.name}
                 </div>
 
-                {/* ✅ Single Link (NOT button) */}
                 <div className="mt-4 flex justify-center">
                   <a
                     href={href}
+                    onClick={(e) => e.stopPropagation()}
                     className="
-      text-base font-bold
-      text-[#79BD43]
-      underline underline-offset-4
-      hover:text-[#DC2227]
-      transition
-    "
+                      text-base font-bold
+                      text-[#79BD43]
+                      underline underline-offset-4
+                      hover:text-[#DC2227]
+                      transition
+                    "
                   >
                     {label}
                   </a>
@@ -308,6 +341,69 @@ function StaffCarousel3Up({ items, bookTo, callTo }) {
             </div>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function StaffPopup({ staff, onClose }) {
+  useEffect(() => {
+    if (!staff) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [staff, onClose]);
+
+  if (!staff) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/45 backdrop-blur-[2px] flex items-center justify-center px-4"
+      onClick={onClose}
+    >
+      <div
+        className="
+          relative w-full max-w-3xl
+          rounded-4xl bg-white
+          shadow-[0_20px_70px_rgba(0,0,0,0.28)]
+          px-8 py-10 sm:px-10 sm:py-12
+        "
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close popup"
+          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 text-xl leading-none"
+        >
+          ×
+        </button>
+
+        <h3 className="text-3xl font-extrabold leading-tight">
+          <span className="font-(--font-heading) text-[#DC2227]">
+            {staff.name}
+          </span>
+          <div className="mt-2 text-[#515D72] font-medium text-base">
+            {staff.role}
+          </div>
+          <div className="mt-1 text-gray-500 font-medium text-base">
+            {staff.credentials}
+          </div>
+          
+        </h3>
+
+        <div className="mt-3 text-[#515D72] text-lg leading-9 whitespace-pre-line">
+          {staff.bio}
+        </div>
       </div>
     </div>
   );

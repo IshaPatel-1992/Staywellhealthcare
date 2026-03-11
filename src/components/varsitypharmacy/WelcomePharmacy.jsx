@@ -2,7 +2,7 @@
 import React from "react";
 
 // Replace these with your real assets
-import heroBuilding from "@/assets/Pharmacy/image10.jpg"; // middle image
+import heroBuilding from "@/assets/SelectedPhotos/IMG_20260305_132724.jpg"; // middle image
 import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp"; // right card image (replace)
 
 const BRAND_RED = "#DC2227";

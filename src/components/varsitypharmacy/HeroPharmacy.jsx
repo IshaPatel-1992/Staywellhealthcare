@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/staywell-home-hero-02.webp";
-import bannerImg2 from "@/assets/staywell-home-hero-3.webp";
+import bannerImg1 from "@/assets/SelectedPhotos/IMG_20260305_132724.jpg"; 
+import bannerImg2 from "@/assets/SelectedPhotos/DSC_0284 copy.jpg"; 
+import bannerImg3 from "@/assets/SelectedPhotos/DSC_0286 copy.jpg";
+import bannerImg4 from "@/assets/SelectedPhotos/DSC_0291 copy.jpg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function HeroClinic() {
@@ -8,6 +10,8 @@ export default function HeroClinic() {
     () => [
       { src: bannerImg1, alt: "Healthcare office background" },
       { src: bannerImg2, alt: "Clinic team and care background" },
+      { src: bannerImg3, alt: "Prescription Image" },
+      { src: bannerImg4, alt: "Prescription pickup" },
     ],
     []
   );

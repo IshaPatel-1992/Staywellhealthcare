@@ -17,7 +17,7 @@ import {
 
 import SocialLinks from "@/components/common/SocialLinks";
 import logo from "@/assets/logo/Staywell-Trans_Main.png";
-import varsityBanner from "@/assets/Varsity/Welcoming1.png";
+import varsityBanner from "@/assets/SelectedPhotos/DSC_0280 copy.jpg";
 import carringtonBanner from "@/assets/staywell-home-hero-02.webp";
 
 const STORAGE_KEY = "staywell:selectedLocation";
@@ -55,7 +55,7 @@ export default function Home() {
       name: "Staywell Healthcare",
       url: canonical,
       sameAs: [
-        "https://www.instagram.com/staywell.healthcare/",
+        "https://www.instagram.com/staywellhealthcareservices/",
         "https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca",
         "https://www.facebook.com/people/Staywell-Healthcare/61570180690301/",
       ],

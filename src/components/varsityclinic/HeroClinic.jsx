@@ -1,7 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/Varsity/staywell-clinic-hero-1920x900.webp";
+import SelectedImg1 from "@/assets/Varsity/staywell-clinic-hero-1920x900.webp"
+import SelectedImg2 from "@/assets/SelectedPhotos/DSC_0280 copy.jpg"
+
+{/* import bannerImg1 from "@/assets/Varsity/staywell-clinic-hero-1920x900.webp";
 import bannerImg2 from "@/assets/Varsity/Welcoming1.png";
-import bannerImg3 from "@/assets/Varsity/ExteriororInterior.png";
+import bannerImg3 from "@/assets/Varsity/ExteriororInterior.png"; */ }
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -9,25 +12,18 @@ export default function HeroClinic() {
   const slides = useMemo(
     () => [
       {
-        src: bannerImg1,
+        src: SelectedImg1,
         alt: "Healthcare office background",
-        fit: "object-cover object-[50%_55%]",
+        fit: "object-cover object-[55%_28%] sm:object-[50%_40%] md:object-[50%_55%]",
         title: "Caring for You",
         subtitle: "A community clinic committed to your well-being.",
       },
       {
-        src: bannerImg2,
-        alt: "Clinic team and care background",
-        fit: "object-cover object-[50%_42%] sm:object-[50%_46%] md:object-[50%_50%]",
-        title: "Personalized Medical Care",
-        subtitle: "Thoughtful support focused on every patient and every visit.",
-      },
-      {
-        src: bannerImg3,
-        alt: "Exterior or interior",
-        fit: "object-cover object-[50%_42%] sm:object-[50%_46%] md:object-[50%_50%]",
-        title: "Modern Care, Trusted Team",
-        subtitle: "Welcoming spaces and dependable healthcare close to home.",
+        src: SelectedImg2,
+        alt: "Healthcare office background",
+       fit: "object-cover object-[55%_28%] sm:object-[50%_40%] md:object-[50%_55%]",
+        title: "Caring for You",
+        subtitle: "A community clinic committed to your well-being.",
       },
     ],
     []
@@ -56,9 +52,9 @@ export default function HeroClinic() {
     setIndex((prev) => (prev + 1) % slides.length);
 
   return (
-    <section
+   <section
   id="home"
-  className={`group relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 h-[60vh] sm:h-[66vh] md:h-[72vh] lg:h-[70vh] ${slides[index].bg}`}
+  className="group relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 h-[48vh] sm:h-[60vh] md:h-[72vh] lg:h-[78vh]"
 >
       {slides.map((s, i) => (
         <img
@@ -74,10 +70,10 @@ export default function HeroClinic() {
         />
       ))}
 
-      {/* overlay */}
-      <div className="absolute inset-0 `z-1` bg-black/18 sm:bg-black/12" />
+      {/* overlay
+      <div className="absolute inset-0 `z-1` bg-black/18 sm:bg-black/12" />  */}
 
-      {/* arrows */}
+      {/* arrows 
       <div className="absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-4 lg:px-8 pointer-events-none">
         <button
           onClick={prevSlide}
@@ -96,9 +92,9 @@ export default function HeroClinic() {
         >
           <FaChevronRight className="text-base md:text-lg" />
         </button>
-      </div>
-
-      {/* content */}
+      </div> */}
+ 
+      {/* content 
       <div className="relative z-10 h-full">
         <div className="mx-auto flex h-full max-w-6xl items-center px-4 sm:px-6 lg:px-8">
           <div
@@ -120,7 +116,7 @@ export default function HeroClinic() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

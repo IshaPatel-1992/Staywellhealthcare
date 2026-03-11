@@ -3,7 +3,7 @@ import React from "react";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
 const SOCIAL = {
-  instagram: "https://www.instagram.com/staywell.healthcare/",
+  instagram: "https://www.instagram.com/staywellhealthcareservices/",
   linkedin: "https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca",
   facebook: "https://www.facebook.com/people/Staywell-Healthcare/61570180690301/",
 };

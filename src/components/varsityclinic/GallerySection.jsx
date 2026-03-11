@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import gallery1 from "@/assets/staywell-home-hero-02.webp";
-import gallery2 from "@/assets/staywell-home-gallery-02.webp";
-import gallery3 from "@/assets/staywell-home-gallery-03.webp";
-import gallery4 from "@/assets/staywell-home-gallery-04.webp";
-import gallery5 from "@/assets/staywell-home-gallery-05.webp";
-import gallery6 from "@/assets/staywell-home-gallery-06.webp";
-import gallery7 from "@/assets/staywell-home-gallery-01.webp";
-import gallery8 from "@/assets/staywell-home-hero-3.webp";
+import gallery1 from "@/assets/SelectedPhotos/IMG_20260305_132724.jpg";
+import gallery2 from "@/assets/SelectedPhotos/DSC_0280 copy.jpg";
+import gallery3 from "@/assets/SelectedPhotos/DSC_0295 copy.jpg";
+import gallery4 from "@/assets/SelectedPhotos/IMG_20260305_142504.jpg";
+import gallery5 from "@/assets/SelectedPhotos/IMG_20260305_141936.jpg";
+import gallery6 from "@/assets/SelectedPhotos/DSC_0286 copy.jpg";
+import gallery7 from "@/assets/SelectedPhotos/DSC_0291 copy.jpg";
+
 
 const galleryImages = [
-    gallery1,gallery2,gallery3,gallery4,gallery5,gallery6,gallery7,gallery8
+    gallery1,gallery2,gallery3,gallery4,gallery5,gallery6,gallery7
 ];
 
 export default function ClinicGallerySlider() {

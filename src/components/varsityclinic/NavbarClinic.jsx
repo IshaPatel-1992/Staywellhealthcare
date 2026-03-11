@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-import logo from "../../assets/logo/Staywell-favicon-01.webp";
+import logo from "@/assets/logo/Staywell-favicon-01.webp";
 import PolicyModal from "@/components/common/PolicyModal";
+import SocialLinks from "@/components/common/SocialLinks";
 
 export default function NavbarClinic() {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,15 +93,11 @@ export default function NavbarClinic() {
 
             {/* Social Icons */}
             <div className="flex items-center space-x-4 ml-2">
-              <a href="#" className="text-staywell-nav" aria-label="Instagram">
-                <FaInstagram size={16} />
-              </a>
-              <a href="#" className="text-staywell-nav" aria-label="LinkedIn">
-                <FaLinkedinIn size={16} />
-              </a>
-              <a href="#" className="text-staywell-nav" aria-label="Facebook">
-                <FaFacebookF size={16} />
-              </a>
+              <SocialLinks
+                         size={18}
+                         className="shrink-0 text-staywell-nav"
+                         iconClassName="text-staywell-nav transition hover:opacity-80"
+                       />
             </div>
 
             {/* Contact Button */}
