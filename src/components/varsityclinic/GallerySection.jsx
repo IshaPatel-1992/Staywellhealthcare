@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import gallery1 from "@/assets/SelectedPhotos/IMG_20260305_132724.jpg";
-import gallery2 from "@/assets/SelectedPhotos/DSC_0280 copy.jpg";
-import gallery3 from "@/assets/SelectedPhotos/DSC_0295 copy.jpg";
-import gallery4 from "@/assets/SelectedPhotos/IMG_20260305_142504.jpg";
-import gallery5 from "@/assets/SelectedPhotos/IMG_20260305_141936.jpg";
-import gallery6 from "@/assets/SelectedPhotos/DSC_0286 copy.jpg";
-import gallery7 from "@/assets/SelectedPhotos/DSC_0291 copy.jpg";
+import gallery1 from "@/assets/Varsity1/HeroBannerImg1.png";
+import gallery2 from "@/assets/Varsity1/Welcoming1.png";
+import gallery3 from "@/assets/Varsity1/PersonalizedRoom2.png";
+import gallery4 from "@/assets/Varsity1/PersonalizedCare3.png";
+import gallery5 from "@/assets/Varsity1/PrescriptionandPickup.png";
+import gallery6 from "@/assets/Varsity1/PrescriptionswithPerson.png";
+import gallery7 from "@/assets/Varsity1/PickupwithPerson.png";
+
 
 
 const galleryImages = [

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import MentalHealthImg from "../../assets/Clinic/Services/staywell-services-mental-health.webp";
-import PeriodicHealthExamImg from "../../assets/Clinic/Services/staywell-services-anual-checkup.webp";
-import WomensHealthImg from "../../assets/Clinic/Services/staywell-services-womens-health.webp";
-import WorkInjuriesImg from "../../assets/Clinic/Services/staywell-services-wcb.webp";
-import MinorProceduresImg from "../../assets/Clinic/Services/staywell-services-minor-proceedure.webp";
-import ChronicDiseaseImg from "../../assets/Clinic/Services/staywell-services-chronic.webp";
-import UnInsuredServicesImg from "../../assets/Clinic/Services/staywell-services-uninsured.webp";
-import BotoxImg from "../../assets/Clinic/Services/staywell-services-botox.webp";
-import DriversMedicalImg from "../../assets/Clinic/Services/staywell-services-driver.webp";
-import MensHealthImg from "../../assets/Clinic/Services/staywell-services-mens-health.webp";
-import PrEPImg from "../../assets/Clinic/Services/staywell-services-prep.webp";
-import AstheticServicesImg from "../../assets/Clinic/Services/staywell-services-aesthetics.webp";
-import InfusionClinicImg from "../../assets/Clinic/Services/staywell-services-infusion.webp";
-import CounsellingImg from "../../assets/Clinic/Services/staywell-services-counselling.webp";
+import MentalHealthImg from "@/assets/Varsity1/ClinicServices/staywell-services-mental-health.webp";
+import PeriodicHealthExamImg from "@/assets/Varsity1/ClinicServices/staywell-services-anual-checkup.webp";
+import WomensHealthImg from "@/assets/Varsity1/ClinicServices/staywell-services-womens-health.webp";
+import WorkInjuriesImg from "@/assets/Varsity1/ClinicServices/staywell-services-wcb.webp";
+import MinorProceduresImg from "@/assets/Varsity1/ClinicServices/staywell-services-minor-proceedure.webp";
+import ChronicDiseaseImg from "@/assets/Varsity1/ClinicServices/staywell-services-chronic.webp";
+import UnInsuredServicesImg from "@/assets/Varsity1/ClinicServices/staywell-services-uninsured.webp";
+import BotoxImg from "@/assets/Varsity1/ClinicServices/staywell-services-botox.webp";
+import DriversMedicalImg from "@/assets/Varsity1/ClinicServices/staywell-services-driver.webp";
+import MensHealthImg from "@/assets/Varsity1/ClinicServices/staywell-services-mens-health.webp";
+import PrEPImg from "@/assets/Varsity1/ClinicServices/staywell-services-prep.webp";
+import AstheticServicesImg from "@/assets/Varsity1/ClinicServices/staywell-services-aesthetics.webp";
+import InfusionClinicImg from "@/assets/Varsity1/ClinicServices/staywell-services-infusion.webp";
+import CounsellingImg from "@/assets/Varsity1/ClinicServices/staywell-services-counselling.webp";
 import AnimatedImage from "./AnimatedImage";
 
 

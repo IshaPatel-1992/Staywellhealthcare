@@ -3,13 +3,13 @@ import { HiCheckCircle, HiPhone, HiMapPin } from "react-icons/hi2";
 import PrescribingCard from "@/components/varsitypharmacy/PrescribingCard";
 import NavbarPharmacy from "@/components/varsitypharmacy/NavbarPharmacy";
 import FooterPharmacy from "@/components/varsitypharmacy/FooterPharmacy";
-import WomensHealthImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image34.jpg";
-import SkinConditionsImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image35.jpg";
-import EarEyeMouthImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image36.jpg";
-import MensHealthImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image31.jpg";
-import StomachImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image32.jpg";
-import ChronicDiseaseImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/image08.jpg";
-import PrescribingBannerImg from "@/assets/Pharmacy/Varsity/PrescribingPharmacist/shutterstock_2738941401.jpg";
+import WomensHealthImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image34.jpg";
+import SkinConditionsImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image35.jpg";
+import EarEyeMouthImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image36.jpg";
+import MensHealthImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image31.jpg";
+import StomachImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image32.jpg";
+import ChronicDiseaseImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/image08.jpg";
+import PrescribingBannerImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/shutterstock_2738941401.jpg";
 
 // ✅ update to your real prescribing booking link (this is travel right now)
 const BOOK_URL = "https://www.bookmypharmacy.com/travel/8254140721?noNav=true";

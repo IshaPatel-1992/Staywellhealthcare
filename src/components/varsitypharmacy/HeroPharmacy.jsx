@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/SelectedPhotos/IMG_20260305_132724.jpg"; 
-import bannerImg2 from "@/assets/SelectedPhotos/DSC_0284 copy.jpg"; 
-import bannerImg3 from "@/assets/SelectedPhotos/DSC_0286 copy.jpg";
-import bannerImg4 from "@/assets/SelectedPhotos/DSC_0291 copy.jpg";
+import bannerImg1 from "@/assets/Varsity1/HeroBannerImg1.png";
+import bannerImg2 from "@/assets/Varsity1/PrescriptionswithPerson.png"; 
+import bannerImg3 from "@/assets/Varsity1/PickUpPrescriptions.png";
+import bannerImg4 from "@/assets/Varsity1/DSC_0284 copy.jpg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function HeroClinic() {

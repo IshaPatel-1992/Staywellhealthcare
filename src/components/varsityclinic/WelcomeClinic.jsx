@@ -6,12 +6,12 @@ import drLinda from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import drAlex from "@/assets/staywell-home-doc-placeholder-man.webp"; // add if you have it
 import rphMaimoona from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
-import rphSandip from "@/assets/Pharmacy/Services/image11.jpg";
+import rphSandip from "@/assets/Varsity1/PharmacyServices/image11.jpg";
 
 // Right-side images
-import right1 from "@/assets/SelectedPhotos/IMG_20260305_132651.jpg";
-import right2 from "@/assets/SelectedPhotos/DSC_0295 copy.jpg";
-import right3 from "@/assets/SelectedPhotos/DSC_0309 copy.jpg";
+import right1 from "@/assets/Varsity1/PickupC.png";
+import right2 from "@/assets/Varsity1/PersonalizedCare2.png";
+import right3 from "@/assets/Varsity1/3together.png";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 

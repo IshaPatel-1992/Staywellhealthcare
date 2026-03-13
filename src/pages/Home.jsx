@@ -17,7 +17,7 @@ import {
 
 import SocialLinks from "@/components/common/SocialLinks";
 import logo from "@/assets/logo/Staywell-Trans_Main.png";
-import varsityBanner from "@/assets/SelectedPhotos/DSC_0280 copy.jpg";
+import varsityBanner from "@/assets/Varsity1/HeroBannerImg1.png";
 import carringtonBanner from "@/assets/staywell-home-hero-02.webp";
 
 const STORAGE_KEY = "staywell:selectedLocation";
