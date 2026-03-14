@@ -11,13 +11,12 @@ const BRAND_GREEN = "#79BD43";
 
 export default function WelcomePharmacy() {
   const hours = [
-    { day: "Monday", time: "9 a.m. – 9 p.m." },
-    { day: "Tuesday", time: "9 a.m. – 9 p.m." },
-    { day: "Wednesday", time: "9 a.m. – 9 p.m." },
-    { day: "Thursday", time: "9 a.m. – 9 p.m." },
-    { day: "Friday", time: "9 a.m. – 9 p.m." },
-    { day: "Saturday", time: "9 a.m. – 5 p.m." },
-    { day: "Sunday", time: "10 a.m. – 3 p.m." },
+    { day: "Monday", time: "9 a.m. – 6 p.m." },
+    { day: "Tuesday", time: "9 a.m. – 6 p.m." },
+    { day: "Wednesday", time: "9 a.m. – 6 p.m." },
+    { day: "Thursday", time: "9 a.m. – 6 p.m." },
+    { day: "Friday", time: "9 a.m. – 6 p.m." },
+    { day: "Saturday", time: "10 a.m. – 3 p.m." },
   ];
 
   return (
