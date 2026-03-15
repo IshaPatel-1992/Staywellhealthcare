@@ -1,9 +1,8 @@
-// src/components/varsitypharmacy/WelcomePharmacy.jsx
 import React from "react";
 
 // Replace these with your real assets
-import heroBuilding from "@/assets/Varsity1/3together.png"; // middle image
-import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp"; // right card image (replace)
+import heroBuilding from "@/assets/Varsity1/3together.png";
+import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp";
 
 const BRAND_RED = "#DC2227";
 const BRAND_GRAY = "#515D72";
@@ -17,13 +16,16 @@ export default function WelcomePharmacy() {
     { day: "Thursday", time: "9 a.m. – 6 p.m." },
     { day: "Friday", time: "9 a.m. – 6 p.m." },
     { day: "Saturday", time: "10 a.m. – 3 p.m." },
+    { day: "Sunday", time: "Closed" },
   ];
+
+  const pharmacyLicenseHref = "/licenses/4704-RPh Maimoona Nirmal.pdf"; // replace with real link
 
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* 3 columns on desktop */}
-        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.05fr_1.2fr_0.95fr] items-start">
+        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.05fr_1.2fr_0.95fr] items-start lg:items-stretch">
           {/* ================= LEFT ================= */}
           <div className="pt-2">
             <h1
@@ -58,9 +60,7 @@ export default function WelcomePharmacy() {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                {/* Book Appointment */}
                 <a
                   href="https://www.bookmypharmacy.com/?noNav=true"
                   className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-extrabold text-white shadow-sm hover:opacity-90 transition w-full sm:w-auto"
@@ -69,7 +69,6 @@ export default function WelcomePharmacy() {
                   Book Appointment
                 </a>
 
-                {/* Leave Review */}
                 <a
                   href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK"
                   target="_blank"
@@ -84,21 +83,20 @@ export default function WelcomePharmacy() {
           </div>
 
           {/* ================= MIDDLE IMAGE ================= */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-md border border-black/10">
+          <div className="flex justify-center lg:justify-start h-full">
+            <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-md border border-black/10 h-full min-h-105 lg:min-h-0">
               <img
                 src={heroBuilding}
                 alt="Staywell Pharmacy building"
-                className="w-full h-65 sm:h-80 md:h-95 lg:h-105 object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
           </div>
 
           {/* ================= RIGHT MANAGER CARD ================= */}
-          <aside className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm rounded-2xl overflow-hidden border border-black/10 shadow-sm bg-white">
-              {/* Image */}
+          <aside className="flex justify-center lg:justify-end h-full">
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden border border-black/10 shadow-sm bg-white h-full">
               <div className="p-2">
                 <div className="rounded-xl overflow-hidden border border-black/10">
                   <img
@@ -110,7 +108,6 @@ export default function WelcomePharmacy() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="px-6 pb-7 pt-4">
                 <div
                   className="text-xl font-extrabold leading-snug text-center"
@@ -121,16 +118,26 @@ export default function WelcomePharmacy() {
                   RPh Maimoona Nirmal
                 </div>
 
-                <p className="mt-3 text-[15px] leading-7 text-center" style={{ color: BRAND_GRAY }}>
+                <p
+                  className="mt-3 text-[15px] leading-7 text-center"
+                  style={{ color: BRAND_GRAY }}
+                >
                   BSc Pharm, MSc Infectious Diseases, APA
                 </p>
 
-                {/* Divider */}
+                <div className="mt-2 text-center">
+                  <a
+                    href={pharmacyLicenseHref}
+                    className="inline-block text-[15px] underline decoration-black/20 hover:decoration-black/50 transition"
+                    style={{ color: BRAND_GRAY }}
+                  >
+                    Pharmacy license
+                  </a>
+                </div>
+
                 <div className="mt-5 h-px w-full bg-black/10" />
 
-                {/* Contact info */}
                 <div className="mt-5 space-y-3 text-[14.5px]" style={{ color: BRAND_GRAY }}>
-                  {/* Location */}
                   <div className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 font-extrabold text-black/70">Location</span>
                     <a
@@ -139,12 +146,12 @@ export default function WelcomePharmacy() {
                       rel="noreferrer"
                       className="leading-6 underline decoration-black/20 hover:decoration-black/50 transition"
                     >
-                      4624 Varsity Drive NW, Unit #10<br />
+                      4624 Varsity Drive NW, Unit #10
+                      <br />
                       Calgary, AB T3A 2L9
                     </a>
                   </div>
 
-                  {/* Phone + Fax (same row) */}
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <span className="shrink-0 font-extrabold text-black/70">Phone</span>
@@ -167,7 +174,6 @@ export default function WelcomePharmacy() {
                     </div>
                   </div>
 
-                  {/* Email */}
                   <div className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 font-extrabold text-black/70">Email</span>
                     <a
@@ -179,11 +185,10 @@ export default function WelcomePharmacy() {
                   </div>
                 </div>
 
-                {/* Optional button */}
                 <a
                   href="tel:+14038748787"
                   className="mt-6 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-extrabold text-white transition hover:opacity-95"
-                  style={{ backgroundColor: "#DC2227" }}
+                  style={{ backgroundColor: BRAND_RED }}
                 >
                   Call Pharmacy
                 </a>

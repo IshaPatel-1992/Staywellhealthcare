@@ -18,6 +18,7 @@ export default function FooterPharmacy() {
         { day: "Thursday", time: "9:00 AM - 6:00 PM" },
         { day: "Friday", time: "9:00 AM - 6:00 PM" },
         { day: "Saturday", time: "10:00 AM - 3:00 PM" },
+        { day: "Sunday", time: "Closed" },
         
     ];
 

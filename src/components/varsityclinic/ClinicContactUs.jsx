@@ -68,7 +68,7 @@ export default function ComeForVisit() {
                   <HoursRow day="Thursday" time="9 a.m. – 6 p.m." />
                   <HoursRow day="Friday" time="9 a.m. – 6 p.m." />
                   <HoursRow day="Saturday" time="10 a.m. – 3 p.m." />
-                  
+                  <HoursRow day="Sunday" time="Closed" />
                 </div>
               </div>
             </div>
