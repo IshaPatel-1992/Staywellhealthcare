@@ -105,10 +105,10 @@ export default function ClinicServices() {
         {/* Section Title */}
         <div className="text-center mb-14">
           <h2 className="relative text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
-              <span className="font-(--font-heading) text-[#DC2227]">
-                Our Most Popular Services
-              </span>
-            </h2>
+            <span className="font-(--font-heading) text-[#DC2227]">
+              Our Most Popular Services
+            </span>
+          </h2>
         </div>
 
         {/* Cards Grid */}
@@ -122,19 +122,19 @@ export default function ClinicServices() {
     75% { transform: rotate(0.15deg) scale(1.01); }
   }
 `}</style>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => setSelectedService(service)}
-              className="cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 hover:animate-[staywellDance_0.6s_ease-in-out_2] origin-center will-change-transform"
+              className="cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:shadow-2xl hover:animate-[staywellDance_0.6s_ease-in-out_2] origin-center will-change-transform"
             >
               <AnimatedImage
                 src={service.image}
                 alt={service.title}
               />
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-extrabold text-black">
+              <div className="p-4 sm:p-6 text-center">
+                <h3 className="text-sm font-extrabold text-black sm:text-lg">
                   {service.title}
                 </h3>
               </div>

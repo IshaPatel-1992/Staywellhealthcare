@@ -12,7 +12,7 @@ import ChronicDiseaseImg from "@/assets/Varsity1/PharmacyServices/PrescribingPha
 import PrescribingBannerImg from "@/assets/Varsity1/PharmacyServices/PrescribingPharmacist/shutterstock_2738941401.jpg";
 
 // ✅ update to your real prescribing booking link (this is travel right now)
-const BOOK_URL = "https://www.bookmypharmacy.com/travel/8254140721?noNav=true";
+const BOOK_URL = "";
 const PHONE = "tel:+14038748787";
 
 export default function PrescribingPharmacist() {

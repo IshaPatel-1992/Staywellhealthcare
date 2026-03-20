@@ -3,29 +3,32 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useSeo } from "@/lib/useSeo";
 import { useNavigate } from "react-router-dom";
 import { MdLocalHospital, MdLocalPharmacy } from "react-icons/md";
-import { FaBoxOpen, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaBoxOpen,
+  FaExternalLinkAlt,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import {
   HiMapPin,
   HiPhone,
   HiEnvelope,
-  HiGlobeAlt,
   HiShieldCheck,
   HiHeart,
   HiClock,
   HiUsers,
 } from "react-icons/hi2";
+import { FiPhoneCall } from "react-icons/fi";
 
 import SocialLinks from "@/components/common/SocialLinks";
 import logo from "@/assets/logo/Staywell-Trans_Main.png";
 import varsityBanner from "@/assets/Varsity1/HeroBannerImg1.png";
-import carringtonBanner from "@/assets/staywell-home-hero-02.webp";
+import carringtonBanner from "@/assets/staywell-home-gallery-02.webp";
 
 const STORAGE_KEY = "staywell:selectedLocation";
 
-// Brand colors
 const BRAND_GREEN = "#79BD43";
 const BRAND_RED = "#DC2227";
-const BRAND_GRAY = "#515D72";
 
 export default function Home() {
   const [saved, setSaved] = useState(null);
@@ -35,12 +38,14 @@ export default function Home() {
   const canonical = "https://staywellhealthcare.ca/";
 
   useSeo({
-    title: "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary",
+    title:
+      "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary",
     description:
       "Staywell Healthcare offers trusted medical clinic care, pharmacy services, and homecare & medical supplies in Calgary. Choose Varsity or Carrington and connect by phone or email.",
     canonical,
     og: {
-      title: "Staywell Healthcare | Calgary Clinics, Pharmacy & Medical Supplies",
+      title:
+        "Staywell Healthcare | Calgary Clinics, Pharmacy & Medical Supplies",
       description:
         "Choose your location (Varsity or Carrington) for medical clinic care, pharmacy services, and homecare & medical supplies in Calgary.",
       url: canonical,
@@ -76,42 +81,12 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Monday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Tuesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Wednesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Saturday",
-              opens: "10:00",
-              closes: "15:00",
-            },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
           ],
           knowsAbout: [
             "Family medicine",
@@ -135,42 +110,12 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Monday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Tuesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Wednesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Saturday",
-              opens: "10:00",
-              closes: "15:00",
-            },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
           ],
           knowsAbout: [
             "Prescription refills",
@@ -194,42 +139,12 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Monday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Tuesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Wednesday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "09:00",
-              closes: "18:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Saturday",
-              opens: "10:00",
-              closes: "15:00",
-            },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
           ],
           knowsAbout: [
             "Homecare supplies",
@@ -252,48 +167,13 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Monday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Tuesday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Wednesday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Saturday",
-              opens: "09:00",
-              closes: "17:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Sunday",
-              opens: "10:00",
-              closes: "14:00",
-            },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
           ],
           knowsAbout: [
             "Family medicine",
@@ -317,48 +197,13 @@ export default function Home() {
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Monday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Tuesday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Wednesday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "09:00",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Saturday",
-              opens: "09:00",
-              closes: "17:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Sunday",
-              opens: "10:00",
-              closes: "14:00",
-            },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
           ],
           knowsAbout: [
             "Prescription refills",
@@ -381,29 +226,18 @@ export default function Home() {
         address: "4624 Varsity Drive NW Unit #10, Calgary, AB T3A 2L9",
         badge: "NEW",
         type: "internal",
-        websiteLabel: "StaywellHealthcare.ca",
         websiteHref: "https://staywellhealthcare.ca",
         banner: varsityBanner,
-        bannerText:
-          "Medical clinic, pharmacy, and homecare supplies — all under one roof in Varsity.",
         imageClassName: "object-center",
         services: {
           clinic: {
-            phone: "587-955-6207",
             tel: "tel:+15879556207",
-            email: "varsity@staywellmedical.ca",
             to: "/varsityclinic",
           },
           pharmacy: {
-            phone: "403-874-8787",
-            tel: "tel:+14038748787",
-            email: "varsity@staywellpharmacy.ca",
             to: "/varsitypharmacy/pharmacy",
           },
           supplies: {
-            phone: "403-874-8787",
-            tel: "tel:+14038748787",
-            email: "info@staywellmedicalsupplies.ca",
             href: "https://www.staywellmedicalsupplies.ca",
           },
         },
@@ -415,23 +249,15 @@ export default function Home() {
         address: "59 Carrington Plz #190, Calgary, AB T3P 1Y3",
         badge: null,
         type: "external",
-        websiteLabel: "StaywellMedical.ca",
         websiteHref: "https://staywellmedical.ca",
         banner: carringtonBanner,
-        bannerText:
-          "Trusted clinic and pharmacy services for individuals and families in Carrington.",
         imageClassName: "object-[center_35%]",
         services: {
           clinic: {
-            phone: "825-414-3933",
             tel: "tel:+18254143933",
-            email: "info@staywellmedical.ca",
             href: "https://staywellmedical.ca",
           },
           pharmacy: {
-            phone: "825-414-0721",
-            tel: "tel:+18254140721",
-            email: "info@staywellpharmacy.ca",
             href: "https://staywellpharmacy.ca",
           },
         },
@@ -545,7 +371,6 @@ export default function Home() {
         tel: "tel:+15879556207",
         email: "varsity@staywellmedical.ca",
         website: "https://staywellhealthcare.ca",
-        websiteLabel: "StaywellHealthcare.ca",
         hours: [
           "Mon – Fri: 9:00 AM – 6:00 PM",
           "Saturday: 10:00 AM – 3:00 PM",
@@ -561,7 +386,6 @@ export default function Home() {
         tel: "tel:+18254143933",
         email: "info@staywellmedical.ca",
         website: "https://staywellmedical.ca",
-        websiteLabel: "StaywellMedical.ca",
         hours: [
           "Mon – Fri: 9:00 AM – 9:00 PM",
           "Saturday: 9:00 AM – 5:00 PM",
@@ -617,7 +441,47 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-white text-gray-900">
+    <main className="relative min-h-svh overflow-hidden bg-[#f6faf5] text-gray-900">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 0% 0%, rgba(121,189,67,0.14) 0%, transparent 24%),
+              radial-gradient(circle at 100% 0%, rgba(220,34,39,0.12) 0%, transparent 24%),
+              radial-gradient(circle at 0% 100%, rgba(121,189,67,0.08) 0%, transparent 22%),
+              radial-gradient(circle at 100% 100%, rgba(220,34,39,0.08) 0%, transparent 22%),
+              radial-gradient(circle at 50% 16%, rgba(255,255,255,0.9) 0%, transparent 28%)
+            `,
+          }}
+        />
+
+        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#79BD43]/16 blur-[140px]" />
+        <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-[#DC2227]/14 blur-[140px]" />
+        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#79BD43]/10 blur-[140px]" />
+        <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#DC2227]/10 blur-[140px]" />
+
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            background:
+              "linear-gradient(125deg, transparent 0%, rgba(255,255,255,0.55) 38%, transparent 68%)",
+          }}
+        />
+
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(0,0,0,0.5) 0.6px, transparent 0.7px)",
+            backgroundSize: "18px 18px",
+          }}
+        />
+      </div>
+
       <div className="relative mx-auto w-full max-w-6xl px-6 py-6 md:py-8">
         <header className="flex items-center justify-between gap-4">
           <img
@@ -633,29 +497,75 @@ export default function Home() {
           />
         </header>
 
-        <div className="mt-4 md:mt-5 md:flex md:items-start md:justify-between md:gap-10">
-          <div className="md:max-w-2xl">
-            <h1 className="text-2xl font-extrabold tracking-tight text-staywell-nav md:text-3xl">
-              Welcome to Staywell Healthcare
-            </h1>
+        <div className="relative mt-4 overflow-hidden rounded-4xl border border-white/70 bg-white/55 px-4 py-6 shadow-[0_20px_50px_-26px_rgba(0,0,0,0.18)] backdrop-blur-md md:mt-5 md:px-6 md:py-7">
+          <div className="pointer-events-none absolute inset-0">
+            <div
+              className="absolute -left-16 -top-16 h-40 w-40 rounded-full blur-3xl"
+              style={{ backgroundColor: `${BRAND_GREEN}24` }}
+            />
+            <div
+              className="absolute -right-16 -top-12 h-44 w-44 rounded-full blur-3xl"
+              style={{ backgroundColor: `${BRAND_RED}20` }}
+            />
+            <div
+              className="absolute inset-0 opacity-75"
+              style={{
+                background:
+                  "linear-gradient(145deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.18) 48%, transparent 100%)",
+              }}
+            />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/95 to-transparent" />
+          </div>
 
-            <div className="mt-2 flex h-1.5 w-24 overflow-hidden rounded-full">
-              <div className="w-2/3" style={{ backgroundColor: BRAND_RED }} />
-              <div className="w-1/3" style={{ backgroundColor: BRAND_GREEN }} />
+          <div className="relative md:flex md:items-start md:justify-between md:gap-10">
+
+            {/* BACKGROUND CURVES */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <svg
+                className="absolute inset-0 h-full w-full opacity-[0.12]"
+                viewBox="0 0 1200 320"
+                preserveAspectRatio="none"
+                fill="none"
+              >
+                {/* Smooth wave 1 */}
+                <path
+                  d="M0 180 C 200 120, 400 120, 600 180 S 1000 240, 1200 140"
+                  stroke={BRAND_GREEN}
+                  strokeWidth="2"
+                />
+
+                {/* Smooth wave 2 */}
+                <path
+                  d="M0 220 C 240 160, 420 170, 640 220 S 1020 260, 1200 180"
+                  stroke={BRAND_RED}
+                  strokeWidth="1.6"
+                />
+              </svg>
             </div>
 
-            <p className="mt-3 text-base font-bold leading-relaxed text-[#515D72] md:text-lg">
-              Select your location to access trusted medical care, pharmacy
-              services, and homecare supplies — all under one roof.
-            </p>
+            {/* CONTENT */}
+            <div className="relative md:max-w-2xl">
+              <h1 className="text-2xl font-extrabold tracking-tight text-staywell-nav md:text-3xl">
+                Welcome to Staywell Healthcare
+              </h1>
+
+              <div className="mt-2 flex h-1.5 w-24 overflow-hidden rounded-full">
+                <div className="w-2/3" style={{ backgroundColor: BRAND_RED }} />
+                <div className="w-1/3" style={{ backgroundColor: BRAND_GREEN }} />
+              </div>
+
+              <p className="mt-3 max-w-2xl text-base font-bold leading-relaxed text-[#515D72] md:text-lg">
+                Select your location to access trusted medical care, pharmacy
+                services, and homecare supplies — all under one roof.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="mt-8 h-px w-full bg-black/10" />
 
-        {/* Section 1: Hero Slider */}
         <section className="mt-8">
-          <div className="relative overflow-hidden rounded-4xl border border-black/10 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)]">
+          <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-black shadow-[0_22px_60px_-28px_rgba(0,0,0,0.38)] sm:rounded-4xl">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -663,7 +573,7 @@ export default function Home() {
               {locations.map((loc) => (
                 <div
                   key={loc.key}
-                  className="relative min-w-full cursor-pointer h-90 sm:h-107.5 lg:h-130"
+                  className="relative h-110 min-w-full cursor-pointer sm:h-140 lg:h-160"
                   onClick={() => goBanner(loc)}
                   role="button"
                   tabIndex={0}
@@ -674,80 +584,130 @@ export default function Home() {
                   <img
                     src={loc.banner}
                     alt={`${loc.title} banner`}
-                    className={`absolute inset-0 h-full w-full object-cover ${loc.imageClassName}`}
+                    className={`absolute inset-0 h-full w-full object-cover ${loc.imageClassName} scale-[1.02]`}
+                    style={{
+                      filter: "contrast(1.05) saturate(1.06) brightness(0.95)",
+                    }}
                   />
 
-                  <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/45 to-black/20" />
+                  <div className="absolute inset-0 bg-linear-to-r from-black/72 via-black/34 to-black/10 sm:from-black/62 sm:via-black/28 sm:to-black/08" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent sm:from-black/38 sm:via-transparent sm:to-transparent" />
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: `linear-gradient(135deg, ${loc.accent}22 0%, transparent 55%, transparent 100%)`,
+                      background: `linear-gradient(135deg, ${loc.accent}18 0%, transparent 50%, transparent 100%)`,
                     }}
                   />
 
                   <div className="relative z-10 flex h-full items-end">
-                    <div className="w-full p-5 sm:p-7 lg:p-10">
-                      <div className="max-w-190">
-                        <div
-                          className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white sm:text-xs"
-                          style={{
-                            backgroundColor: `${loc.accent}E6`,
-                            boxShadow: `0 10px 30px -16px ${loc.accent}`,
-                          }}
-                        >
-                          {loc.badge || "Location"}
-                        </div>
-
-                        <h2 className="mt-3 text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-5xl">
-                          {loc.title}
-                        </h2>
-
-                        <p className="mt-3 max-w-160 text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-                          {loc.bannerText}
-                        </p>
-
-                        <div className="mt-4 flex max-w-175 items-start gap-2 text-sm text-white/90 sm:text-base">
-                          <HiMapPin className="mt-0.5 shrink-0" size={18} />
-                          <span>{loc.address}</span>
-                        </div>
-
-                        <div className="mt-5 flex flex-wrap gap-3">
-                          <a
-                            href={loc.services?.clinic?.tel}
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold text-white transition duration-300 hover:-translate-y-px sm:px-5 sm:text-base"
+                    <div className="w-full p-4 sm:p-7 lg:p-10">
+                      <div className="max-w-full sm:max-w-190">
+                        <div className="w-full rounded-3xl border border-white/14 bg-black/48 p-4 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.58)] backdrop-blur-[6px] sm:max-w-155 sm:rounded-[28px] sm:p-6 lg:max-w-150 lg:p-7">
+                          <div
+                            className="inline-flex w-fit items-center rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white sm:text-[11px]"
                             style={{
-                              background: `linear-gradient(135deg, ${loc.accent} 0%, ${loc.accent}CC 55%, ${loc.accent} 100%)`,
-                              boxShadow: `0 14px 30px -18px ${loc.accent}AA`,
+                              backgroundColor: `${loc.accent}E6`,
+                              boxShadow: `0 10px 30px -16px ${loc.accent}`,
                             }}
                           >
-                            <HiPhone size={18} />
-                            Call Now
-                          </a>
-
-                          <a
-                            href={loc.websiteHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold text-white transition duration-300 hover:-translate-y-px sm:px-5 sm:text-base"
-                            style={{
-                              border: "1px solid rgba(255,255,255,0.35)",
-                              backgroundColor: "rgba(255,255,255,0.14)",
-                              backdropFilter: "blur(6px)",
-                            }}
-                          >
-                            <HiGlobeAlt size={18} />
-                            Visit Website
-                            <FaExternalLinkAlt className="opacity-80" />
-                          </a>
-                        </div>
-
-                        {saved === loc.key ? (
-                          <div className="mt-4 text-sm font-semibold text-white/90">
-                            Selected for next time
+                            {loc.badge || "Location"}
                           </div>
-                        ) : null}
+
+                          <h2
+                            className="mt-3 text-[26px] font-extrabold leading-[1.08] text-white sm:mt-4 sm:text-3xl lg:text-5xl"
+                            style={{
+                              textShadow: "0 3px 14px rgba(0,0,0,0.32)",
+                            }}
+                          >
+                            {loc.title}
+                          </h2>
+
+                          <div
+                            className="mt-4 flex max-w-full items-start gap-2 text-[13px] leading-5 text-white/92 sm:max-w-140 sm:text-base sm:leading-6"
+                            style={{
+                              textShadow: "0 2px 10px rgba(0,0,0,0.28)",
+                            }}
+                          >
+                            <HiMapPin className="mt-0.5 shrink-0" size={17} />
+                            <span>{loc.address}</span>
+                          </div>
+
+                          <div className="mt-5 flex items-center gap-3 sm:mt-6">
+                            <a
+                              href={loc.services?.clinic?.tel}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex h-11 w-11 items-center justify-center rounded-full text-white shadow-md transition hover:scale-105 active:scale-95"
+                              style={{
+                                background: `linear-gradient(135deg, ${loc.accent}, ${loc.accent}CC)`,
+                                boxShadow: `0 10px 24px -12px ${loc.accent}AA`,
+                              }}
+                              aria-label="Call"
+                            >
+                              <FiPhoneCall size={18} />
+                            </a>
+
+                            {loc.services?.clinic?.to || loc.services?.clinic?.href ? (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  loc.services.clinic.to
+                                    ? navigate(loc.services.clinic.to)
+                                    : window.open(
+                                      loc.services.clinic.href,
+                                      "_blank",
+                                      "noopener,noreferrer"
+                                    );
+                                }}
+                                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 active:scale-95"
+                                aria-label="Clinic"
+                              >
+                                <MdLocalHospital size={18} />
+                              </button>
+                            ) : null}
+
+                            {loc.services?.pharmacy && (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  loc.services.pharmacy.to
+                                    ? navigate(loc.services.pharmacy.to)
+                                    : window.open(
+                                      loc.services.pharmacy.href,
+                                      "_blank",
+                                      "noopener,noreferrer"
+                                    );
+                                }}
+                                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 active:scale-95"
+                                aria-label="Pharmacy"
+                              >
+                                <MdLocalPharmacy size={18} />
+                              </button>
+                            )}
+
+                            {loc.services?.supplies && (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  window.open(
+                                    loc.services.supplies.href,
+                                    "_blank",
+                                    "noopener,noreferrer"
+                                  );
+                                }}
+                                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 active:scale-95"
+                                aria-label="Supplies"
+                              >
+                                <FaBoxOpen size={17} />
+                              </button>
+                            )}
+                          </div>
+
+                          {saved === loc.key ? (
+                            <div className="mt-4 text-xs font-semibold text-white/88 sm:text-sm">
+                              Selected for next time
+                            </div>
+                          ) : null}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -755,25 +715,27 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Arrows */}
             <button
               type="button"
               aria-label="Previous slide"
               onClick={goPrevSlide}
-              className="absolute left-3 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 p-3 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-105 active:scale-95 not-first-of-type:md:inline-flex"
+              className="absolute left-2 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/35 p-2.5 text-white shadow-[0_10px_24px_-18px_rgba(0,0,0,0.6)] backdrop-blur-md transition hover:scale-105 hover:bg-black/45 active:scale-95 sm:left-3 sm:p-3"
             >
-              <FaChevronLeft size={16} />
+              <FaChevronLeft size={14} className="sm:hidden" />
+              <FaChevronLeft size={16} className="hidden sm:block" />
             </button>
 
             <button
               type="button"
               aria-label="Next slide"
               onClick={goNextSlide}
-              className="absolute right-3 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 p-3 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-105 active:scale-95 md:inline-flex"
+              className="absolute right-2 top-1/2 z-20 inline-flex -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/35 p-2.5 text-white shadow-[0_10px_24px_-18px_rgba(0,0,0,0.6)] backdrop-blur-md transition hover:scale-105 hover:bg-black/45 active:scale-95 sm:right-3 sm:p-3"
             >
-              <FaChevronRight size={16} />
+              <FaChevronRight size={14} className="sm:hidden" />
+              <FaChevronRight size={16} className="hidden sm:block" />
             </button>
-            <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/15 px-3 py-2 backdrop-blur-md">
+
+            <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/12 bg-black/28 px-3 py-2 backdrop-blur-md sm:bottom-4">
               {locations.map((loc, index) => {
                 const isActive = activeSlide === index;
 
@@ -783,12 +745,12 @@ export default function Home() {
                     type="button"
                     aria-label={`Go to ${loc.title}`}
                     onClick={() => setActiveSlide(index)}
-                    className="h-3 rounded-full transition-all duration-300"
+                    className="h-2.5 rounded-full transition-all duration-300 sm:h-3"
                     style={{
-                      width: isActive ? "28px" : "10px",
+                      width: isActive ? "24px" : "9px",
                       backgroundColor: isActive
                         ? loc.accent
-                        : "rgba(255,255,255,0.65)",
+                        : "rgba(255,255,255,0.68)",
                     }}
                   />
                 );
@@ -797,7 +759,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 2: Our Services */}
         <section className="mt-12">
           <div className="text-center">
             <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
@@ -819,55 +780,77 @@ export default function Home() {
               return (
                 <div
                   key={service.key}
-                  className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_12px_30px_-20px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-1"
-                  style={{ outline: `1px solid ${service.accent}22` }}
+                  className="group relative overflow-hidden rounded-3xl border border-black/8 bg-white/88 p-6 shadow-[0_16px_34px_-22px_rgba(0,0,0,0.22)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_-24px_rgba(0,0,0,0.26)]"
+                  style={{ outline: `1px solid ${service.accent}20` }}
                 >
-                  <div
-                    className="inline-flex h-14 w-14 items-center justify-center rounded-2xl"
-                    style={{
-                      backgroundColor: `${service.accent}14`,
-                      color: service.accent,
-                    }}
-                  >
-                    <Icon size={24} />
+                  <div className="pointer-events-none absolute inset-0">
+                    <div
+                      className="absolute -left-10 -top-10 h-28 w-28 rounded-full blur-3xl"
+                      style={{ backgroundColor: `${service.accent}18` }}
+                    />
+                    <div
+                      className="absolute bottom-0 right-0 h-24 w-24 rounded-full blur-3xl"
+                      style={{ backgroundColor: `${service.accent}10` }}
+                    />
+                    <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/95 to-transparent" />
+                    <div
+                      className="absolute inset-0 opacity-70"
+                      style={{
+                        background:
+                          "linear-gradient(145deg, rgba(255,255,255,0.56) 0%, rgba(255,255,255,0.14) 42%, transparent 100%)",
+                      }}
+                    />
                   </div>
 
-                  <h3 className="mt-5 text-2xl font-extrabold text-staywell-nav">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-black/65">
-                    {service.description}
-                  </p>
+                  <div className="relative z-10">
+                    <div
+                      className="inline-flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm"
+                      style={{
+                        backgroundColor: `${service.accent}16`,
+                        color: service.accent,
+                      }}
+                    >
+                      <Icon size={24} />
+                    </div>
 
-                  <div
-                    className="mt-4 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
-                    style={{
-                      backgroundColor: `${service.accent}12`,
-                      color: service.accent,
-                    }}
-                  >
-                    {service.availability}
-                  </div>
+                    <h3 className="mt-5 text-2xl font-extrabold text-staywell-nav">
+                      {service.title}
+                    </h3>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {service.actions.map((action) => (
-                      <button
-                        key={action.label}
-                        type="button"
-                        onClick={() => goAction(action)}
-                        className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold transition duration-300 hover:-translate-y-px"
-                        style={{
-                          backgroundColor: `${service.accent}10`,
-                          color: service.accent,
-                          border: `1px solid ${service.accent}33`,
-                        }}
-                      >
-                        {action.label}
-                        {action.type === "external" ? (
-                          <FaExternalLinkAlt className="opacity-70" />
-                        ) : null}
-                      </button>
-                    ))}
+                    <p className="mt-3 text-base leading-7 text-black/65">
+                      {service.description}
+                    </p>
+
+                    <div
+                      className="mt-4 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
+                      style={{
+                        backgroundColor: `${service.accent}12`,
+                        color: service.accent,
+                      }}
+                    >
+                      {service.availability}
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {service.actions.map((action) => (
+                        <button
+                          key={action.label}
+                          type="button"
+                          onClick={() => goAction(action)}
+                          className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-extrabold transition duration-300 hover:-translate-y-px"
+                          style={{
+                            backgroundColor: `${service.accent}10`,
+                            color: service.accent,
+                            border: `1px solid ${service.accent}33`,
+                          }}
+                        >
+                          {action.label}
+                          {action.type === "external" ? (
+                            <FaExternalLinkAlt className="opacity-70" />
+                          ) : null}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               );
@@ -875,8 +858,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 3: Why Staywell Healthcare */}
-        <section className="mt-14 rounded-4xl bg-[#F8FAFB] px-6 py-10 md:px-8 md:py-12">
+        <section className="mt-14 rounded-4xl border border-white/60 bg-white/68 px-6 py-10 backdrop-blur-sm md:px-8 md:py-12">
           <div className="text-center">
             <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
               Why Staywell Healthcare
@@ -893,31 +875,48 @@ export default function Home() {
               return (
                 <div
                   key={item.title}
-                  className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_24px_-18px_rgba(0,0,0,0.22)]"
+                  className="group relative overflow-hidden rounded-3xl border border-black/8 bg-white/88 p-6 shadow-[0_16px_34px_-22px_rgba(0,0,0,0.22)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_-24px_rgba(0,0,0,0.26)]"
                 >
-                  <div
-                    className="inline-flex h-12 w-12 items-center justify-center rounded-2xl"
-                    style={{
-                      backgroundColor: `${item.accent}14`,
-                      color: item.accent,
-                    }}
-                  >
-                    <Icon size={22} />
+                  <div className="pointer-events-none absolute inset-0">
+                    <div
+                      className="absolute -right-8 -top-8 h-24 w-24 rounded-full blur-3xl"
+                      style={{ backgroundColor: `${item.accent}16` }}
+                    />
+                    <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/95 to-transparent" />
+                    <div
+                      className="absolute inset-0 opacity-60"
+                      style={{
+                        background:
+                          "linear-gradient(145deg, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.12) 45%, transparent 100%)",
+                      }}
+                    />
                   </div>
 
-                  <h3 className="mt-4 text-lg font-extrabold text-staywell-nav">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-black/65">
-                    {item.description}
-                  </p>
+                  <div className="relative z-10">
+                    <div
+                      className="inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-sm"
+                      style={{
+                        backgroundColor: `${item.accent}16`,
+                        color: item.accent,
+                      }}
+                    >
+                      <Icon size={22} />
+                    </div>
+
+                    <h3 className="mt-4 text-lg font-extrabold text-staywell-nav">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-6 text-black/65">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               );
             })}
           </div>
         </section>
 
-        {/* Section 4: Quick Contact / Visit Us */}
         <section className="mt-14">
           <div className="text-center">
             <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-staywell-red">
@@ -932,65 +931,91 @@ export default function Home() {
             {quickLocations.map((loc) => (
               <div
                 key={loc.key}
-                className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_12px_28px_-20px_rgba(0,0,0,0.25)]"
-                style={{ outline: `1px solid ${loc.accent}22` }}
+                className="relative overflow-hidden rounded-3xl border border-black/8 bg-white/90 p-6 shadow-[0_16px_34px_-22px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                style={{ outline: `1px solid ${loc.accent}20` }}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-2xl font-extrabold text-staywell-nav">
-                      {loc.title}
-                    </h3>
-                    <div
-                      className="mt-2 h-1.5 w-16 rounded-full"
-                      style={{ backgroundColor: loc.accent }}
-                    />
-                  </div>
-
-                  <a
-                    href={loc.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-extrabold"
+                <div className="pointer-events-none absolute inset-0">
+                  <div
+                    className="absolute -left-12 -top-12 h-32 w-32 rounded-full blur-3xl"
+                    style={{ backgroundColor: `${loc.accent}16` }}
+                  />
+                  <div
+                    className="absolute bottom-0 right-0 h-24 w-24 rounded-full blur-3xl"
+                    style={{ backgroundColor: `${loc.accent}10` }}
+                  />
+                  <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/95 to-transparent" />
+                  <div
+                    className="absolute inset-0 opacity-60"
                     style={{
-                      backgroundColor: `${loc.accent}10`,
-                      color: loc.accent,
-                      border: `1px solid ${loc.accent}33`,
+                      background:
+                        "linear-gradient(145deg, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.10) 45%, transparent 100%)",
                     }}
-                  >
-                    Website
-                    <FaExternalLinkAlt className="opacity-70" />
-                  </a>
+                  />
                 </div>
 
-                <div className="mt-5 space-y-3 text-black/65">
-                  <div className="flex items-start gap-3">
-                    <HiMapPin className="mt-0.5 shrink-0" size={18} />
-                    <span>{loc.address}</span>
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-2xl font-extrabold text-staywell-nav">
+                        {loc.title}
+                      </h3>
+                      <div
+                        className="mt-2 h-1.5 w-16 rounded-full"
+                        style={{ backgroundColor: loc.accent }}
+                      />
+                    </div>
+
+                    {loc.key !== "varsity" && (
+                      <a
+                        href={loc.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-extrabold"
+                        style={{
+                          backgroundColor: `${loc.accent}10`,
+                          color: loc.accent,
+                          border: `1px solid ${loc.accent}33`,
+                        }}
+                      >
+                        Website
+                        <FaExternalLinkAlt className="opacity-70" />
+                      </a>
+                    )}
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <HiPhone className="mt-0.5 shrink-0" size={18} />
-                    <a href={loc.tel} className="hover:underline">
-                      {loc.phone}
-                    </a>
+                  <div className="mt-5 space-y-3 text-black/65">
+                    <div className="flex items-start gap-3">
+                      <HiMapPin className="mt-0.5 shrink-0" size={18} />
+                      <span>{loc.address}</span>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <HiPhone className="mt-0.5 shrink-0" size={18} />
+                      <a href={loc.tel} className="hover:underline">
+                        {loc.phone}
+                      </a>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <HiEnvelope className="mt-0.5 shrink-0" size={18} />
+                      <a
+                        href={`mailto:${loc.email}`}
+                        className="break-all hover:underline"
+                      >
+                        {loc.email}
+                      </a>
+                    </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <HiEnvelope className="mt-0.5 shrink-0" size={18} />
-                    <a href={`mailto:${loc.email}`} className="break-all hover:underline">
-                      {loc.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl bg-[#F8FAFB] p-4">
-                  <div className="text-sm font-extrabold uppercase tracking-wide text-staywell-nav">
-                    Hours
-                  </div>
-                  <div className="mt-3 space-y-2 text-sm text-black/65">
-                    {loc.hours.map((line) => (
-                      <div key={line}>{line}</div>
-                    ))}
+                  <div className="mt-6 rounded-2xl border border-black/5 bg-white/72 p-4 backdrop-blur-sm">
+                    <div className="text-sm font-extrabold uppercase tracking-wide text-staywell-nav">
+                      Hours
+                    </div>
+                    <div className="mt-3 space-y-2 text-sm text-black/65">
+                      {loc.hours.map((line) => (
+                        <div key={line}>{line}</div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1004,7 +1029,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Section 5: Footer */}
       <footer className="relative mt-16">
         <div className="relative">
           <svg

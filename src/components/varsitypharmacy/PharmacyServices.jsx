@@ -21,6 +21,8 @@ import HomecareImg from "@/assets/Varsity1/PharmacyServices/image27.jpg";
 import RentalsImg from "@/assets/Varsity1/PharmacyServices/image28.jpg";
 import BreastPumpImg from "@/assets/Varsity1/PharmacyServices/image06.jpg";
 
+import { Link } from "react-router-dom";
+
 const BRAND_GREEN = "#79BD43";
 const BRAND_RED = "#DC2227";
 const TEXT_GRAY = "#5C5656";
@@ -33,16 +35,16 @@ const services = [
     image: TravelHealthImg,
     blurb:
       "Plan your next trip with confidence. Get a preconsultation for personalized advice and vaccinations tailored to your travel needs.",
-    links: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/travel/8254140721?noNav=true" }],
+    links: [{ label: "+ Book Now", href: "" }],
   },
 
   {
     title: "Walk-in Prescribing Pharmacists",
     image: WalkinImg,
     blurb: "No appointment? No problem. Visit us for quick and convenient access to prescriptions.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   {
@@ -57,18 +59,18 @@ const services = [
     title: "Men’s Health",
     image: MensImg,
     blurb: "Specialized services to address men’s unique health concerns like ED.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   {
     title: "Women’s Health",
     image: WomensImg,
     blurb: "Empowering women’s health with expert guidance and care tailored to your needs.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   // ✅ Additional cards shown on StaywellPharmacy.ca
@@ -76,7 +78,7 @@ const services = [
     title: "PreP and LGBTQIA2S+",
     image: PrepImg, // add image import if you have one
     blurb: "Inclusive, compassionate care for all. Our services are designed to support the needs of the LGBTQIA2S+ community.",
-    links: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    links: [{ label: "+ Book Now", href: "" }],
     orText: "Or",
     call: { label: "Call: 403-874-8787", tel: "tel:+14038748787" },
   },
@@ -85,9 +87,9 @@ const services = [
     title: "Chronic diseases",
     image: ChronicImg,
     blurb: "Comprehensive management and support for chronic conditions, helping you live well.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   {
@@ -95,7 +97,7 @@ const services = [
     image: ImmunizationsImg,
     blurb: "Protect yourself and your loved ones. We offer a full range of vaccines for all ages.",
     bullets: ["Flu/COVID/RSV", "Yellow Fever", "TDAP/HPV/Shingles", "PNEUMONIA", "and more..."],
-    links: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    links: [{ label: "+ Book Now", href: "" }],
   },
 
   {
@@ -103,16 +105,16 @@ const services = [
     image: InjectionsImg,
     blurb: "Convenient injection services to ensure your treatment plan stays on track.",
     bullets: ["B12", "Mental Health Medications", "Diabetes Medications", "Allergy Serums", "and more..."],
-    links: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    links: [{ label: "+ Book Now", href: "" }],
   },
 
   {
     title: "Minor Injuries",
     image: MinorInjuriesImg,
     blurb: "Quick and effective treatment for minor injuries. We're here to help you heal faster.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   {
@@ -126,9 +128,9 @@ const services = [
     title: "Wellness",
     image: WellnessImg,
     blurb: "Stay on top of your health with our wellness services, from screenings to personalized advice.",
-    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "https://staywellpharmacy.ca/#prescribing-pharmacists" }],
+    links: [{ label: "+ Explore our Pharmacist Led Walk-in Service", href: "/varsitypharmacy/PrescribingPharmacist" }],
     orText: "Or",
-    secondaryLinks: [{ label: "+ Book Now", href: "https://www.bookmypharmacy.com/?noNav=true" }],
+    secondaryLinks: [{ label: "+ Book Now", href: "" }],
   },
 
   {

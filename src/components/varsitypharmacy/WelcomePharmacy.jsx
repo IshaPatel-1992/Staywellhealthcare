@@ -22,7 +22,7 @@ export default function WelcomePharmacy() {
   const pharmacyLicenseHref = "/licenses/4704-RPh Maimoona Nirmal.pdf"; // replace with real link
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section id="about-section" className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* 3 columns on desktop */}
         <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.05fr_1.2fr_0.95fr] items-start lg:items-stretch">

@@ -9,7 +9,7 @@ import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import rphSandip from "@/assets/Varsity1/PharmacyServices/image11.jpg";
 
 // Right-side images
-import right1 from "@/assets/Varsity1/PickupC.png";
+import right1 from "@/assets/Varsity1/PesonalizedCare1.png";
 import right2 from "@/assets/Varsity1/PersonalizedCare2.png";
 import right3 from "@/assets/Varsity1/3together.png";
 
