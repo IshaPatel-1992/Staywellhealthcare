@@ -22,7 +22,7 @@ import { FiPhoneCall } from "react-icons/fi";
 
 import SocialLinks from "@/components/common/SocialLinks";
 import logo from "@/assets/logo/Staywell-Trans_Main.png";
-import varsityBanner from "@/assets/Varsity1/HeroBannerImg1.png";
+import varsityBanner from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp";
 import carringtonBanner from "@/assets/staywell-home-gallery-02.webp";
 
 const STORAGE_KEY = "staywell:selectedLocation";

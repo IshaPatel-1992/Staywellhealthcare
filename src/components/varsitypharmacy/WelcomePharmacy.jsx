@@ -1,7 +1,7 @@
 import React from "react";
 
 // Replace these with your real assets
-import heroBuilding from "@/assets/Varsity1/3together.png";
+import heroBuilding from "@/assets/Varsity1/staywellwebp/staywell-exterior-pickup-clinic.png";
 import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp";
 
 const BRAND_RED = "#DC2227";

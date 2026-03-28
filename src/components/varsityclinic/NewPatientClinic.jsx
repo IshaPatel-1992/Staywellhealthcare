@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 // Right-side images
-import right1 from "@/assets/Varsity1/PersonalizedRoom.png";
-import right2 from "@/assets/Varsity1/PersonalizedCare3.png";
-import right3 from "@/assets/Varsity1/PesonalizedCare1.png";
+import right1 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit1.webp";
+import right2 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit2.webp";
+import right3 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit3.webp";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 

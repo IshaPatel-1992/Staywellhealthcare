@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaFax, FaEnvelope, FaEnvelope as FaMail } f
 import SocialLinks from "@/components/common/SocialLinks";
 
 // ✅ Replace with your real assets
-import footerBg from "@/assets/Varsity1/HeroBannerImg1.png"; // background image for top strip
+import footerBg from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp"; // background image for top strip
 import logo from "@/assets/logo/LogoStaywellPharmacy.png";
 
 const BRAND_RED = "#DC2227";

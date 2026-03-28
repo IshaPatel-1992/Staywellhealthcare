@@ -4,14 +4,15 @@ import React, { useEffect, useMemo, useState } from "react";
 // Staff images (add these files to your src/assets/staff folder)
 import drLinda from "@/assets/staywell-home-doc-placeholder-femal.webp";
 import drAlex from "@/assets/staywell-home-doc-placeholder-man.webp"; // add if you have it
-import rphMaimoona from "@/assets/staywell-home-doc-placeholder-femal.webp";
-import msRima from "@/assets/staywell-home-doc-placeholder-femal.webp";
-import rphSandip from "@/assets/Varsity1/PharmacyServices/image11.jpg";
+import rphMaimoona from "@/assets/Varsity1/staff/maimoona-nirmal-pharmacist-varsity-staywell.webp";
+import msRima from "@/assets/Varsity1/staff/rima-dave-homecare-medical-supplies-manager.webp";
+import rphSandip from "@/assets/Varsity1/staff/sandip-dave-prescribing-pharmacist.webp";
+import rphParamdeep from "@/assets/Varsity1/staff/paramdeep-pharmacy-manager-varsity.jpeg";
 
 // Right-side images
-import right1 from "@/assets/Varsity1/PesonalizedCare1.png";
-import right2 from "@/assets/Varsity1/PersonalizedCare2.png";
-import right3 from "@/assets/Varsity1/3together.png";
+import right1 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit1.webp";
+import right2 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit2.webp";
+import right3 from "@/assets/Varsity1/staywellwebp/staywell-exterior-pickup-clinic.png";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -93,7 +94,7 @@ Her focus is on helping patients better understand their medications, improving 
       },
       {
         name: "RPh Sandip Dave",
-        role: "Pharmacist",
+        role: "Pharmacy Manager",
         credentials: "BSc Pharm, APA, CDE",
         img: rphSandip, // add image in assets similar to others
         cta: "call",
@@ -105,8 +106,19 @@ Sandip has extensive experience in compounding, travel health consultations, men
 He is committed to helping patients better understand their medications and supporting improved health outcomes through accessible pharmacy services and collaborative care with the healthcare team.`
       },
       {
+        name: "RPh Paramdeep",
+        role: "Pharmacy Manager",
+        credentials: "",
+        img: rphParamdeep, // add image in assets similar to others
+        cta: "call",
+        ctaHref: PHARM_PHONE,
+        ctaLabel: "Call Now",
+        metaLine: "Staywell Pharmacy (Varsity)",
+        bio: `RPh Paramdeep is a dedicated Pharmacy Manager at Staywell Pharmacy, committed to delivering safe, accurate, and patient-centered care. With a strong focus on medication management and patient education, Paramdeep ensures every patient receives personalized guidance and support for their health needs. Known for a compassionate approach and attention to detail, Paramdeep works closely with patients and healthcare providers to optimize treatment outcomes.`
+      },
+      {
         name: "Ms. Rima Dave",
-        role: "MOA • Sales Representative",
+        role: "Homecare and Medical Supplies Manager",
         credentials: "Certified Compression Stocking Fitter & Sales Representative",
         img: msRima,
         cta: "call",

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import gallery1 from "@/assets/Varsity1/HeroBannerImg1.png";
-import gallery2 from "@/assets/Varsity1/Welcoming1.png";
-import gallery3 from "@/assets/Varsity1/PersonalizedRoom2.png";
-import gallery4 from "@/assets/Varsity1/PersonalizedCare3.png";
-import gallery5 from "@/assets/Varsity1/PrescriptionandPickup.png";
-import gallery6 from "@/assets/Varsity1/PrescriptionswithPerson.png";
-import gallery7 from "@/assets/Varsity1/PickupwithPerson.png";
+import gallery1 from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp";
+import gallery2 from "@/assets/Varsity1/staywellwebp/staywell-varsity-clinic-pharamcy-waiting-area.webp";
+import gallery3 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit1.webp";
+import gallery4 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit2.webp";
+import gallery5 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit3.webp";
+import gallery6 from "@/assets/Varsity1/staywellwebp/staywell-exterior-pickup-clinic.png";
+import gallery7 from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp";
 
 
 

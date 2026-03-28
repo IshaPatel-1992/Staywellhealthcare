@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/Varsity1/HeroBannerImg1.png"
-import bannerImg2 from "@/assets/Varsity1/Welcoming1.png";
+import bannerImg1 from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp";
+import bannerImg2 from "@/assets/Varsity1/staywellwebp/staywell-varsity-clinic-pharamcy-waiting-area.webp";
 
 
 {/* import bannerImg1 from "@/assets/Varsity/staywell-clinic-hero-1920x900.webp";

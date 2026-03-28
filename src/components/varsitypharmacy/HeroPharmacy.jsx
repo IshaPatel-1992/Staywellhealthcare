@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import bannerImg1 from "@/assets/Varsity1/HeroBannerImg1.png";
-import bannerImg2 from "@/assets/Varsity1/PrescriptionswithPerson.png"; 
-import bannerImg3 from "@/assets/Varsity1/PickUpPrescriptions.png";
-import bannerImg4 from "@/assets/Varsity1/DSC_0284 copy.jpg";
+import bannerImg1 from "@/assets/Varsity1/staywellwebp/staywell-medical-clinic-pharmacy-varsity-calgary-exterior.webp";
+import bannerImg2 from "@/assets/Varsity1/staywellwebp/staywell-varsity-prescription-counter.webp";
+import bannerImg3 from "@/assets/Varsity1/staywellwebp/staywell-pharamcy-pickup-prescriptions.webp";
+import bannerImg4 from "@/assets/Varsity1/staywellwebp/staywell-over-the-counter-medicines-pharmacy-varsitycalgary.webp"; 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function HeroClinic() {
