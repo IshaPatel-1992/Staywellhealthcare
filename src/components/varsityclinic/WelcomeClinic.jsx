@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from "react";
 
 
 // Staff images (add these files to your src/assets/staff folder)
-import drLinda from "@/assets/staywell-home-doc-placeholder-femal.webp";
+import drLinda from "@/assets/Varsity1/staff/webp/linda-ukey-jarrett-family-physician-varsity-staywell.webp";
 import drAlex from "@/assets/staywell-home-doc-placeholder-man.webp"; // add if you have it
-import rphMaimoona from "@/assets/Varsity1/staff/maimoona-nirmal-pharmacist-varsity-staywell.webp";
-import msRima from "@/assets/Varsity1/staff/rima-dave-homecare-medical-supplies-manager.webp";
-import rphSandip from "@/assets/Varsity1/staff/sandip-dave-prescribing-pharmacist.webp";
-import rphParamdeep from "@/assets/Varsity1/staff/paramdeep-pharmacy-manager-varsity.jpeg";
+import rphMaimoona from "@/assets/Varsity1/staff/webp/maimoona-nirmal-clinical-pharmacist-varsity-staywell.webp";
+import msRima from "@/assets/Varsity1/staff/webp/rima-dave-homecare-medical-supplies-manager-varsity-staywell.webp";
+import rphSandip from "@/assets/Varsity1/staff/webp/sandip-dave-prescribing-pharmacist-varsity-staywell.webp";
+import rphParamdeep from "@/assets/Varsity1/staff/webp/paramdeep-pharmacy-manager-varsity-staywell.webp";
 
 // Right-side images
 import right1 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit1.webp";
@@ -22,6 +22,7 @@ export default function WelcomeClinic() {
   const PHARM_PHONE = "tel:+14038748787";
   const PHARM_FAX = "fax:+15873508585";
   const PHARM_EMAIL = "mailto:varsity@staywellpharmacy.ca";
+  const SUPPLIES_PHONE = "tel:+14038748787";
   const SUPPLIES_EMAIL = "mailto:varsity@staywellpharmacy.ca";
 
 
@@ -49,9 +50,11 @@ export default function WelcomeClinic() {
             type: "phone"
           }
         ],
-        bio: `Dr. Linda Ukey-Jarrett is a dedicated Family Physician committed to providing compassionate, patient-centered care to individuals and families. She completed her medical training with an MBBS degree and is certified by the College of Family Physicians of Canada (CCFP). Dr. Ukey-Jarrett is also a Licentiate of the Medical Council of Canada (LMCC).
-Her practice focuses on preventive medicine, chronic disease management, and supporting patients in maintaining long-term health and wellness. She believes in building strong relationships with her patients and providing clear guidance to help them make informed decisions about their health.
-Dr. Ukey-Jarrett is committed to creating a welcoming and respectful environment where patients feel heard, supported, and confident in their care.`
+        bio: `Dr. Linda Ukey-Jarrett is a Family Physician in Calgary with over 15 years of experience providing comprehensive, patient-centered care. She earned her MBBS from the University of Benin (Nigeria) and holds CCFP and LMCC certifications in Canada. She is also CanREACH certified and completed a Compact Fellowship in Psychiatry through the University of Alberta.
+
+Dr. Ukey-Jarrett has a strong focus on mental health and addiction care, working in a collaborative shared-care model with psychiatrists. Her practice also includes full-scope family medicine, with special interests in women’s health, preventative care, and long-term wellness.
+
+Known for her compassionate and approachable nature, she builds strong, trusting relationships with patients of all ages. Outside of her practice, she enjoys traveling, interior decorating, and spending time with her family as a proud wife and mother of three.`
 
       },
       {
@@ -75,9 +78,15 @@ Dr. Ukey-Jarrett is committed to creating a welcoming and respectful environment
             type: "phone"
           }
         ],
-        bio: `Dr. Alexander Arthur is a Family and Addiction Medicine Physician and serves as the Medical Director of the clinic. He is certified by the College of Family Physicians of Canada (CCFP) and holds additional certification in addiction medicine through the Canadian Society of Addiction Medicine (cCSAM) and the International Society of Addiction Medicine (ISAM).
-Dr. Arthur has extensive experience supporting patients with both general family medicine needs and complex health conditions. His practice focuses on preventive care, chronic disease management, and evidence-based treatment for substance use disorders.
-He is committed to providing compassionate, respectful, and non-judgmental care while helping patients build healthier and more stable lives. As Medical Director, Dr. Arthur also works closely with the healthcare team to ensure high standards of patient care and coordinated treatment across services.`
+        bio: `Dr. Alexander Arthur is a Family and Addiction Medicine Physician in Calgary and serves as the Medical Director at Staywell Healthcare. He earned his medical degree from Kwame Nkrumah University of Science and Technology in Ghana and has extensive international experience across Ghana, the United Kingdom, and Canada.
+
+Dr. Arthur has practiced comprehensive family medicine in diverse settings, including emergency care, hospital medicine, outpatient clinics, and mental health services. In Canada, he provided longitudinal care in Saskatchewan, with a strong focus on mental health and addiction medicine.
+
+He has extensive experience in opioid agonist therapy (OAT), detox and treatment centers, and was a pioneer physician with the Virtual Access to Addiction Medicine (VAAM) program. He is passionate about improving access to care through telemedicine, especially for patients in rural and underserved communities.
+
+Dr. Arthur holds certifications in addiction medicine from the International Society of Addiction Medicine (ISAM), Canadian Society of Addiction Medicine (cCSAM), and the American Board of Preventive Medicine, along with certification from the College of Family Physicians of Canada (CCFP).
+
+He is currently based in Alberta, providing patient-centered care in Calgary with a focus on family medicine, addiction treatment, mental health, and virtual care. Outside of work, he enjoys spending time with his family, listening to jazz music, and travelling.`
       },
       {
         name: "RPh Maimoona Nirmal",
@@ -88,6 +97,13 @@ He is committed to providing compassionate, respectful, and non-judgmental care 
         ctaHref: PHARM_PHONE,
         ctaLabel: "Call Now",
         metaLine: "Pharmacy Licence No 4704",
+        actions: [
+          {
+            label: "Call Now",
+            href: PHARM_PHONE,
+            type: "phone"
+          }
+        ],
         bio: `RPh Maimoona Nirmal is a Clinical Pharmacist with a Bachelor of Science in Pharmacy and a Master’s degree in Infectious Diseases. She is an Additional Prescribing Authorization (APA) pharmacist, allowing her to assess certain health conditions, manage medications, and provide prescribing services when appropriate.
 Maimoona is passionate about supporting patients through medication management, prescription reviews, and personalized care plans. She works closely with physicians and healthcare professionals to ensure safe, effective, and coordinated treatment for patients.
 Her focus is on helping patients better understand their medications, improving health outcomes, and providing accessible pharmacy care within the community.`
@@ -101,6 +117,13 @@ Her focus is on helping patients better understand their medications, improving 
         ctaHref: PHARM_PHONE,
         ctaLabel: "Call Now",
         metaLine: "Staywell Pharmacy (Varsity)",
+        actions: [
+          {
+            label: "Call Now",
+            href: PHARM_PHONE,
+            type: "phone"
+          }
+        ],
         bio: `RPh Sandip Dave is a Prescribing Pharmacist with Additional Prescribing Authorization (APA) and a Certified Diabetes Educator (CDE). He provides patient-focused pharmacy care with expertise in medication management, diabetes education, and preventative health services.
 Sandip has extensive experience in compounding, travel health consultations, mental health medication support, and HIV prevention services. As a certified PrEP prescriber, he works closely with patients to provide safe, confidential, and evidence-based care.
 He is committed to helping patients better understand their medications and supporting improved health outcomes through accessible pharmacy services and collaborative care with the healthcare team.`
@@ -114,6 +137,13 @@ He is committed to helping patients better understand their medications and supp
         ctaHref: PHARM_PHONE,
         ctaLabel: "Call Now",
         metaLine: "Staywell Pharmacy (Varsity)",
+        actions: [
+          {
+            label: "Call Now",
+            href: PHARM_PHONE,
+            type: "phone"
+          }
+        ],
         bio: `RPh Paramdeep is a dedicated Pharmacy Manager at Staywell Pharmacy, committed to delivering safe, accurate, and patient-centered care. With a strong focus on medication management and patient education, Paramdeep ensures every patient receives personalized guidance and support for their health needs. Known for a compassionate approach and attention to detail, Paramdeep works closely with patients and healthcare providers to optimize treatment outcomes.`
       },
       {
@@ -122,11 +152,21 @@ He is committed to helping patients better understand their medications and supp
         credentials: "Certified Compression Stocking Fitter & Sales Representative",
         img: msRima,
         cta: "call",
-        ctaHref: PHARM_PHONE, // or separate supplies number if different
+        ctaHref: SUPPLIES_PHONE, // or separate supplies number if different
         ctaLabel: "Call Now",
         metaLine: "Homecare & Medical Supplies",
-        bio: `Ms. Rima Dave supports patients and families as a Medical Office Assistant and Sales Representative at Staywell. She assists with clinic coordination, patient services, and guidance on homecare and medical supply products.
-As a Certified Compression Stocking Fitter, she helps patients find the appropriate compression solutions and other medical supplies to support their health and daily comfort. Rima is dedicated to providing friendly, knowledgeable assistance and ensuring that every patient experience is welcoming, efficient, and supportive.`
+         actions: [
+          {
+            label: "Call Now",
+            href: SUPPLIES_PHONE,
+            type: "phone"
+          }
+        ],
+        bio: `Ms. Rima Dave is a Homecare and Medical Supplies Manager in Calgary, supporting patients and families with personalized care and guidance. She works as a Medical Office Assistant and Sales Representative at Staywell, assisting with clinic coordination, patient services, and homecare product support.
+
+As a Certified Compression Stocking Fitter, Rima specializes in helping patients find the right compression therapy and medical supplies to improve comfort, mobility, and overall health. She provides expert guidance on a wide range of homecare and medical equipment tailored to individual needs.
+
+Known for her friendly and compassionate approach, Rima is committed to delivering a welcoming and supportive experience while ensuring patients receive the right solutions for their daily care and well-being.`
       },
     ],
     []
@@ -342,15 +382,14 @@ function StaffCarousel3Up({ items, bookTo, callTo, onSelectStaff }) {
                 transition-all duration-300
               "
             >
-              <div className="relative">
+              <div className="relative bg-[#f8f8f8] overflow-hidden">
                 <img
                   src={m.img}
                   alt={m.name}
-                  className="w-full h-60 sm:h-64 lg:h-72 object-cover"
+                  className="w-full h-72 object-cover object-top"
                   loading="lazy"
                   draggable={false}
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/25 via-black/0 to-black/0" />
               </div>
 
               <div className="px-6 pt-5 pb-6">
@@ -408,42 +447,47 @@ function StaffPopup({ staff, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/45 backdrop-blur-[2px] flex items-center justify-center px-4"
+      className="fixed inset-0 z-50 bg-black/45 backdrop-blur-[2px] overflow-y-auto"
       onClick={onClose}
     >
-      <div
-        className="
-          relative w-full max-w-3xl
-          rounded-4xl bg-white
-          shadow-[0_20px_70px_rgba(0,0,0,0.28)]
-          px-8 py-10 sm:px-10 sm:py-12
-        "
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close popup"
-          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 text-xl leading-none"
+      <div className="min-h-full flex items-start sm:items-center justify-center p-4 sm:p-6">
+        <div
+          className="
+            relative w-full max-w-3xl
+            rounded-3xl sm:rounded-4xl bg-white
+            shadow-[0_20px_70px_rgba(0,0,0,0.28)]
+            px-5 py-6 sm:px-10 sm:py-12
+            max-h-[90vh] overflow-y-auto
+            overscroll-contain
+          "
+          onClick={(e) => e.stopPropagation()}
         >
-          ×
-        </button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close popup"
+            className="absolute right-4 top-4 z-10 text-gray-500 hover:text-gray-700 text-2xl leading-none"
+          >
+            ×
+          </button>
 
-        <h3 className="text-3xl font-extrabold leading-tight">
-          <span className="font-(--font-heading) text-[#DC2227]">
-            {staff.name}
-          </span>
-          <div className="mt-2 text-[#515D72] font-medium text-base">
-            {staff.role}
+          <h3 className="pr-8 text-2xl sm:text-3xl font-extrabold leading-tight">
+            <span className="font-(--font-heading) text-[#DC2227]">
+              {staff.name}
+            </span>
+
+            <div className="mt-2 text-[#515D72] font-medium text-sm sm:text-base">
+              {staff.role}
+            </div>
+
+            <div className="mt-1 text-gray-500 font-medium text-sm sm:text-base">
+              {staff.credentials}
+            </div>
+          </h3>
+
+          <div className="mt-4 text-[#515D72] text-base sm:text-lg leading-7 sm:leading-9 whitespace-pre-line">
+            {staff.bio}
           </div>
-          <div className="mt-1 text-gray-500 font-medium text-base">
-            {staff.credentials}
-          </div>
-
-        </h3>
-
-        <div className="mt-3 text-[#515D72] text-lg leading-9 whitespace-pre-line">
-          {staff.bio}
         </div>
       </div>
     </div>

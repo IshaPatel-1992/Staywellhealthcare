@@ -39,7 +39,7 @@ export default function Home() {
 
   useSeo({
     title:
-      "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary",
+      "Staywell Healthcare | Medical Clinic, Pharmacy & Homecare Supplies in Calgary NW",
     description:
       "Staywell Healthcare offers trusted medical clinic care, pharmacy services, and homecare & medical supplies in Calgary. Choose Varsity or Carrington and connect by phone or email.",
     canonical,
@@ -51,14 +51,36 @@ export default function Home() {
       url: canonical,
       type: "website",
       image:
-        "https://staywellhealthcare.ca/images/og/varsity-clinic-pharmacy-medicalsupplies.jpg",
+        "https://staywellhealthcare.ca/images/og/staywell-clinic-pharmacy-exterior-varsity-calgary.webp",
     },
     jsonLdId: "staywell-home",
     jsonLd: {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "MedicalBusiness",
       name: "Staywell Healthcare",
       url: canonical,
+      logo: "https://staywellhealthcare.ca/images/og/logo_512.png",
+      image: [
+        "https://staywellhealthcare.ca/images/og/staywell-clinic-pharmacy-exterior-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-medicalclinic-pharmacy-waitingarea-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-pharmacy-prescriptions-counter-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-pharmacy-pickup-prescriptions-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room1-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room2-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room3-varsity-calgary.webp",
+        "https://staywellhealthcare.ca/images/og/staywell-homecare-supplies-products-varsity-calgary.webp"
+      ],
+      telephone: "+1-587-955-6207",
+      priceRange: "$$",
+      areaServed: "Calgary",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "4624 Varsity Drive NW Unit #10",
+        addressLocality: "Calgary",
+        addressRegion: "AB",
+        postalCode: "T3A 2L9",
+        addressCountry: "CA"
+      },
       sameAs: [
         "https://www.instagram.com/staywellhealthcareservices/",
         "https://www.linkedin.com/company/staywell-pharmacy-medical-clinic/?originalSubdomain=ca",
@@ -71,6 +93,15 @@ export default function Home() {
           "@type": "MedicalClinic",
           name: "Staywell Medical Clinic - Varsity",
           telephone: "+1-587-955-6207",
+          image: [
+            "https://staywellhealthcare.ca/images/og/staywell-clinic-pharmacy-exterior-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-medicalclinic-pharmacy-waitingarea-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room1-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room2-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-doctor-consultation-room3-varsity-calgary.webp"
+          ],
+          priceRange: "$$",
+          areaServed: "Calgary",
           email: "varsity@staywellmedical.ca",
           address: {
             "@type": "PostalAddress",
@@ -88,18 +119,20 @@ export default function Home() {
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
           ],
-          knowsAbout: [
-            "Family medicine",
-            "Walk-in clinic",
-            "Preventive care",
-            "Chronic disease management",
-          ],
         },
         {
           "@type": "Pharmacy",
           name: "Staywell Pharmacy - Varsity",
           telephone: "+1-403-874-8787",
           faxNumber: "+1-825-414-0722",
+          image: [
+            "https://staywellhealthcare.ca/images/og/staywell-clinic-pharmacy-exterior-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-medicalclinic-pharmacy-waitingarea-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-pharmacy-prescriptions-counter-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-pharmacy-pickup-prescriptions-varsity-calgary.webp"
+          ],
+          priceRange: "$$",
+          areaServed: "Calgary",
           email: "varsity@staywellpharmacy.ca",
           address: {
             "@type": "PostalAddress",
@@ -116,19 +149,20 @@ export default function Home() {
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
-          ],
-          knowsAbout: [
-            "Prescription refills",
-            "Prescription transfers",
-            "Vaccines",
-            "Compounding",
-            "Delivery",
           ],
         },
         {
           "@type": "Store",
           name: "Staywell Homecare & Medical Supplies - Varsity",
           telephone: "+1-403-874-8787",
+          image: [
+            "https://staywellhealthcare.ca/images/og/staywell-clinic-pharmacy-exterior-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-homecaresupplies-exterior-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywellhealthcare-medicalclinic-pharmacy-waitingarea-varsity-calgary.webp",
+            "https://staywellhealthcare.ca/images/og/staywell-homecare-supplies-products-varsity-calgary.webp"
+          ],
+          priceRange: "$$",
+          areaServed: "Calgary",
           email: "varsity@staywellpharmacy.ca",
           address: {
             "@type": "PostalAddress",
@@ -146,75 +180,9 @@ export default function Home() {
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
             { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "15:00" },
           ],
-          knowsAbout: [
-            "Homecare supplies",
-            "Medical equipment",
-            "Compression stockings",
-            "Mobility aids",
-          ],
-        },
-        {
-          "@type": "MedicalClinic",
-          name: "Staywell Medical Clinic - Carrington",
-          telephone: "+1-825-414-3933",
-          email: "info@staywellmedical.ca",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "59 Carrington Plz #190",
-            addressLocality: "Calgary",
-            addressRegion: "AB",
-            postalCode: "T3P 1Y3",
-            addressCountry: "CA",
-          },
-          openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
-          ],
-          knowsAbout: [
-            "Family medicine",
-            "Walk-in clinic",
-            "Preventive care",
-            "Chronic disease management",
-          ],
-        },
-        {
-          "@type": "Pharmacy",
-          name: "Staywell Pharmacy - Carrington",
-          telephone: "+1-825-414-0721",
-          faxNumber: "+1-825-414-0722",
-          email: "info@staywellpharmacy.ca",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "59 Carrington Plz #190",
-            addressLocality: "Calgary",
-            addressRegion: "AB",
-            postalCode: "T3P 1Y3",
-            addressCountry: "CA",
-          },
-          openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "21:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "14:00" },
-          ],
-          knowsAbout: [
-            "Prescription refills",
-            "Prescription transfers",
-            "Vaccines",
-            "Compounding",
-            "Delivery",
-          ],
-        },
-      ],
-    },
+        }
+      ]
+    }
   });
 
   const locations = useMemo(
