@@ -2,7 +2,7 @@ import React from "react";
 
 // Replace these with your real assets
 import heroBuilding from "@/assets/Varsity1/staywellwebp/staywell-exterior-pickup-clinic.png";
-import managerImg from "@/assets/staywell-home-doc-placeholder-femal.webp";
+import managerImg from "@/assets/Varsity1/staff/webp/maimoona-nirmal-clinical-pharmacist-varsity-staywell.webp";
 
 const BRAND_RED = "#DC2227";
 const BRAND_GRAY = "#515D72";
