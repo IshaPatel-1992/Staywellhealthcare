@@ -8,6 +8,7 @@ import rphMaimoona from "@/assets/Varsity1/staff/webp/maimoona-nirmal-clinical-p
 import msRima from "@/assets/Varsity1/staff/webp/rima-dave-homecare-medical-supplies-manager-varsity-staywell.webp";
 import rphSandip from "@/assets/Varsity1/staff/webp/sandip-dave-prescribing-pharmacist-varsity-staywell.webp";
 import rphParamdeep from "@/assets/Varsity1/staff/webp/paramdeep-pharmacy-manager-varsity-staywell.webp";
+import tammyImg from "@/assets/Varsity1/staff/webp/tammy-rogers-family-nurse-practitioner-varsity-staywell.webp";
 
 // Right-side images
 import right1 from "@/assets/Varsity1/staywellwebp/staywell-clinic-personalised-unit1.webp";
@@ -89,6 +90,38 @@ Dr. Arthur holds certifications in addiction medicine from the International Soc
 He is currently based in Alberta, providing patient-centered care in Calgary with a focus on family medicine, addiction treatment, mental health, and virtual care. Outside of work, he enjoys spending time with his family, listening to jazz music, and travelling.`
       },
       {
+  name: "Tammy Rogers",
+  role: "Family Nurse Practitioner",
+  credentials: "NP, BScN, MScN",
+  badge: "Accepting New Patients", 
+  img: tammyImg, 
+  cta: "call",
+  ctaHref: CLINIC_PHONE,
+  ctaLabel: "Call Now",
+  metaLine: "", // add license if available later
+  actions: [
+    {
+      label: "Book Now",
+      href: "https://patient.medeohealth.com/booking/staywell-medical-clinic-varsity",
+      type: "external"
+    },
+    {
+      label: "Call Now",
+      href: CLINIC_PHONE,
+      type: "phone"
+    }
+  ],
+  bio: `
+Tammy Rogers is a Master's-prepared Family Nurse Practitioner who completed her Bachelor of Science in Nursing (BScN) and Nurse Practitioner certification at McMaster University in 2003. She later earned her Master of Science in Nursing (MScN) from the University of Ottawa in 2013.
+
+She brings extensive experience as both a Registered Nurse and Nurse Practitioner, including general medical care, critical care, and acute care travel nursing in the United States. Her work also includes primary care and emergency services in Nunavut, primary care in East Vancouver and Northeast Calgary, and complex geriatric care in a long-term care setting in Cochrane, Alberta.
+
+Tammy is passionate about providing high-quality, evidence-based primary healthcare to patients of all ages and holds specialized certification in care of the elderly.
+
+Outside of work, Tammy enjoys working out, spending time in nature, camping, quadding, and cooking.
+`
+},
+      {
         name: "RPh Maimoona Nirmal",
         role: "Clinical Pharmacist",
         credentials: "BSc Pharm, MSc Infectious Diseases, APA",
@@ -155,7 +188,7 @@ He is committed to helping patients better understand their medications and supp
         ctaHref: SUPPLIES_PHONE, // or separate supplies number if different
         ctaLabel: "Call Now",
         metaLine: "Homecare & Medical Supplies",
-         actions: [
+        actions: [
           {
             label: "Call Now",
             href: SUPPLIES_PHONE,
